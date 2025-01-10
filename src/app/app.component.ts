@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { AppbarComponent } from './appbar/appbar.component';
+import { AppbarComponent } from './components/appbar/appbar.component';
 
 
 @Component({
