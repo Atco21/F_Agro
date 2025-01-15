@@ -1,3 +1,7 @@
+body{
+  margin-top: 90px;/*baja el dashdorad para que no lo tape el header*/
+}
+
 .circle {
   width: 50vw; /* Tamaño relativo al ancho de la pantalla */
   max-width: 200px; /* Tamaño máximo */
@@ -32,7 +36,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem; /* Tamaño relativo */
+  font-size: 1,2rem; /* Tamaño relativo */
   font-weight: bold;
   color: #333;
 }
@@ -81,15 +85,15 @@ p{
 .legend {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
-  justify-content: flex-start;
-  gap: 10px; /* Añade espacio entre los elementos de la leyenda */
+  justify-content:center;
+  gap: 0px; /* Añade espacio entre los elementos de la leyenda */
   margin: 0 auto; /* Centra la leyenda */
-  max-width: 100%;
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  max-width: 75%;
+  width: 500%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 .legend .d-flex {
-  margin: 5px 0;
+  margin: 1px 0;
 }
 
 /* Media Query para Pantallas Pequeñas */

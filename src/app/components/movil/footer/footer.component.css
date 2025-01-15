@@ -1,8 +1,14 @@
-.footer {
+  .fixed-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004d40;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Por si hay contenido superpuesto */
+    background-color: #004d40; /* Color de fondo */
     padding: 20px;
+    text-align: center;
+
   }
