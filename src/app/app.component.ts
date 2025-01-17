@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { AppbarComponent } from './appbar/appbar.component';
-
+import { HeaderComponent } from './components/movil/header/header.component'; // Ajusta la ruta según tu estructura de carpetas
+import { DashboardComponent } from './components/movil//dashboard/dashboard.component';
+import { FooterComponent } from './components/movil//footer/footer.component';
+import { TareasComponent } from "./components/movil/dashboard/tareas/tareas.component";
+import { RouterOutlet,RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppbarComponent],
+  standalone: true,
+  imports: [HeaderComponent, DashboardComponent, FooterComponent, TareasComponent,RouterOutlet,RouterLink],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'F_Agro';
+  title = 'proyecto001';
 }
+
