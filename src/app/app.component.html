@@ -5,7 +5,13 @@
          <app-tareas></app-tareas>
 
     </app-dashboard>
-    <app-footer></app-footer> <!-- Pie de página -->
+    <app-footer>
+      <router-outlet></router-outlet>
+      <a routerLink="/Calendario" routerLinkActive="active">Calendario</a>
+      
+
+    </app-footer> <!-- Pie de página -->
+    <router-outlet />
 </body>
 
 
