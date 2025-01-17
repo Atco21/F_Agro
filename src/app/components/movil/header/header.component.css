@@ -1,0 +1,56 @@
+/* Estilos generales */
+.header {
+  background-color: #004d40; /* Color de fondo */
+  color: white; /* Texto claro */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; /* Asegura que esté por encima del contenido */
+
+}
+
+
+/* Logo */
+.logo img {
+  width: 50px; /* Tamaño fijo para el logo */
+  height: auto;
+}
+
+/* Botón agregar tareas */
+.add-tareas {
+  width: 50px;
+  height: 50px;
+  font-size: 2rem; /* Tamaño del texto "+" */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Botón redondo */
+  margin-right: 5px; /* Espaciado entre botones */
+  padding-bottom:15px;
+  padding-right: 70px;
+}
+
+/* Botón de notificaciones */
+.notifications {
+  background: none;
+  border: none;
+}
+
+
+.notification-icon {
+  width: 20px; /* Tamaño fijo para el ícono */
+  height: 20px;
+}
+
+/* Avatar */
+.avatar-img {
+  width: 50px;
+  height: 50px;
+}
+
+body{
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
