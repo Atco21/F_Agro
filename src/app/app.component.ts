@@ -5,6 +5,7 @@ import { FooterComponent } from './components/movil//footer/footer.component';
 import { TareasComponent } from "./components/movil/dashboard/tareas/tareas.component";
 import { RouterOutlet,RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
