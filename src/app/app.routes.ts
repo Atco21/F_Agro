@@ -1,11 +1,15 @@
 import { Routes } from '@angular/router';
-import { FooterComponent } from './components/movil/footer/footer.component';
+import { DashboardComponent } from './components/movil/dashboard/dashboard.component';
 import { CalendarioComponent } from './components/movil/calendario/calendario.component';
-import { Component } from '@angular/core';
 
+export const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+  },
+  {
+    path: 'calendario',
+    component: CalendarioComponent,
+ },
 
-export const routes: Routes =
-[   { path: '', redirectTo: 'calendario', pathMatch: 'full' },
-    {path:'calendario',component:CalendarioComponent},
 ];
-
