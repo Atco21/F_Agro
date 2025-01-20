@@ -6,6 +6,7 @@ import { TareasComponent } from "./components/movil/dashboard/tareas/tareas.comp
 import { RouterOutlet,RouterLink } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
