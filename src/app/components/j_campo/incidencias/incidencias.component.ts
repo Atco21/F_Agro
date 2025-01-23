@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-incidencias',
-  imports: [],
+  standalone: true,
   templateUrl: './incidencias.component.html',
-  styleUrl: './incidencias.component.css'
+  styleUrl: './incidencias.component.css',
+
 })
 export class IncidenciasComponent {
 
