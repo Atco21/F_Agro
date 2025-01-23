@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { FooterComponent } from './movil/footer/footer.component';
-import { HeaderComponent } from './movil/header/header.component';
-import { HomeComponent } from './movil/home/home.component';
+import { FooterComponent } from './components/movil/footer/footer.component';
+import { HeaderComponent } from './components/movil/header/header.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent, RouterLink, HomeComponent],
+  imports: [FooterComponent, HeaderComponent, RouterLink, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
