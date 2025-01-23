@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './components/movil/header/header.component'; // Ajusta la ruta según tu estructura de carpetas
-import { FooterComponent } from './components/movil//footer/footer.component';
+import { FooterComponent } from './components/j_campo/footer/footer.component';
+import { RouterOutlet} from '@angular/router';
+import { HeaderComponent } from './components/j_campo/header/header.component';
 
-import { RouterOutlet,RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,FooterComponent,RouterOutlet],
+  imports: [RouterOutlet,HeaderComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
