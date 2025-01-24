@@ -1,0 +1,20 @@
+/* Define la fuente Inter para todo el componente */
+:host {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo para los títulos de las tarjetas */
+.card-title {
+  color: #28a745; /* Verde usado en el header */
+  font-weight: bold;
+}
+
+/* Estilo para las interpolaciones */
+.card-body p {
+  color: #8B4513; /* Marrón */
+}
+.btn{
+  display: flex;
+  background-color:#8B4513;
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+<div class="modal fade" id="modalCrearTarea" tabindex="-1" aria-labelledby="modalCrearTareaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center" id="modalCrearTareaLabel">Crear Tarea</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-geo-alt"></i> Parcela
+                  </h3>
+                  <p>{{ parcelaNombre }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-list-task"></i> Tarea
+                  </h3>
+                  <p>{{ tareaNombre }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-person"></i> Aplicador
+                  </h3>
+                  <p>{{ aplicadorNombre }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-tools"></i> Máquina
+                  </h3>
+                  <p>{{ maquinaNombre }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-flask"></i> Tratamiento
+                  </h3>
+                  <p>{{ tratamientoNombre }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <i class="bi bi-calendar"></i> Fecha
+                  </h3>
+                  <p>{{ fecha }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-primary mx-auto" (click)="openSecondModal()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
