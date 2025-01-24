@@ -6,6 +6,8 @@ import { DashboardComponent } from './components/movil/dashboard/dashboard.compo
 import { TareasComponent } from './components/movil/dashboard/tareas/tareas.component';
 import { OrdenNoFinalizadaComponent } from './components/movil/orden/orden-no-finalizada/orden-no-finalizada.component';
 import { OrdenFinalizadaComponent } from './components/movil/orden/orden-finalizada/orden-finalizada.component';
+import { CalendarioComponent } from './components/movil/calendario/calendario.component';
+import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
 // import { IncidenciaNoFinalizadaComponent } from './components/movil/incidencias/incidencia-no-finalizada/incidencia-no-finalizada.component';
 // import { IncidenciaFinalizadaComponent } from './components/movil/incidencias/incidencia-finalizada/incidencia-finalizada.component';
 
@@ -50,6 +52,14 @@ export const routes: Routes = [
             component: TareasComponent,
           }
         ]
+      },
+      {
+          path: 'calendario',
+          component: CalendarioComponent,
+      },
+      {
+        path: 'crear-incidencia',
+        component: CrearIncidenciaComponent,
       }
     ]
   }

@@ -4,6 +4,7 @@ import { FooterComponent } from './components/movil/footer/footer.component';
 import { HeaderComponent } from './components/movil/header/header.component';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [FooterComponent, HeaderComponent, RouterLink, RouterOutlet],
