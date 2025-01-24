@@ -27,9 +27,14 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "src/styles.css",
+<<<<<<< HEAD
                 "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
+=======
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+>>>>>>> 996d04ff7b174cb45c9f3dcab761e7f433b946af
             ],
             "scripts": [
              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -89,6 +94,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "src/styles.css"
             ],
             "scripts": [
