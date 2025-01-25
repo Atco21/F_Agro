@@ -5,16 +5,20 @@
 
 /* Estilo para los títulos de las tarjetas */
 .card-title {
-  color: #28a745; /* Verde usado en el header */
+  color: #01533E; /* Verde usado en el header */
   font-weight: bold;
 }
 
 /* Estilo para las interpolaciones */
 .card-body p {
-  color: #8B4513; /* Marrón */
+  color: #532301; /* Marrón */
 }
 .btn{
   display: flex;
-  background-color:#8B4513;
+  background-color:#532301;
   text-align: center;
+}
+.modal-title{
+  color: #532301;
+  font-weight: bold;
 }

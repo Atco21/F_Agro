@@ -17,5 +17,32 @@ export class ModalCrearParcelaComponent implements OnInit {
       { id: 3, nombre: 'Parcela 3' }
     ];
   }
+  openthirdModal(): void {
+    const modalCrearParcela = document.getElementById('modalCrearParcela');
+    const modalTercero = document.getElementById('modalTercero');
 
+    if (modalCrearParcela && modalTercero) {
+      // Ocultar el segundo modal
+      modalCrearParcela.classList.remove('show');
+      modalCrearParcela.setAttribute('aria-hidden', 'true');
+      modalCrearParcela.setAttribute('style', 'display: none;');
+
+      // Mostrar el tercer modal
+      // modalTercero.classList.add('show');
+      // modalTercero.setAttribute('aria-hidden', 'false');
+      // modalTercero.setAttribute('style', 'display: block; padding-right: 17px;');
+    }
+
+  }
+
+  cerrarModal(): void {
+    const modalCrearParcela = document.getElementById('modalCrearParcela');
+
+    if (modalCrearParcela) {
+      // Ocultar el modal
+      modalCrearParcela.classList.remove('show');
+      modalCrearParcela.setAttribute('aria-hidden', 'true');
+      modalCrearParcela.setAttribute('style', 'display: none;');
+    }
+  }
 }
