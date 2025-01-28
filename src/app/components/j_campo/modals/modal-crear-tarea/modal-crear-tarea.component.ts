@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 export class ModalCrearTareaComponent {
   parcelaNombre: string = 'Nombre de la Parcela';
   aplicadorNombre: string = 'Nombre del Aplicador';
-  tareaNombre: string = '';
-  maquinaNombre: string = '';
-  tratamientoNombre : string = '';
-  fecha : string = '';
+  tareaNombre: string = 'Nombre de la Tarea';
+  maquinaNombre: string = 'Nombre de la Máquina';
+  tratamientoNombre : string = 'Nombre del Tratamiento';
+  fecha : string = 'Nombre de la Fecha';
 
   cerrarModal(): void {
-    const modalElement = document.getElementById('modalCrearParcela');
+    const modalElement = document.getElementById('modalCrearTarea');
 
     if (modalElement) {
       modalElement.classList.remove('show');
