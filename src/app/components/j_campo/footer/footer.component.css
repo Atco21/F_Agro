@@ -12,3 +12,12 @@
     text-align: center;
 
   }
+  .modal-header{
+    background-color: #ffffff;
+    color: #004d40;
+    padding-top: 200px;
+  }
+  .menu-opciones{
+    display: flex;
+    justify-content: space-between;
+  }

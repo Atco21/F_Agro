@@ -8,7 +8,9 @@
   <a routerLink="/calendario"><img src="Calendar.svg" alt="calendar" /></a>
 </div>
 <div class="incidencia">
-  <a routerLink="/incidencia"><img src="Incidencia.svg" alt="incidencia" /></a>
+  <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalIncidencia">
+    <img src="Incidencia.svg" alt="incidencia" />
+  </button>
 </div>
 <div class="orden">
  <a routerLink="/orden"><img src="tareas.svg" alt="orden" /></a>
@@ -17,6 +19,60 @@
  <a routerLink="/menu"><img src="menu.svg" alt="menu" /></a>
 </div>
 
+<!-- MODAL INCIDENCIA  -->
+<!-- Modal -->
+<div class="modal fade" id="modalIncidencia" tabindex="-1" aria-labelledby="modalIncidenciaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center" id="modalIncidenciaLabel">Incidencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-header">
+            Incidencias
+          </div>
+          <div class="card-body">
 
-
-
+            <p class="menu-opciones">
+              <a >Personal</a>
+              <a >Máquina</a>
+              <a>Stock</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- Contenido del pie de página -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalIncidencia" tabindex="-1" aria-labelledby="modalIncidenciaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center" id="modalIncidenciaLabel">Incidencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-header">
+            Incidencias
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#">Personal</a></li>
+              <li class="list-group-item"><a href="#">Máquina</a></li>
+              <li class="list-group-item"><a href="#">Stock</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- Contenido del pie de página -->
+      </div>
+    </div>
+  </div>
+</div>
