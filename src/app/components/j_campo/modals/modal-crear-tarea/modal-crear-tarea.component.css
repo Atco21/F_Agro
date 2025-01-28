@@ -1,25 +1,40 @@
-/* Define la fuente Inter para todo el componente */
-:host {
-  font-family: 'Inter', sans-serif;
-}
-
-/* Estilo para los títulos de las tarjetas */
-.card-title {
-  color: #01533E; /* Verde usado en el header */
-  font-weight: bold;
-}
-
-/* Estilo para las interpolaciones */
-.card-body p {
-  color: #532301; /* Marrón */
-}
-.btn{
+.btn {
   display: flex;
-  background-color:#532301;
+  background-color: #532301;
   text-align: center;
 }
-.modal-title{
+
+.modal-title {
   color: #532301;
   font-weight: bold;
+}
+
+.modal-dialog {
+  margin-top: 20px;
+}
+
+.modal-header {
+  background-color: #ffffff;
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1050; /* Asegúrate de que el encabezado esté por encima del contenido */
+}
+
+.modal-footer {
+  background-color: #ffffff;
+  color: white;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 1050; /* Asegúrate de que el pie de página esté por encima del contenido */
+}
+
+.modal-body {
+  max-height: 70vh; /* Ajusta este valor según sea necesario */
+  overflow-y: auto;
+  padding-top: 60px; /* Ajusta este valor según sea necesario */
+  padding-bottom: 60px; /* Ajusta este valor según sea necesario */
 }
 
