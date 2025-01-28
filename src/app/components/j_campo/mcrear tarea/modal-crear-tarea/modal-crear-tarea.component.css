@@ -1,0 +1,39 @@
+/* Define la fuente Inter para todo el componente */
+:host {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo para los títulos de las tarjetas */
+.card-title {
+  color: #01533E; /* Verde usado en el header */
+  font-weight: bold;
+}
+
+/* Estilo para las interpolaciones */
+.card-body p {
+  color: #FFFFFF; /* Blanco por defecto */
+}
+
+/* Cambiar a marrón cuando el campo está modificado */
+.card-body p.ng-dirty {
+  color: #532301; /* Marrón */
+}
+
+/* Estilo para los botones */
+.btn {
+  display: flex;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Estilo para el título del modal */
+.modal-title {
+  color: #532301;
+  font-weight: bold;
+}
+.btn1{
+  display: flex;
+  background-color: #532301;
+  color: #FFFFFF;
+  text-align: center;
+}

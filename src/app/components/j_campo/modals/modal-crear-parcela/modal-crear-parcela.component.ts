@@ -35,14 +35,14 @@ export class ModalCrearParcelaComponent implements OnInit {
 
   }
 
-  cerrarModal(): void {
-    const modalCrearParcela = document.getElementById('modalCrearParcela');
+  // cerrarModal(): void {
+  //   const modalCrearParcela = document.getElementById('modalCrearParcela');
 
-    if (modalCrearParcela) {
-      // Ocultar el modal
-      modalCrearParcela.classList.remove('show');
-      modalCrearParcela.setAttribute('aria-hidden', 'true');
-      modalCrearParcela.setAttribute('style', 'display: none;');
-    }
-  }
+  //   if (modalCrearParcela) {
+  //     // Ocultar el modal
+  //     modalCrearParcela.classList.remove('show');
+  //     modalCrearParcela.setAttribute('aria-hidden', 'true');
+  //     modalCrearParcela.setAttribute('style', 'display: none;');
+  //   }
+  // }
 }
