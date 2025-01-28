@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CrearIncidenciaComponent } from './crear-incidencia.component';
 
 describe('CrearIncidenciaComponent', () => {
@@ -8,7 +8,7 @@ describe('CrearIncidenciaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrearIncidenciaComponent]
+      imports: [CrearIncidenciaComponent, RouterLink, RouterOutlet]
     })
     .compileComponents();
 

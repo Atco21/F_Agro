@@ -18,16 +18,16 @@ export const routes: Routes = [
       {
         path: 'incidencias',
         component: IncidenciasComponent,
-        // children: [
-        //   {
-        //     path: 'incidencia-no-finalizada',
-        //     component: IncidenciaNoFinalizadaComponent,
-        //   },
+        children: [
+          {
+            path: 'crear-incidencia',
+            component: CrearIncidenciaComponent,
+          },
         //   {
         //     path: 'incidencia-finalizada',
         //     component: IncidenciaFinalizadaComponent,
         //   }
-        // ]
+        ]
       },
       {
         path: 'orden',
