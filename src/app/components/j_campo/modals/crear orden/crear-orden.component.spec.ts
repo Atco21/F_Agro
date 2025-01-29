@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalCrearTareaComponent } from './modal-crear-tarea.component';
+import { ModalCrearTareaComponent } from './crear-orden.component';
 
 describe('ModalCrearTareaComponent', () => {
   let component: ModalCrearTareaComponent;

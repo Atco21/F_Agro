@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TareasComponent } from "./tareas/tareas.component";
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [TareasComponent]
 })
 export class DashboardComponent {
+
+
 
 }

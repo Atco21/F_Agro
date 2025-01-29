@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 // import { AddTareaModalComponent } from '../crear_tarea/add-tarea-modal/add-tarea-modal.component';
 
@@ -12,16 +13,11 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 })
 export class HeaderComponent {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private router: Router) {}
 
-  // openFullScreenModal() {
-  //   const dialogRef = this.dialog.open(AddTareaModalComponent, {
-  //     width: '100vw',
-  //     height: '100vh',
-  //     maxWidth: '100vw',
-  //     maxHeight: '100vh',
-  //     panelClass: 'full-screen-modal'
-  //   });
+  // navegarACrearTarea(): void {
+  //   this.router.navigate(['/creartarea']);
+  //   console.log('click a Crear Tarea');
   // }
 }
 
