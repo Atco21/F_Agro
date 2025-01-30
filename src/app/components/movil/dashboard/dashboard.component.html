@@ -1,43 +1,33 @@
-<body class="bg-light">
+<div class="div1">
+  <div class="div2">
+    <table>
+      <tbody>
+        <tr id="modalVerTarea" (click)="crearIncidencia()">
+          <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px" ></td>
+          <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
+          <app-modal-ver-tarea #modalVerTarea></app-modal-ver-tarea>
+        </tr>
 
-  <!--Contenedor Principal-->
-  <div class="container py-3">
-    <!-- Tarjeta Principal -->
-    <div class="card mx-auto main-card">
-      <!-- Fecha -->
-      <p class="text-center text-success mb-2 date">Fecha 25 Diciembre 2024</p>
+        <tr>
+          <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+          <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
 
-      <!-- Título -->
-      <h2 class="text-center text-brown mb-3 title">Tareas</h2>
+        </tr>
 
-      <!-- Gráfico -->
-      <div class="text-center mb-3">
-        <div class="circle">
-          <span class="center-text">50</span>
-        </div>
-        <p class="total-tasks mb-5">Total tareas</p>
-      </div>
+        <tr>
+          <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+          <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
 
-      <!-- Leyenda -->
-      <div class="legend">
-        <div class="d-flex justify-content-start align-items-center me-5">
-          <span class="dot dot-blue"></span>
-          <span>En curso</span>
-        </div>
-        <div class="d-flex justify-content-start align-items-center">
-          <span class="dot dot-green"></span>
-          <span>Pendientes</span>
-        </div>
-        <div class="d-flex justify-content-start align-items-center me-5">
-          <span class="dot dot-red"></span>
-          <span>Terminadas</span>
-        </div>
-        <div class="d-flex justify-content-start align-items-center">
-          <span class="dot dot-orange"></span>
-          <span>Pausadas</span>
-        </div>
-      </div>
-    </div>
-    <app-tareas></app-tareas>
-    <ng-content></ng-content> <!-- se inyecta <app-tareas> -->
+        </tr>
+
+        <tr>
+          <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+          <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
+
+        </tr>
+
+
+      </tbody>
+    </table>
   </div>
+</div>

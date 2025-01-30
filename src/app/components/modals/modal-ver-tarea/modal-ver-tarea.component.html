@@ -1,0 +1,16 @@
+<div #modalElement class="modal fade" 
+     [class.show]="isVisible"
+     id="modalVerTarea"
+     [attr.aria-hidden]="!isVisible">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center">Orden</h1>
+        <button type="button" class="btn-close" (click)="toggleModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ver tarea</p>
+      </div>
+    </div>
+  </div>
+</div>

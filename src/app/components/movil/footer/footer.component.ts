@@ -7,9 +7,9 @@ import { RouterOutlet } from '@angular/router';
   standalone: true, // Esto es crucial si estás usando Angular Standalone Components
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
-  imports:[RouterLink, RouterOutlet]
+  imports: [RouterLink, RouterOutlet]
 
 })
 export class FooterComponent {
-
+  
 }
