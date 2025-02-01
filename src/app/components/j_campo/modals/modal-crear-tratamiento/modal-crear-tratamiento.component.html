@@ -23,7 +23,7 @@
         </div>
 
         <!-- Lista de tratamientos -->
-        <ul id="treatmentList" class="list-group overflow-auto" style="max-height: 200px;">
+        <!-- <ul id="treatmentList" class="list-group overflow-auto" style="max-height: 200px;">
           <li class="list-group-item d-flex align-items-center">
             <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
             Mosca blanca
@@ -44,7 +44,7 @@
             <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
             Hongo
           </li>
-        </ul>
+        </ul> -->
 
         <!-- Producto asignado -->
         <div class="border rounded p-2 mt-3">
@@ -56,6 +56,7 @@
     </div>
   </div>
   <div class="border-0 d-flex justify-content-center">
-    <button type="button" class="btn w-10 rounded-1 text-white fw-bold" routerLink="/crear-orden">Continuar</button>
+    <input type="text" [(ngModel)]="tratamiento" placeholder="Ingrese tratamiento">
+    <button (click)="enviarAlPadre(tratamiento)">Guardar</button>
   </div>
 </div>
