@@ -1,4 +1,6 @@
 <br><br><br><br><br>
+<!-- #modalElement Permite manipular el modal desde el TypeScript.-->
+<!-- isVisible es una variable se usa para controlar si el modal está abierto o cerrado-->
 <div #modalElement class="modal fade" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen">
     <div class="modal-content" (click)="$event.stopPropagation()">
@@ -9,9 +11,10 @@
       <div class="modal-body">
         <p>Selecciona un tratamiento:</p>
         <select [(ngModel)]="tratamientoSeleccionado">
+          <!--Lista de tratamientos (*ngFor) → Genera opciones en un <select>.-->
           <option *ngFor="let tratamiento of tratamientos" [value]="tratamiento">{{ tratamiento }}</option>
         </select>
-        <button type="button" class="btn btn-primary mt-3" (click)="guardarCambios()">Guardar Cambios</button>
+        <button type="button" class="btn" (click)="guardarCambios()">Guardar Cambios</button>
       </div>
     </div>
   </div>

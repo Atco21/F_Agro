@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';//Ng sirve paraque funcionen las importaciones de padre a hijo y viceversa
 import { Routes,RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/j_campo/dashboard/dashboard.component';
 import { NotificacionesComponent } from './components/j_campo/notificaciones/notificaciones.component';

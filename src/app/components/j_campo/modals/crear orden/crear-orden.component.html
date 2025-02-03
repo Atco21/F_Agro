@@ -51,23 +51,20 @@
       </div>
     </div>
     <div class="col-12 mb-3">
-        <div class="card shadow" (click)="abrirModal()">  <!-- Llamamos a la función del padre -->
-
+        <div class="card shadow" (click)="abrirModal()">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
             <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
-            Tratamiento: {{ tratamientoSeleccionado || 'No seleccionado' }}
+            Tratamiento: {{ tratamientoSeleccionado || ' No seleccionado' }} <!--Si no hay nada selecionado muestra no selecionadao-->
           </h3>
+            <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
+                Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
+                Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
           <app-modal-crear-tratamiento #modalVerTarea (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
-
-
         </div>
       </div>
     </div>
-
-
-
     <div class="col-12 mb-3">
       <div class="card shadow" routerLink="/modal-crear-fecha" style="cursor: pointer;">
         <div class="card-body">

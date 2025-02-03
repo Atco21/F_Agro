@@ -53,4 +53,10 @@
   justify-content: center;
   padding-top: 10px;
 }
-
+.btn{
+  display: flex;
+  background-color:#532301;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
