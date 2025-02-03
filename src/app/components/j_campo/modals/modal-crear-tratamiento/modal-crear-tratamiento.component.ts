@@ -1,26 +1,51 @@
-//importamos Ouput y EventEmitter para poder emitir el valor del tratamiento al padre
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-crear-tratamiento',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './modal-crear-tratamiento.component.html',
   styleUrls: ['./modal-crear-tratamiento.component.css']
 })
-
 export class ModalCrearTratamientoComponent {
-  tratamiento: string = '';
-//creamos un evento que emitirá el valor del tratamiento al padre
-@Output() tratamientoEnviado = new EventEmitter<string>();
-constructor(private router: Router) {}  // Inyecta Router correctamente
-enviarAlPadre(tratamiento: string) {
-  this.tratamientoEnviado.emit(tratamiento);
-  console.log('Tratamiento enviado al padre:', tratamiento);
-  this.router.navigate(['/crear orden']);  // Navegar correctamente
+  isVisible = false; // Controla la visibilidad del modal
+  tratamientos: string[] = ['moscablanca', 'moscamediterraneo', 'sdfg', 'sfds', 'sdfds'];
+  tratamientoSeleccionado: string = '';
+
+  @ViewChild('modalElement') modalElement!: ElementRef;
+  @Output() tratamientoGuardado = new EventEmitter<string>();
+
+  constructor(private rendered: Renderer2) {}
+
+  // Mostrar modal usando clases de Bootstrap
+  abrirModal() {
+    this.isVisible = true;
+    this.rendered.addClass(this.modalElement.nativeElement, 'show');
+    this.rendered.setAttribute(this.modalElement.nativeElement, 'aria-hidden', 'false');
+    this.rendered.setStyle(this.modalElement.nativeElement, 'display', 'block');
+  }
+
+  // Cerrar modal solo con el botón "X"
+  cerrarModal() {
+    this.isVisible = false;
+    this.rendered.removeClass(this.modalElement.nativeElement, 'show');
+    this.rendered.setAttribute(this.modalElement.nativeElement, 'aria-hidden', 'true');
+    this.rendered.setStyle(this.modalElement.nativeElement, 'display', 'none');
+  }
+
+  // Guardar cambios y emitir el tratamiento seleccionado
+  guardarCambios() {
+    if (this.tratamientoSeleccionado) {
+      this.tratamientoGuardado.emit(this.tratamientoSeleccionado);
+      this.cerrarModal();
+    }
+  }
 }
-}
+
+
+
+
+
 

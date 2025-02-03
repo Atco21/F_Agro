@@ -1,62 +1,22 @@
 <br><br><br><br><br>
-
-<div class="container p-3 rounded-4">
-  <!-- Título "Crear tarea" -->
-  <h1 class="text-center fw-bold mb-4">Crear tarea:</h1>
-
-  <div class="border-0 text-center">
-    <!-- Contenido existente -->
-    <div class="container">
-      <div>
-        <h3 class="fw-semibold d-flex align-items-center">
-          <img src="/quimico-Icon.svg" alt="Químico Icon" class="me-2" width="35">
-          Selecciona tratamiento:
-          <i class="btn-tratamiento"><img src="Plus-Icon.svg"></i>
-        </h3>
-
-        <!-- Barra de búsqueda -->
-        <div class="input-group my-3">
-          <input type="text" id="searchInput" class="form-control rounded-1" placeholder="Buscar tratamiento..." aria-label="Buscar tratamiento">
-          <span class="input-group-text bg-white border-0">
-            <i class="bi bi-search"></i>
-          </span>
-        </div>
-
-        <!-- Lista de tratamientos -->
-        <!-- <ul id="treatmentList" class="list-group overflow-auto" style="max-height: 200px;">
-          <li class="list-group-item d-flex align-items-center">
-            <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
-            Mosca blanca
-          </li>
-          <li class="list-group-item d-flex align-items-center">
-            <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
-            Cotonet
-          </li>
-          <li class="list-group-item d-flex align-items-center">
-            <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
-            Pulgón
-          </li>
-          <li class="list-group-item d-flex align-items-center">
-            <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
-            Mosca mediterráneo
-          </li>
-          <li class="list-group-item d-flex align-items-center">
-            <img src="/quimico-Icon.svg" alt="Tratamiento" class="me-2" width="30">
-            Hongo
-          </li>
-        </ul> -->
-
-        <!-- Producto asignado -->
-        <div class="border rounded p-2 mt-3">
-          <strong>Producto asignado:</strong>
-          <p class="mb-0 text-muted">Ninguno seleccionado</p>
-        </div>
-
+<div #modalElement class="modal fade" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center">Crear Tratamiento</h1>
+        <button type="button" class="btn-close" (click)="cerrarModal()">X</button>
+      </div>
+      <div class="modal-body">
+        <p>Selecciona un tratamiento:</p>
+        <select [(ngModel)]="tratamientoSeleccionado">
+          <option *ngFor="let tratamiento of tratamientos" [value]="tratamiento">{{ tratamiento }}</option>
+        </select>
+        <button type="button" class="btn btn-primary mt-3" (click)="guardarCambios()">Guardar Cambios</button>
       </div>
     </div>
   </div>
-  <div class="border-0 d-flex justify-content-center">
-    <input type="text" [(ngModel)]="tratamiento" placeholder="Ingrese tratamiento">
-    <button (click)="enviarAlPadre(tratamiento)">Guardar</button>
-  </div>
 </div>
+
+
+
+

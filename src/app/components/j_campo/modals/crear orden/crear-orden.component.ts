@@ -39,42 +39,44 @@
 
 
 
-
-import { Component, Output, EventEmitter } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ModalCrearTratamientoComponent } from '../modal-crear-tratamiento/modal-crear-tratamiento.component';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-crear-orden',
-  standalone: true,
-  imports: [RouterLink, ModalCrearTratamientoComponent],  // Importar el hijo
+  standalone: true, // 👈 Indica que es standalone
+  imports: [CommonModule, ModalCrearTratamientoComponent], // 👈 Importamos el modal
   templateUrl: './crear-orden.component.html',
   styleUrls: ['./crear-orden.component.css']
 })
-export class CrearOrdenComponent  {
-  parcelaNombre: string = 'Nombre de la Parcela';
-  aplicadorNombre: string = 'Nombre del Aplicador';
-  tareaNombre: string = 'Nombre de la Tarea';
-  maquinaNombre: string = 'Nombre de la Máquina';
-  tratamientoNombre: string = " ";  // Guardar el valor recibido del hijo
-  fecha: string = 'Nombre de la Fecha';
+export class CrearOrdenComponent implements AfterViewInit {
+  tratamientoSeleccionado: string = '';
 
-  // Este es el método que llamas desde el HTML
- @Output() tratamientoEnviado = new EventEmitter<string>();  // Definir un EventEmitter para emitir el valor
+  @ViewChild(ModalCrearTratamientoComponent) modalVerTarea!: ModalCrearTratamientoComponent;
 
-
-
-  constructor() {}
-
-
- // tratamiento: string = '';  // Variable de tratamiento para almacenar lo que se introduce en el input
-
-  // constructor() {}
-
-  //Método que enviará el tratamiento al hijo
-
-  recibirTratamiento(tratamiento: string) {
-    this.tratamientoNombre = tratamiento;  // Guardar el tratamiento recibido
-    console.log('Tratamiento recibido:', this.tratamientoNombre);  // Verificar que llega correctamente
+  ngAfterViewInit() {
+    if (!this.modalVerTarea) {
+      console.error('modalVerTarea no está inicializado correctamente');
+    }
   }
 
+  recibirTratamiento(tratamiento: string) {
+    console.log('Tratamiento recibido en el padre:', tratamiento);
+    this.tratamientoSeleccionado = tratamiento;
+  }
+
+  abrirModal() {
+    if (this.modalVerTarea) {
+      this.modalVerTarea.abrirModal();
+    } else {
+      console.error('modalVerTarea no está disponible');
+    }
+  }
 }
+
+
+
+
+
+

@@ -10,7 +10,7 @@
             <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
             Parcela
           </h3>
-          <p>{{ parcelaNombre }}</p>
+          <!-- <p>{{ parcelaNombre }}</p> -->
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
             <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
             Tarea
           </h3>
-          <p>{{ tareaNombre }}</p>
+          <!-- <p>{{ tareaNombre }}</p> -->
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
             <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
             Aplicador
           </h3>
-          <p>{{ aplicadorNombre }}</p>
+          <!-- <p>{{ aplicadorNombre }}</p> -->
         </div>
       </div>
     </div>
@@ -46,23 +46,28 @@
             <img src="/Maquina-Icon.svg" alt="Maquina Icon" class="img-fluid me-2" />
             Máquina
           </h3>
-          <p>{{ maquinaNombre }}</p>
+          <!-- <p>{{ maquinaNombre }}</p> -->
         </div>
       </div>
     </div>
     <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-tratamiento" style="cursor: pointer;">
+        <div class="card shadow" (click)="abrirModal()">  <!-- Llamamos a la función del padre -->
+
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
             <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
-            Tratamiento
+            Tratamiento: {{ tratamientoSeleccionado || 'No seleccionado' }}
           </h3>
-          <!-- <app-tratamientos (tratamientoSeleccionado)="recibirTratamiento($event)"></app-tratamientos> -->
-          <p>Tratamiento recibido:  {{tratamientoNombre}}</p>
+          <app-modal-crear-tratamiento #modalVerTarea (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
+
+
         </div>
       </div>
     </div>
+
+
+
     <div class="col-12 mb-3">
       <div class="card shadow" routerLink="/modal-crear-fecha" style="cursor: pointer;">
         <div class="card-body">
@@ -71,7 +76,7 @@
             <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
             Fecha
           </h3>
-          <p>{{ fecha }}</p>
+          <!-- <p>{{ fecha }}</p> -->
         </div>
       </div>
     </div>
