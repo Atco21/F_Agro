@@ -1,5 +1,5 @@
 .container {
-  max-height: 80vh; /* Ajusta la altura máxima según sea necesario */
+  max-height: 60vh; /* Ajusta la altura máxima según sea necesario */
   overflow-y: auto; /* Habilita el scroll vertical */
   padding-bottom: 20px; /* Añade espacio para el botón */
 }

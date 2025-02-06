@@ -9,12 +9,37 @@
         <button type="button" class="btn-close" (click)="cerrarModal()">X</button>
       </div>
       <div class="modal-body">
-        <p>Selecciona un tratamiento:</p>
-        <select [(ngModel)]="tratamientoSeleccionado">
-          <!--Lista de tratamientos (*ngFor) → Genera opciones en un <select>.-->
-          <option *ngFor="let tratamiento of tratamientos" [value]="tratamiento">{{ tratamiento }}</option>
+        <!-- <p>Selecciona un tratamiento:</p>
+        @for(tratamientos of tratamientos;track $index){
+          <p>{{tratamientos.tratamiento}}</p>
+        } -->
+         <!-- <select [(ngModel)]="tratamientoSeleccionado">
+          sta de tratamientos (*ngFor) → Genera opciones en un <select>
+           <option *ngFor="let tratamiento of tratamientos" [value]="tratamiento">{{ tratamiento }}</option>
+        </select> -->
+         <select [(ngModel)]="tratamientoSeleccionado">
+          <option *ngFor="let tratamiento of tratamientos" [ngValue]="tratamiento">
+            {{ tratamiento.nombre_tratamiento }}
+          </option>
         </select>
+
+        <!-- <p>Has seleccionado: {{ tratamientoSeleccionado?.nombre }}</p> -->
+
+         <!-- @for (tratamiento of tratamientos; track $index) {
+          <p>{{tratamiento.dosis}}</p>
+
+        } -->
+
+
+        <p>{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p>
+
+
+
+
+
+        <!-- Botón para guardar y emitir el valor al componente padre -->
         <button type="button" class="btn" (click)="guardarCambios()">Guardar Cambios</button>
+
       </div>
     </div>
   </div>
