@@ -13,5 +13,5 @@ import { HeaderComponent } from './components/movil/header/header.component';
 })
 export class AppComponent {
   title = 'F_Agro';
-  
+
 }

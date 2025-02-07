@@ -10,9 +10,9 @@ import { ModalVerTareaComponent } from '../../modals/modal-ver-tarea/modal-ver-t
   imports: [ModalVerTareaComponent]
 })
 export class DashboardComponent {
-@ViewChild(ModalVerTareaComponent) verTarea!: ModalVerTareaComponent; // Accedemos al modal
+  @ViewChild(ModalVerTareaComponent) verTarea!: ModalVerTareaComponent; // Accedemos al modal
   crearIncidencia(): void {
-    
+
     // var idTarea = document.getElementById("modalVerTarea");
     // console.log("idTarea", idTarea);
     // var verTarea;
@@ -21,14 +21,14 @@ export class DashboardComponent {
       console.log("verTarea", this.verTarea);
     }
 
-//     if(idTarea&&verTarea){
-//       if(verTarea.style.display === "block"){
-//         idTarea.style.display = "none";
-//   }else{
-//     verTarea.style.display = "block"; // Muestra el modal
-//       verTarea.setAttribute("aria-hidden", "false");
-//       verTarea.classList.add("show"); // Agrega la clase para que se muestre
-//   }
-// }
-}
+    //     if(idTarea&&verTarea){
+    //       if(verTarea.style.display === "block"){
+    //         idTarea.style.display = "none";
+    //   }else{
+    //     verTarea.style.display = "block"; // Muestra el modal
+    //       verTarea.setAttribute("aria-hidden", "false");
+    //       verTarea.classList.add("show"); // Agrega la clase para que se muestre
+    //   }
+    // }
+  }
 }

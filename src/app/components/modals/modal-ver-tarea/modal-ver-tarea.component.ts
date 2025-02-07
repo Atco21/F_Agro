@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Renderer2} from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common'; // ✅ Importamos CommonModule
 
 @Component({
@@ -11,7 +11,7 @@ export class ModalVerTareaComponent {
   isVisible = false; // Variable que controla si el modal está visible o no
   @ViewChild('modalElement') modalElement!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) { }
 
   toggleModal() {
     this.isVisible = !this.isVisible;

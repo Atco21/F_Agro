@@ -8,8 +8,7 @@ import { OrdenFinalizadaComponent } from './components/movil/orden/orden-finaliz
 import { CalendarioComponent } from './components/movil/calendario/calendario.component';
 import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
 import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
-// import { IncidenciaNoFinalizadaComponent } from './components/movil/incidencias/incidencia-no-finalizada/incidencia-no-finalizada.component';
-// import { IncidenciaFinalizadaComponent } from './components/movil/incidencias/incidencia-finalizada/incidencia-finalizada.component';
+
 
 export const routes: Routes = [
   {
