@@ -8,6 +8,7 @@ import { OrdenFinalizadaComponent } from './components/movil/orden/orden-finaliz
 import { CalendarioComponent } from './components/movil/calendario/calendario.component';
 import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
 import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
+import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
 
 
 export const routes: Routes = [
@@ -59,8 +60,13 @@ export const routes: Routes = [
             component: CrearIncidenciaMaquinaComponent,
           }
         ]
+      },
+      {
+        path: 'quimicos',
+        component: QuimicosComponent,
       }
     ]
+
   }
 
 ];

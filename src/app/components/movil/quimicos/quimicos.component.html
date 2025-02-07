@@ -1,0 +1,25 @@
+<h2>Lista de Químicos</h2>
+<div>
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(quimico of quimicos;track quimico.id){
+    <tr>
+      <td>{{ quimico.id }}</td>
+      <td>{{ quimico.nombre }}</td>
+      <td>{{ quimico.tipo }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<!-- Aquí se renderizarán otros componentes -->
+
