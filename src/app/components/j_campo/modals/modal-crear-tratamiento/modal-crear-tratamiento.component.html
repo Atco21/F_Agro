@@ -14,7 +14,7 @@
             {{ tratamiento.nombre_tratamiento }}<!--Lo muestra-->
           </option>
         </select>
-        <p>{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p><!--Asegura que se muestr algo siempre en pantalla-->
+        <p>{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p><!--Asegura que se muestr algo siempre en pantalla ? se llama operacion de navegacion segura-->
         <!-- Botón para guardar y emitir el valor al componente padre -->
         <button type="button" class="btn" (click)="guardarCambios()">Guardar Cambios</button>
 
