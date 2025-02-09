@@ -8,6 +8,7 @@
   <a routerLink="/calendario"><img src="Calendar.svg" alt="calendar" /></a>
 </div>
 <div class="incidencia">
+  <!-- <div class="card shadow" (click)="abrirModal()">   -->
   <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalIncidencia">
     <img src="Incidencia.svg" alt="incidencia" />
   </button>
@@ -28,9 +29,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <a href="/personal" class="btn btn-success w-100 my-2">Personal</a>
-        <a href="/maquina" class="btn btn-success w-100 my-2">Máquina</a>
-        <a href="/stock" class="btn btn-success w-100 my-2">Stock</a>
+        <a routerLink="/personal" class="btn btn-success w-100 my-2">Personal</a>
+        <a routerLink="/maquina" class="btn btn-success w-100 my-2">Máquina</a>
+        <a routerLink="/stock" class="btn btn-success w-100 my-2">Stock</a>
       </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
