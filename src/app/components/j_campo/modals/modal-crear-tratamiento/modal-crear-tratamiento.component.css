@@ -53,10 +53,12 @@
   justify-content: center;
   padding-top: 10px;
 }
-.btn{
-  display: flex;
-  background-color:#532301;
+.btn {
+  display: block;
+  width: fit-content; /* Se ajusta al contenido */
+  background-color: #532301;
   text-align: center;
   color: white;
-  margin-top: 20px;
+  margin: 20px auto; /* Lo centra horizontalmente */
+  padding: 10px 20px;
 }

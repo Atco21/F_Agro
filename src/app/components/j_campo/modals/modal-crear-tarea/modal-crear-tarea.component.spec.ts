@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalCrearDTareaComponent } from './modal-crear-dtarea.component';
+import { ModalCrearTareaComponent } from './modal-crear-tarea.component';
 
 describe('ModalCrearDTareaComponent', () => {
-  let component: ModalCrearDTareaComponent;
-  let fixture: ComponentFixture<ModalCrearDTareaComponent>;
+  let component: ModalCrearTareaComponent;
+  let fixture: ComponentFixture<ModalCrearTareaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModalCrearDTareaComponent]
+      imports: [ModalCrearTareaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModalCrearDTareaComponent);
+    fixture = TestBed.createComponent(ModalCrearTareaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

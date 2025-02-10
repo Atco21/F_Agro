@@ -6,7 +6,7 @@
     <div class="modal-content" (click)="$event.stopPropagation()"><!--stopPropagation evita que se propague el evento; AQUI LO QUE HACE ES QUE NO FUCIONE EL CLICK DE CERRAR MODAL PARA PODER GUARDAR EL EVENTO CON EL BOTON GUADAR Y LA FUNCION-->
       <div class="modal-header">
         <h1 class="modal-title w-100 text-center">Crear Tratamiento</h1>
-        <button type="button" class="btn-close" (click)="cerrarModal()">X</button>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
       <div class="modal-body">
          <select [(ngModel)]="tratamientoSeleccionado">  <!-- ngModel es una directiva de angular cuando el usuario elige la opcion se guarda en tratamiento selecionado-->

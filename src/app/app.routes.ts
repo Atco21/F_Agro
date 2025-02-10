@@ -7,7 +7,7 @@ import { IncidenciasComponent } from './components/j_campo/incidencias/incidenci
 import { MenuComponent } from './components/j_campo/menu/menu.component';
 import { ModalCrearParcelaComponent } from './components/j_campo/modals/modal-crear-parcela/modal-crear-parcela.component';
 import { ModalCrearTratamientoComponent } from './components/j_campo/modals/modal-crear-tratamiento/modal-crear-tratamiento.component';
-import {ModalCrearDTareaComponent} from './components/j_campo/modals/modal-crear-dtarea/modal-crear-dtarea.component';
+import {ModalCrearTareaComponent} from './components/j_campo/modals/modal-crear-tarea/modal-crear-tarea.component';
 import { CrearOrdenComponent} from './components/j_campo/modals/crear orden/crear-orden.component';
 
 export const routes: Routes = [
@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'crear orden', component: CrearOrdenComponent }, // routa de home crear tarea
   {path:'modal-crear-parcela', component: ModalCrearParcelaComponent},
   {path:'modal-crear-tratamiento', component: ModalCrearTratamientoComponent},
-  {path:'modal-crear-dtarea', component: ModalCrearDTareaComponent},
+  {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
 

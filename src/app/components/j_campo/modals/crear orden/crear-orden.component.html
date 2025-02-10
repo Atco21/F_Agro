@@ -15,14 +15,15 @@
       </div>
     </div>
     <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-dtarea" style="cursor: pointer;">
+       <div class="card shadow" (click)="abrirModalTarea()"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
             <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
             Tarea
-          </h3>
-          <!-- <p>{{ tareaNombre }}</p> -->
+          <p>Tarea: {{ tareaSeleccionada || 'No select' }}</p>
+        </h3>
+        <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
         </div>
       </div>
     </div>
@@ -51,7 +52,7 @@
       </div>
     </div>
     <div class="col-12 mb-3">
-        <div class="card shadow" (click)="abrirModal()">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
+        <div class="card shadow" (click)="abrirModalTratamiento()">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
@@ -61,7 +62,7 @@
             <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
                 Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
                 Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
-          <app-modal-crear-tratamiento #modalVerTarea (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
+          <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
         </div>
       </div>
     </div>
@@ -84,4 +85,4 @@
       <button class="btn btn-primary mt-3">Guardar Cambios</button>
     </div>
   </div>
-</div>
+
