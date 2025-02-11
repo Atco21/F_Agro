@@ -1,23 +1,68 @@
-  .fixed-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* Por si hay contenido superpuesto */
-    background-color: #004d40; /* Color de fondo */
-    padding: 20px;
-    text-align: center;
+/* Estilo del footer fijo */
+#fixed-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #004d40;
+  padding: 15px;
+}
 
-  }
-  .modal-header{
-    background-color: #ffffff;
-    color: #004d40;
-    padding-top: 200px;
-  }
-  .menu-opciones{
-    display: flex;
-    justify-content: space-between;
-  }
+#incidenciaMenu{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  border: 2px solid #004d40;
+}
+
+/* Estilos para el contenedor */
+.incidencia-content {
+  position: relative;
+  padding: 20px;
+}
+
+/* Botón de cerrar "X" */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333; 
+}
+
+/* Título "Incidencias" */
+h1 {
+  color: #064420;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  display: inline-block;
+}
+
+/* Subtítulos "Personal", "Máquina", "Stock" */
+h3 {
+  color: #064420;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+/* Alinear "Incidencias" y "X" en la misma línea */
+.incidencia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

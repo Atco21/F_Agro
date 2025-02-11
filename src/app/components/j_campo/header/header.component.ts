@@ -15,9 +15,6 @@ export class HeaderComponent {
 
   constructor(private router: Router) {}
 
-  // navegarACrearTarea(): void {
-  //   this.router.navigate(['/creartarea']);
-  //   console.log('click a Crear Tarea');
-  // }
+  
 }
 

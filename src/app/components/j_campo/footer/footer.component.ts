@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef, Renderer2} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ModalIncidenciaComponent } from '../incidencias/modal-incidencia/modal-incidencia.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -7,7 +9,20 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
-  imports:[RouterLink]
+  imports: [RouterLink, CommonModule, ModalIncidenciaComponent]
 
 })
-export class FooterComponent {}
+export class FooterComponent {
+  isIncidenciaMenuVisible: boolean = false;
+
+  // Función para alternar la visibilidad
+  toggleIncidenciaMenu() {
+    this.isIncidenciaMenuVisible = !this.isIncidenciaMenuVisible;
+  }
+
+  closeIncidenciaMenu() {
+    this.isIncidenciaMenuVisible = false;
+  }
+
+
+}
