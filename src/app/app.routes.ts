@@ -9,6 +9,9 @@ import { ModalCrearParcelaComponent } from './components/j_campo/modals/modal-cr
 import { ModalCrearTratamientoComponent } from './components/j_campo/modals/modal-crear-tratamiento/modal-crear-tratamiento.component';
 import {ModalCrearTareaComponent} from './components/j_campo/modals/modal-crear-tarea/modal-crear-tarea.component';
 import { CrearOrdenComponent} from './components/j_campo/modals/crear orden/crear-orden.component';
+import { TipoPersonalComponent } from './components/j_campo/incidencias/tipos/tipo-personal/tipo-personal.component';
+import { TipoMaquinaComponent } from './components/j_campo/incidencias/tipos/tipo-maquina/tipo-maquina.component';
+import { TipoStockComponent } from './components/j_campo/incidencias/tipos/tipo-stock/tipo-stock.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -22,11 +25,14 @@ export const routes: Routes = [
   {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
+  {path:"incidencias/tipo-personal", component:TipoPersonalComponent},//tabla incidencias tipo personal
+  {path:"incidencias/tipo-maquina", component:TipoMaquinaComponent},//incedncias tipo maquina
+  {path:"incidencias/tipo-stock",component:TipoStockComponent} //incidencias tipo stock
 
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
 export class AppRoutingModule {}

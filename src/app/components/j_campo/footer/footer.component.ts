@@ -16,7 +16,7 @@ export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
 
   // Función para alternar la visibilidad
-  toggleIncidenciaMenu() {
+  IncidenciaMenu() {
     this.isIncidenciaMenuVisible = !this.isIncidenciaMenuVisible;
   }
 

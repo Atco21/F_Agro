@@ -4,10 +4,10 @@
   <div id="incidenciaMenu" [hidden]="!isIncidenciaMenuVisible">
     <div>
       <button class="close-btn" (click)="closeIncidenciaMenu()">X</button>
-      <h1>Incidencias</h1>
-      <h3>Personal</h3>
-      <h3>Máquina</h3>
-      <h3>Stock</h3>
+      <h1 >Incidencias</h1>
+      <h3 routerLink="/incidencias/tipo-personal" style="cursor: pointer;">Personal</h3>
+      <h3 routerLink="/incidencias/tipo-maquina"style="cursor: pointer;">Máquina</h3>
+      <h3 routerLink="/incidencias/tipo-stock"style="cursor: pointer;">Stock</h3>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
 
     <!-- Botón Incidencias -->
     <div class="incidencia">
-      <div type="button" class="btn" (click)="toggleIncidenciaMenu()">
+      <div type="button" class="btn" (click)="IncidenciaMenu()">
         <img src="Incidencia.svg" alt="incidencia" />
       </div>
       <app-modal-incidencia #modalVerIncidencia></app-modal-incidencia>
