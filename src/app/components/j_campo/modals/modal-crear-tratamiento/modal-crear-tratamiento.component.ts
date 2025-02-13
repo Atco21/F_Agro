@@ -20,9 +20,6 @@ export class ModalCrearTratamientoComponent {
 
 
 
-  // constructor(private rendered: Renderer2, private tratamientoService: TratamientoService) {
-  //   this.tratamientos = this.tratamientoService.obtenerTratamientos();
-  // }
   constructor(private rendered: Renderer2 ,private tratamientoService: TratamientoService) {
     this.tratamientoService.obtenerDatosApi()
       .subscribe(result => this.tratamientos = result)

@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class ModalCrearTareaComponent {
   isVisibleTarea = false; // Controla la visibilidad del modal
-  // tarea: any;
   tareaSeleccionada: string = "";  // Inicializado a null o un objeto vacío
 
   @ViewChild('modalElement') modalElement!: ElementRef;
@@ -47,10 +46,6 @@ export class ModalCrearTareaComponent {
     this.tareaGuardada.emit(this.tareaSeleccionada);
     this.cerrarModal();
   }
-
-
-
-
   }
 
 

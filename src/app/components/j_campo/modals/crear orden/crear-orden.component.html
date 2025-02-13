@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="col-12 mb-3">
-        <div class="card shadow" (click)="abrirModalTratamiento()">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
+        <div class="card shadow" (click)="abrirModalTratamiento()"  style="cursor: pointer;">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
@@ -67,14 +67,18 @@
       </div>
     </div>
     <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-fecha" style="cursor: pointer;">
+      <div class="card shadow" (click)="abrirModalFecha() " style="cursor: pointer;">
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
             <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
             Fecha
           </h3>
-          <!-- <p>{{ fecha }}</p> -->
+          <h5>Fecha</h5>
+          <p>{{ fechaSeleccionada || "No selecionado"}}</p>
+          <h5>Hora</h5>
+          <p>{{ horaSeleccionada ||"No selecionado"}}</p>
+          <app-modal-crear-fecha #modalVerFecha (fechaGuardada)="recibirFechaYHora($event)"></app-modal-crear-fecha>
         </div>
       </div>
     </div>
