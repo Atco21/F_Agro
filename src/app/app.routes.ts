@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IncidenciasComponent } from './components/movil/incidencias/incidencias.component';
 import { OrdenComponent } from './components/movil/orden/orden.component';
@@ -9,6 +9,7 @@ import { CalendarioComponent } from './components/movil/calendario/calendario.co
 import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
 import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
 import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
+import { PedidoComponent } from './components/movil/pedido/pedido.component';
 
 
 export const routes: Routes = [
@@ -64,7 +65,11 @@ export const routes: Routes = [
       {
         path: 'quimicos',
         component: QuimicosComponent,
-      }
+      },
+      {
+        path: 'crear-pedido',
+        component: PedidoComponent,
+        }
     ]
 
   }

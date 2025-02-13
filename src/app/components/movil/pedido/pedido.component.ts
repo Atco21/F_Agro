@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { QuimicosService } from '../../../servicios/quimicos.service';
-import { RouterLink } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-quimicos',
-  templateUrl: './quimicos.component.html',
-  styleUrls: ['./quimicos.component.css'],
-  imports: [RouterLink, RouterOutlet]
+  selector: 'app-pedido',
+  imports: [],
+  templateUrl: './pedido.component.html',
+  styleUrl: './pedido.component.css'
 })
-export class QuimicosComponent {
+export class PedidoComponent {
+
   quimicos: any;  // Lista de químicos
   cantidades: { [id: number]: number } = {}; // Objeto para manejar cantidades por producto
 
@@ -30,4 +29,8 @@ export class QuimicosComponent {
       this.cantidades[id]--;
     }
   }
+  guardarCantidad(){
+    console.log("1");
+  }
+
 }
