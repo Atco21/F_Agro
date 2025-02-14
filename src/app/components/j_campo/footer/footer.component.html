@@ -1,22 +1,55 @@
-
 <div class="fixed-footer">
-<div class="home">
-  <img src="Home.svg" alt="home" />
-</div>
 
-<div class="calendar">
-  <a routerLink="/calendario"><img src="Calendar.svg" alt="calendar" /></a>
-</div>
-<div class="incidencia">
-  <a routerLink="/incidencia"><img src="Incidencia.svg" alt="incidencia" /></a>
-</div>
-<div class="orden">
- <a routerLink="/orden"><img src="tareas.svg" alt="orden" /></a>
-</div>
-<div class="menu">
- <a routerLink="/menu"><img src="menu.svg" alt="menu" /></a>
-</div>
+  <!-- Incidencias Menu -->
+  <div id="incidenciaMenu" [hidden]="!isIncidenciaMenuVisible">
+    <div>
+      <button class="close-btn" (click)="closeIncidenciaMenu()">X</button>
+      <h1 >Incidencias</h1>
+      <h3 routerLink="/incidencias/tipo-personal" style="cursor: pointer;">Personal</h3>
+      <h3 routerLink="/incidencias/tipo-maquina"style="cursor: pointer;">Máquina</h3>
+      <h3 routerLink="/incidencias/tipo-stock"style="cursor: pointer;">Stock</h3>
+    </div>
+  </div>
 
+  <!-- Footer Fijo -->
+  <div id="fixed-footer">
 
+    <!-- Botón Home -->
+    <div class="home">
+      <a routerLink="/dashboard">
+        <img src="Home.svg" alt="home" />
+      </a>
+    </div>
 
+    <!-- Botón Calendario -->
+    <div class="calendar">
+      <a routerLink="/calendario">
+        <img src="Calendar.svg" alt="calendar" />
+      </a>
+    </div>
 
+    <!-- Botón Incidencias -->
+    <div class="incidencia">
+      <div type="button" class="btn" (click)="IncidenciaMenu()">
+        <img src="Incidencia.svg" alt="incidencia" />
+      </div>
+      <app-modal-incidencia #modalVerIncidencia></app-modal-incidencia>
+    </div>
+
+    <!-- Botón Orden -->
+    <div class="orden">
+      <a routerLink="/orden">
+        <img src="tareas.svg" alt="orden" />
+      </a>
+    </div>
+
+    <!-- Botón Menú -->
+    <div class="menu">
+      <a routerLink="/menu">
+        <img src="menu.svg" alt="menu" />
+      </a>
+    </div>
+
+  </div>
+
+</div>

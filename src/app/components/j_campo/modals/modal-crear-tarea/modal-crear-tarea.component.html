@@ -1,0 +1,20 @@
+<br><br><br><br><br>
+<!-- #modalElement Permite manipular el modal desde el TypeScript.-->
+<!-- isVisible controla el modal Si es tru class show se muestra si es false aria-hiden no se muestra-->
+<div #modalElement class="modal fade" [class.show]="isVisibleTarea" [attr.aria-hidden]="!isVisibleTarea">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content" (click)="$event.stopPropagation()"><!--stopPropagation evita que se propague el evento; AQUI LO QUE HACE ES QUE NO FUCIONE EL CLICK DE CERRAR MODAL PARA PODER GUARDAR EL EVENTO CON EL BOTON GUADAR Y LA FUNCION-->
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center">Crear Tarea</h1>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Escribe la tarea aquí" [(ngModel)]="tareaSeleccionada">
+
+        <p>{{ tareaSeleccionada || 'No seleccionado' }}</p>
+        <button type="button" class="btn" (click)="guardarCambiosTarea()">Guardar Cambios</button>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrdenComponent } from './orden.component';
+import { ModalCrearTareaComponent } from './modal-crear-tarea.component';
 
-describe('OrdenComponent', () => {
-  let component: OrdenComponent;
-  let fixture: ComponentFixture<OrdenComponent>;
+describe('ModalCrearDTareaComponent', () => {
+  let component: ModalCrearTareaComponent;
+  let fixture: ComponentFixture<ModalCrearTareaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OrdenComponent]
+      imports: [ModalCrearTareaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OrdenComponent);
+    fixture = TestBed.createComponent(ModalCrearTareaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

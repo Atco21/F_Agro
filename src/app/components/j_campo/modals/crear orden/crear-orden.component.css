@@ -1,0 +1,41 @@
+.container {
+  max-height: 60vh; /* Ajusta la altura máxima según sea necesario */
+  overflow-y: auto; /* Habilita el scroll vertical */
+  padding-bottom: 20px; /* Añade espacio para el botón */
+}
+
+body {
+  overflow-y: auto; /* Habilita el scroll vertical para todo el cuerpo */
+}
+
+.btn {
+  display: flex;
+  background-color: #532301;
+  text-align: center;
+}
+
+.modal-title {
+  color: #532301;
+  font-weight: bold;
+}
+
+.modal-dialog {
+  margin-top: 20px;
+}
+
+.modal-header {
+  background-color: #ffffff;
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1050; /* Asegúrate de que el encabezado esté por encima del contenido */
+}
+
+.modal-footer {
+  background-color: #ffffff;
+}
+.title{
+  color: #532301;
+  font-weight: bold;
+}

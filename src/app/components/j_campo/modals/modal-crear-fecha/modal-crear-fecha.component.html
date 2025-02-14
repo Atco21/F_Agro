@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div #modalElement class="modal fade" [class.show]="isVisibleFecha" [attr.aria-hidden]="!isVisibleFecha" tabindex="-1" aria-labelledby="modalFechaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h1 class="modal-title w-100 text-center">Crear Fecha</h1>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Calendario para seleccionar la fecha -->
+        <div class="form-group">
+          <label for="fecha">Selecciona una fecha</label>
+          <input type="date" class="form-control" id="fecha" [(ngModel)]="fechaSeleccionada">
+        </div>
+
+        <!-- Selector de hora -->
+        <div class="form-group mt-3" *ngIf="fechaSeleccionada">
+          <label for="hora">Selecciona la hora</label>
+          <input type="time" class="form-control" id="hora" [(ngModel)]="horaSeleccionada">
+        </div>
+        <h3>Fecha</h3>
+        <p>{{ fechaSeleccionada || 'No seleccionado' }}</p>
+        <h3>Hora</h3>
+        <p>{{ horaSeleccionada || 'No seleccionado' }}</p>
+        <!-- Botón para guardar cambios -->
+        <button type="button" class="btn btn-primary mt-3" (click)="guardarCambiosFecha()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
