@@ -16,21 +16,14 @@ export class CrearOrdenComponent{
   tareaSeleccionada: any = null;
   fechaSeleccionada:string="";
   horaSeleccionada:string="";
-//Se usa ViewChild para referenciar el componente hijo y manipularlo desde el padre
-//@ViewChild() es un decorador de Angular que permite al componente padre obtener una referencia a un elemento hijo dentro de su plantilla (.html). Puede ser usado para acceder a:
-//Un elemento HTML directamente,Un componente hijo (como en este caso),Una directiva.
-  // @ViewChild(ModalCrearTratamientoComponent) modalVerTarea!: ModalCrearTratamientoComponent;//  esto ! Angular se encargará de inicializar la variable más tarde, es decir, sabemos que la referencia existirá en tiempo de ejecución
+
+  //Untilizamos el @ViewChild para obtener acceso al coponente del modal con el <app-modal-crear-.... #>que esta en el archivo html
   @ViewChild('modalVerTratamiento') modalVerTratamiento!: ModalCrearTratamientoComponent;
+  //                Id                  Variabel    N undefined            componente
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
-  // ngAfterViewInit() Se ejecuta cuando la vista ha cargado. Verifica que modalVerTarea se haya inicializado correctamente.
 
-  // ngAfterViewInit() {
-  //   if (!this.modalVerTratamiento) {
-  //     console.error('modalVerTarea no está inicializado correctamente');
-  //   }
-  // }
 
 
 //recibe el tratamiento del hijo y lo almacena
