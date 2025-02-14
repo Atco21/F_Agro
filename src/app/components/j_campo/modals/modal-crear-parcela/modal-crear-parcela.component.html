@@ -1,19 +1,28 @@
-<!-- <div class="modal fade" id="modalParcela" tabindex="-1" aria-labelledby="modalCrearTareaLabel" aria-hidden="true">
+<br><br><br><br><br>
+<!-- #modalElement Permite manipular el modal desde el TypeScript.-->
+<!-- isVisible controla el modal Si es tru class show se muestra si es false aria-hiden no se muestra-->
+<div #modalElement class="modal fade" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-    <div class="modal-content">
+    <div class="modal-content" (click)="$event.stopPropagation()"><!--stopPropagation evita que se propague el evento; AQUI LO QUE HACE ES QUE NO FUCIONE EL CLICK DE CERRAR MODAL PARA PODER GUARDAR EL EVENTO CON EL BOTON GUADAR Y LA FUNCION-->
       <div class="modal-header">
-        <h1 class="modal-title w-100 text-center" id="modalCrearTareaLabel">Crear Tarea</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title w-100 text-center">Seleccionar parcela</h1>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
       <div class="modal-body">
-        <div class="container">
-      <p>Hola estamos en parcela </p>
-        </div>
+         <select [(ngModel)]="parcelaSeleecionada">  <!-- ngModel es una directiva de angular cuando el usuario elige la opcion se guarda en tratamiento selecionado-->
+          <option *ngFor="let parcela of parcelas" [ngValue]="parcela"><!--ngfor repiete un item para cada item de la lista ngValue asigna un objeto completo-->
+            {{ parcela.nombre }}<!--Lo muestra-->
+          </option>
+        </select>
+        <p>{{ parcelaSeleecionada?.nombre || 'No seleccionado' }}</p><!--Asegura que se muestr algo siempre en pantalla ? se llama operacion de navegacion segura-->
+        <!-- Botón para guardar y emitir el valor al componente padre -->
+        <button type="button" class="btn" (click)="guardarCambios()">Guardar Cambios</button>
+
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
-<br><br><br><br><br><br>
 
-<p>ESTAMOS EN CREAR PARCELA</p>
+
+

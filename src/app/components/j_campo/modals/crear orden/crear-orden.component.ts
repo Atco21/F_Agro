@@ -3,15 +3,18 @@ import { ModalCrearTratamientoComponent } from '../modal-crear-tratamiento/modal
 import { ModalCrearTareaComponent } from '../modal-crear-tarea/modal-crear-tarea.component';
 import { ModalCrearFechaComponent } from '../modal-crear-fecha/modal-crear-fecha.component';
 import { CommonModule } from '@angular/common';
+import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
 
 @Component({
   selector: 'app-crear-orden',
   standalone: true,
-  imports: [CommonModule, ModalCrearTratamientoComponent,ModalCrearTareaComponent,ModalCrearFechaComponent], //Importamos el modal
+  imports: [CommonModule, ModalCrearTratamientoComponent, ModalCrearTareaComponent, ModalCrearFechaComponent, ModalCrearParcelaComponent], //Importamos el modal
   templateUrl: './crear-orden.component.html',
   styleUrls: ['./crear-orden.component.css']
 })
 export class CrearOrdenComponent{
+
+  parcelaSeleccionada: any = null;
   tratamientoSeleccionado: any = null;
   tareaSeleccionada: any = null;
   fechaSeleccionada:string="";
@@ -20,18 +23,24 @@ export class CrearOrdenComponent{
 //@ViewChild() es un decorador de Angular que permite al componente padre obtener una referencia a un elemento hijo dentro de su plantilla (.html). Puede ser usado para acceder a:
 //Un elemento HTML directamente,Un componente hijo (como en este caso),Una directiva.
   // @ViewChild(ModalCrearTratamientoComponent) modalVerTarea!: ModalCrearTratamientoComponent;//  esto ! Angular se encargará de inicializar la variable más tarde, es decir, sabemos que la referencia existirá en tiempo de ejecución
+  @ViewChild('modalVerParcelas') modalVerParcelas!: ModalCrearParcelaComponent;
   @ViewChild('modalVerTratamiento') modalVerTratamiento!: ModalCrearTratamientoComponent;
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
   // ngAfterViewInit() Se ejecuta cuando la vista ha cargado. Verifica que modalVerTarea se haya inicializado correctamente.
 
-  // ngAfterViewInit() {
-  //   if (!this.modalVerTratamiento) {
-  //     console.error('modalVerTarea no está inicializado correctamente');
-  //   }
-  // }
+  ngAfterViewInit() {
+    if (!this.modalVerParcelas) {
+      console.error('modalVerParcelas no está inicializado en ngAfterViewInit');
+    }
+  }
 
+
+recibirParcela(parcela: any) {
+  console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
+  this.parcelaSeleccionada = parcela;
+}
 
 //recibe el tratamiento del hijo y lo almacena
 recibirTratamiento(tratamiento: any) {
@@ -51,6 +60,13 @@ recibirFechaYHora(data: { fecha: string, hora: string }) {
 }
 
 
+abrirModalParcela() {
+  if (this.modalVerParcelas) {
+    this.modalVerParcelas.abrirModal();
+  } else {
+    console.error('modalVerParcelas no está inicializado aún');
+  }
+}
 
 abrirModalTratamiento() {
   if (this.modalVerTratamiento) {

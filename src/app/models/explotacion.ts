@@ -1,6 +1,6 @@
 export interface explotacion  {
 
-    idExpotacion: string;
+    id: number;
     direccion: string;
     nombre: string;
 

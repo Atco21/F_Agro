@@ -3,19 +3,25 @@
 <div class="container">
   <div class="row">
     <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-parcela" style="cursor: pointer;">
+      <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
             <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
             Parcela
           </h3>
-          <!-- <p>{{ parcelaNombre }}</p> -->
+          <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
+          @if( parcelaSeleccionada){
+            <p>Parcela: {{ parcelaSeleccionada.nombre_parcela }}</p>
+          } @else{
+            <p>Parcela: No seleccionada</p>
+          }
         </div>
+
       </div>
     </div>
     <div class="col-12 mb-3">
-       <div class="card shadow" (click)="abrirModalTarea()"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
+       <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
         <div class="card-body">
           <h3 class="card-title">
             <i class="bi bi-geo-alt"></i>
