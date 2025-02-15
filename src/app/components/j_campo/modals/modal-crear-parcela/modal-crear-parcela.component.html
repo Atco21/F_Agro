@@ -1,8 +1,7 @@
-<br><br><br><br><br>
 <!-- #modalElement Permite manipular el modal desde el TypeScript.-->
 <!-- isVisible controla el modal Si es tru class show se muestra si es false aria-hiden no se muestra-->
-<div #modalElement class="modal fade" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+<div #modalElement class="modal fade h-75 w-75 m-5" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-lg-down">
     <div class="modal-content" (click)="$event.stopPropagation()"><!--stopPropagation evita que se propague el evento; AQUI LO QUE HACE ES QUE NO FUCIONE EL CLICK DE CERRAR MODAL PARA PODER GUARDAR EL EVENTO CON EL BOTON GUADAR Y LA FUNCION-->
       <div class="modal-header">
         <h1 class="modal-title w-100 text-center">Seleccionar parcela</h1>

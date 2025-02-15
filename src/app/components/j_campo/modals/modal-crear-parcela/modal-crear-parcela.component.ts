@@ -47,6 +47,7 @@ export class ModalCrearParcelaComponent {
   guardarCambios() {
     console.log('Emitiendo:', this.parcelaSeleecionada);  // Verifica el objeto completo
     this.parcelaGuardada.emit(this.parcelaSeleecionada);
+
     this.cerrarModal();
   }
   }

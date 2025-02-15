@@ -10,12 +10,12 @@
             <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
             Parcela
           </h3>
+
+          <div class="ps-5">
+            <p>Parcela: {{ parcelaSeleccionada || '' }}</p>
+          </div>
           <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
-          @if( parcelaSeleccionada){
-            <p>Parcela: {{ parcelaSeleccionada.nombre_parcela }}</p>
-          } @else{
-            <p>Parcela: No seleccionada</p>
-          }
+
         </div>
 
       </div>
@@ -27,8 +27,10 @@
             <i class="bi bi-geo-alt"></i>
             <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
             Tarea
-          <p>Tarea: {{ tareaSeleccionada || 'No select' }}</p>
-        </h3>
+          </h3>
+            <div class="ps-5">
+              <p>Tarea: {{ tareaSeleccionada || '' }}</p>
+            </div>
         <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { ModalCrearTareaComponent } from '../modal-crear-tarea/modal-crear-tarea
 import { ModalCrearFechaComponent } from '../modal-crear-fecha/modal-crear-fecha.component';
 import { CommonModule } from '@angular/common';
 import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
+import { Parcelas } from '../../../../models/parcelas';
 
 @Component({
   selector: 'app-crear-orden',
@@ -14,11 +15,12 @@ import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-p
 })
 export class CrearOrdenComponent{
 
-  parcelaSeleccionada: any = null;
   tratamientoSeleccionado: any = null;
   tareaSeleccionada: any = null;
   fechaSeleccionada:string="";
   horaSeleccionada:string="";
+  parcelaSeleccionada: any = null;
+
 //Se usa ViewChild para referenciar el componente hijo y manipularlo desde el padre
 //@ViewChild() es un decorador de Angular que permite al componente padre obtener una referencia a un elemento hijo dentro de su plantilla (.html). Puede ser usado para acceder a:
 //Un elemento HTML directamente,Un componente hijo (como en este caso),Una directiva.
@@ -37,9 +39,11 @@ export class CrearOrdenComponent{
   }
 
 
-recibirParcela(parcela: any) {
+recibirParcela(parcela: Parcelas) {
   console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
-  this.parcelaSeleccionada = parcela;
+  this.parcelaSeleccionada = parcela.nombre;
+  
+  console.log(this.parcelaSeleccionada)
 }
 
 //recibe el tratamiento del hijo y lo almacena
