@@ -1,100 +1,118 @@
-<br><br><br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+              Parcela
+            </h3>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12 mb-3">
-      <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-            Parcela
-          </h3>
-
-          <div class="ps-5">
-            <p>Parcela: {{ parcelaSeleccionada || '' }}</p>
-          </div>
-          <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
-
-        </div>
-
-      </div>
-    </div>
-    <div class="col-12 mb-3">
-       <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
-            Tarea
-          </h3>
             <div class="ps-5">
-              <p>Tarea: {{ tareaSeleccionada || '' }}</p>
+              <p>Parcela: {{ parcelaSeleccionada || '' }}</p>
             </div>
-        <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
+            <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
+              Tarea
+            </h3>
+              <div class="ps-5">
+                <p>Tarea: {{ tareaSeleccionada || '' }}</p>
+              </div>
+          <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="card shadow" (click)="abrirModalAplicador()" style="cursor: pointer;">
+          <div class="card-body aplicadores">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+              Aplicador
+            </h3>
+            <app-modal-crear-aplicador #modalVerAplicador (aplicadoresGuardados)="recibirAplicador($event)"></app-modal-crear-aplicador>
+            <div class="ps-5">
+              <div *ngIf="aplicadoresSeleccionados.length > 0">
+                <p *ngFor="let aplicador of aplicadoresSeleccionados">
+                  {{ aplicador.nombre_completo }}
+                </p>
+              </div>
+              <p *ngIf="aplicadoresSeleccionados.length === 0">No seleccionado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="card shadow" routerLink="/modal-crear-maquina" style="cursor: pointer;">
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Maquina-Icon.svg" alt="Maquina Icon" class="img-fluid me-2" />
+              Máquina
+            </h3>
+            <!-- <p>{{ maquinaNombre }}</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+          <div class="card shadow" (click)="abrirModalTratamiento()"  style="cursor: pointer;">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
+              <p>Tratamiento: {{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p>
+            </h3>
+              <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
+                  Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
+                  Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
+            <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3">
+        <div class="card shadow" (click)="abrirModalFecha() " style="cursor: pointer;">
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-geo-alt"></i>
+              <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
+              Fecha
+            </h3>
+            <app-modal-crear-fecha #modalVerFecha (fechaGuardada)="recibirFechaYHora($event)"></app-modal-crear-fecha>
+            <div class="d-flex justify-content-between align-content-center">
+              <div class="col-5">
+                <h5>Fecha</h5>
+                <p>{{ fechaSeleccionada || "No selecionado"}}</p>
+              </div>
+              <div class="col-5">
+                <h5>Hora</h5>
+                <p>{{ horaSeleccionada ||"No selecionado"}}</p>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-aplicador" style="cursor: pointer;">
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-            Aplicador
-          </h3>
-          <!-- <p>{{ aplicadorNombre }}</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="col-12 mb-3">
-      <div class="card shadow" routerLink="/modal-crear-maquina" style="cursor: pointer;">
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Maquina-Icon.svg" alt="Maquina Icon" class="img-fluid me-2" />
-            Máquina
-          </h3>
-          <!-- <p>{{ maquinaNombre }}</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="col-12 mb-3">
-        <div class="card shadow" (click)="abrirModalTratamiento()"  style="cursor: pointer;">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
-            <p>Tratamiento: {{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p>
-          </h3>
-            <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
-                Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
-                Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
-          <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 mb-3">
-      <div class="card shadow" (click)="abrirModalFecha() " style="cursor: pointer;">
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-geo-alt"></i>
-            <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
-            Fecha
-          </h3>
-          <h5>Fecha</h5>
-          <p>{{ fechaSeleccionada || "No selecionado"}}</p>
-          <h5>Hora</h5>
-          <p>{{ horaSeleccionada ||"No selecionado"}}</p>
-          <app-modal-crear-fecha #modalVerFecha (fechaGuardada)="recibirFechaYHora($event)"></app-modal-crear-fecha>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Botón centrado para guardar cambios -->
-  <div class="row" (click)="guardarDatos()">
-    <div class="col-12 d-flex justify-content-center">
+  <div class="" (click)="guardarDatos()">
+    <div class="d-flex justify-content-center">
       <button class="btn btn-primary mt-3">Guardar Cambios</button>
     </div>
   </div>
+  </div>
+
+
+
 
