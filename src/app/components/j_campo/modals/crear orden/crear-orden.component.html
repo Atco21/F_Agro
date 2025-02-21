@@ -45,7 +45,7 @@
             <div class="ps-5">
               <div *ngIf="aplicadoresSeleccionados.length > 0">
                 <p *ngFor="let aplicador of aplicadoresSeleccionados">
-                  {{ aplicador.nombre_completo }}
+                  {{ aplicador.id }}
                 </p>
               </div>
               <p *ngIf="aplicadoresSeleccionados.length === 0">No seleccionado</p>
