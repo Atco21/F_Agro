@@ -1,51 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import { StorageService } from '../_services/storage.service';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
-  form: any = {
-    username: null,
-    password: null
-  };
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
+export default class LoginComponent{
+  
+usuario: string = '';
+password: string = '';
+errorMessage: string = '';
+constructor(private authService: AuthService, private router: Router) {
 
-  constructor(private authService: AuthService, private storageService: StorageService) { }
-
-  ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
+ }
+ login() {
+  this.authService.login(this.usuario, this.password).subscribe({
+    next: (response) => {
+      localStorage.setItem('token', response.token);
+      this.router.navigate(['/movil/dashboard']);
+    },
+    error: (err) => {
+      this.errorMessage = 'Credenciales incorrectas';
     }
-  }
-
-  onSubmit(): void {
-    const { username, password } = this.form;
-
-    this.authService.login(username, password).subscribe({
-      next: data => {
-        this.storageService.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
-        this.reloadPage();
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    });
-  }
-
-  reloadPage(): void {
-    window.location.reload();
-  }
+  });
+}
 }

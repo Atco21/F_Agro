@@ -10,6 +10,7 @@ import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-i
 import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
 import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
 import { PedidoComponent } from './components/movil/pedido/pedido.component';
+import LoginComponent from './login/login.component';
 
 
 export const routes: Routes = [
@@ -72,6 +73,15 @@ export const routes: Routes = [
         }
     ]
 
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   }
 
 ];

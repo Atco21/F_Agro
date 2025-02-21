@@ -3,12 +3,13 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 import { FooterComponent } from './components/movil/footer/footer.component';
 import { HeaderComponent } from './components/movil/header/header.component';
 import { QuimicosService } from './servicios/quimicos.service';
+import { FormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [FooterComponent, HeaderComponent, RouterLink, RouterOutlet, RouterModule],
+  imports: [FooterComponent, HeaderComponent, RouterLink, RouterOutlet, RouterModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
