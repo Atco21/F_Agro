@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ModalVerTareaComponent } from '../../modals/modal-ver-tarea/modal-ver-tarea.component';
 
 
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,

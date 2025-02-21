@@ -11,45 +11,48 @@
             background-color: #f8f9fa;
         }
         .login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 30px;
-            background:#01533E;
+            padding: 20px;
+            background: #01533E;
             color: white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
             margin: 0 auto 20px;
+        }
+        @media (max-width: 576px) {
+            .login-container {
+                width: 90%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
 
-    <div class="text-center login-container w-25 h-50">
+    <div class="text-center login-container">
         <!-- Imagen de perfil -->
         <img src="./assets/logoAgro.png" alt="Usuario" class="profile-img">
 
         <h4 class="mb-3">Iniciar Sesión</h4>
 
+        <div class="mb-3">
+            <label class="form-label">Usuario</label>
+            <input [(ngModel)]="usuario" type="text" name="usuario" class="form-control" placeholder="Ingrese su usuario" required>
+        </div>
 
-            <div class="mb-3">
-                <label class="form-label">Usuario</label>
-                <input [(ngModel)]="usuario" type="text" name="usuario" class="form-control" placeholder="Ingrese su usuario" required>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input [(ngModel)]="password" type="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
+        </div>
 
-            <div class="mb-3">
-                <label class="form-label">Contraseña</label>
-                <input [(ngModel)]="password" type="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
-            </div>
-
-            <button (click)="login()" type="submit" class="btn btn-secondary w-100">Iniciar Sesión</button>
+        <button (click)="login()" type="submit" class="btn btn-secondary w-100">Iniciar Sesión</button>
     </div>
 </div>
 

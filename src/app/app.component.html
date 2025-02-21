@@ -9,13 +9,18 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<!-- Muestra el formulario de login si no está autenticado -->
+<div *ngIf="!isLoggedIn">
+  <app-login (loginSuccess)="onLoginSuccess()"></app-login>
+</div>
 
+<!-- Muestra la aplicación si está autenticado -->
+<div *ngIf="isLoggedIn">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
 
-<app-header></app-header>
-<br><br><br>
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>
 
 
 
