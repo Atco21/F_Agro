@@ -22,9 +22,18 @@ export class AppComponent {
 
   isLoggedIn: boolean = false;
 
+  ngOnInit() {
+    this.isLoggedIn = !!localStorage.getItem('token');
+  }
+
   // Maneja el evento de éxito de login
   onLoginSuccess() {
     this.isLoggedIn = true;
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.isLoggedIn = false;
   }
 
   quimicos:any;
