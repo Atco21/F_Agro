@@ -1,7 +1,7 @@
 .container {
-  max-height: 60vh; /* Ajusta la altura máxima según sea necesario */
-  overflow-y: auto; /* Habilita el scroll vertical */
-  padding-bottom: 20px; /* Añade espacio para el botón */
+  margin-top: 10vh;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 body {
@@ -38,4 +38,16 @@ body {
 .title{
   color: #532301;
   font-weight: bold;
+}
+.card-body{
+
+  max-height: 110px;
+
+}
+
+.aplicadores{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
