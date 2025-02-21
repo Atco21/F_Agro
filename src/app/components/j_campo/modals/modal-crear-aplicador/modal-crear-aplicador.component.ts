@@ -13,23 +13,23 @@ import { Aplicador } from '../../../../models/aplicador';
 })
 export class ModalCrearAplicadorComponent {
 
-  isVisible = false; // Controla la visibilidad del modal
-  aplicadores: any;
-  aplicadoresSeleccionados: any = [];  // Inicializado a null o un objeto vacío
-
+  isVisible = false;
+  aplicadores: any = [];  // Asegurar que es un array
+  aplicadoresSeleccionados: any = [];
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() aplicadoresGuardados = new EventEmitter<Aplicador>();  // Emite el tratamiento seleccionado al padre
+  @Output() aplicadoresGuardados = new EventEmitter<Aplicador>();
 
+  constructor(private rendered: Renderer2, private trabajadoresService: TrabajadoresService) {
+  this.trabajadoresService.obtenerAplicadores()
+      .subscribe(result => this.aplicadores = result);
 
-  constructor(private rendered: Renderer2 ,private trabajadoresService: TrabajadoresService) {
-    this.trabajadoresService.obtenerAplicadores()
-      .subscribe(result => this.aplicadores = result)
-      console.log(this.aplicadores)
+    console.log(this.aplicadores);
   }
 
 
-  // Mostrar modal usando clases de Bootstrap
+
+
   abrirModal() {
     this.isVisible = true;
     this.rendered.addClass(this.modalElement.nativeElement, 'show');
@@ -37,7 +37,6 @@ export class ModalCrearAplicadorComponent {
     this.rendered.setStyle(this.modalElement.nativeElement, 'display', 'block');
   }
 
-  // Cerrar modal solo con el botón "X"
   cerrarModal() {
     this.isVisible = false;
     this.rendered.removeClass(this.modalElement.nativeElement, 'show');
@@ -45,12 +44,9 @@ export class ModalCrearAplicadorComponent {
     this.rendered.setStyle(this.modalElement.nativeElement, 'display', 'none');
   }
 
-  // Guardar cambios y emitir el tratamiento seleccionado
   guardarCambios() {
-    console.log('Emitiendo:', this.aplicadoresSeleccionados);  // Verifica el objeto completo
+    console.log('Emitiendo:', this.aplicadoresSeleccionados);
     this.aplicadoresGuardados.emit(this.aplicadoresSeleccionados);
-
     this.cerrarModal();
   }
-
 }
