@@ -10,8 +10,15 @@
             </h3>
 
             <div class="ps-5">
-              <p>Parcela: {{ parcelaSeleccionada || '' }}</p>
+              <div *ngIf="parcelaSeleccionada > 0">
+              <p *ngFor="let parcela of parcelaSeleccionada">
+                Parcela:{{parcela.nombre}}
+              </p>
+              </div>
+              <p *ngIf="aplicadoresSeleccionados == null">No seleccionado</p>
+
             </div>
+
             <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
 
           </div>
@@ -45,7 +52,7 @@
             <div class="ps-5">
               <div *ngIf="aplicadoresSeleccionados.length > 0">
                 <p *ngFor="let aplicador of aplicadoresSeleccionados">
-                  {{ aplicador.nombre_completo }}
+                  {{ aplicador.nombre}}
                 </p>
               </div>
               <p *ngIf="aplicadoresSeleccionados.length === 0">No seleccionado</p>

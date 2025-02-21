@@ -7,6 +7,7 @@ import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-p
 import { Parcelas } from '../../../../models/parcelas';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
 import { Aplicador } from '../../../../models/aplicador';
+import { OrdenesService } from '../../services/ordenes.service';
 
 @Component({
   selector: 'app-crear-orden',
@@ -39,14 +40,16 @@ export class CrearOrdenComponent{
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
-
+  constructor(private ordenesService: OrdenesService) {
+    console.log("CrearOrdenComponent inicializado");
+  }
 
 
 
 
 recibirParcela(parcela: Parcelas) {
   console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
-  this.parcelaSeleccionada = parcela.nombre;
+  this.parcelaSeleccionada = parcela;
 
   console.log(this.parcelaSeleccionada)
 }
@@ -67,7 +70,7 @@ recibirTratamiento(tratamiento: any) {
   console.log('Recibido en el padre:', tratamiento);  // Verifica el objeto recibido
   this.tratamientoSeleccionado = tratamiento;
 }
-recibirTarea(tarea: string) {
+recibirTarea(tarea: any) {
   console.log('Recibido en el padre:', tarea);  // Verifica el objeto recibido
   this.tareaSeleccionada = tarea;
 }
@@ -124,11 +127,35 @@ abrirModalFecha(){
 
 
 guardarDatos(){
- console.log("Hola")
-console.log(this.tratamientoSeleccionado);
+
+this.datosOrden();
 }
 
 guardarDatosTarea(){
   console.log(this.tratamientoSeleccionado);
 }
+
+datosOrden(){
+ const orden={
+  parcela:this.parcelaSeleccionada || "",
+  tarea:this.tareaSeleccionada ||"",
+  aplicadores:this.aplicadoresSeleccionados[0].id || "",
+  // maquina: || "",
+  tratamiento:this.tratamientoSeleccionado.id || "",
+  fecha:this.fechaSeleccionada || "",
+ }
+ this.ordenesService.enviarOrden(orden).subscribe({
+  next: (response) => {
+    console.log('Orden enviada correctamente:', response);
+  },
+  error: (error) => {
+    console.error('Error al enviar la orden:', error);
+  }
+});
+}
+
+
+
+
+
 }
