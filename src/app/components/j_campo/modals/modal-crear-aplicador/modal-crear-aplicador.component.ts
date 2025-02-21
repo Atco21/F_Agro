@@ -1,29 +1,31 @@
 import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ParcelaService } from '../../services/parcela.service';
-import { Parcelas } from '../../../../models/parcelas';
+import { TrabajadoresService } from '../../services/trabajadores.service';
+import { Aplicador } from '../../../../models/aplicador';
 
 @Component({
-  selector: 'app-modal-crear-parcela',
+  selector: 'app-modal-crear-aplicador',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './modal-crear-parcela.component.html',
-  styleUrls: ['./modal-crear-parcela.component.css']
+  imports: [FormsModule, CommonModule],
+  templateUrl: './modal-crear-aplicador.component.html',
+  styleUrl: './modal-crear-aplicador.component.css'
 })
-export class ModalCrearParcelaComponent {
+export class ModalCrearAplicadorComponent {
+
   isVisible = false; // Controla la visibilidad del modal
-  parcelas: any;
-  parcelaSeleecionada: any = null;  // Inicializado a null o un objeto vacío
+  aplicadores: any;
+  aplicadoresSeleccionados: any = [];  // Inicializado a null o un objeto vacío
+
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() parcelaGuardada = new EventEmitter<Parcelas>();  // Emite el tratamiento seleccionado al padre
+  @Output() aplicadoresGuardados = new EventEmitter<Aplicador>();  // Emite el tratamiento seleccionado al padre
 
 
-
-  constructor(private rendered: Renderer2 ,private parcelaService: ParcelaService) {
-    this.parcelaService.getParcelasAll()
-      .subscribe(result => this.parcelas = result)
+  constructor(private rendered: Renderer2 ,private trabajadoresService: TrabajadoresService) {
+    this.trabajadoresService.obtenerAplicadores()
+      .subscribe(result => this.aplicadores = result)
+      console.log(this.aplicadores)
   }
 
 
@@ -45,10 +47,10 @@ export class ModalCrearParcelaComponent {
 
   // Guardar cambios y emitir el tratamiento seleccionado
   guardarCambios() {
-    console.log('Emitiendo:', this.parcelaSeleecionada);  // Verifica el objeto completo
-    this.parcelaGuardada.emit(this.parcelaSeleecionada);
+    console.log('Emitiendo:', this.aplicadoresSeleccionados);  // Verifica el objeto completo
+    this.aplicadoresGuardados.emit(this.aplicadoresSeleccionados);
 
     this.cerrarModal();
   }
-  }
 
+}
