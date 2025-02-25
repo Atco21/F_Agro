@@ -11,7 +11,7 @@ export class OrdenesService {
   constructor(private http: HttpClient) {}
 
   enviarOrden(datosOrden: any): Observable<any> {
-    console.log('alvaro');
+
 
     console.log(datosOrden);
 
