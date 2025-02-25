@@ -18,7 +18,7 @@ export class ModalCrearAplicadorComponent {
   aplicadoresSeleccionados: any = [];
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() aplicadoresGuardados = new EventEmitter<Aplicador>();
+  @Output() aplicadoresGuardados = new EventEmitter<any>();
 
   constructor(private rendered: Renderer2, private trabajadoresService: TrabajadoresService) {
   this.trabajadoresService.obtenerAplicadores()
