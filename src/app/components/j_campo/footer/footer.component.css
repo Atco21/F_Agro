@@ -12,7 +12,7 @@
   padding: 15px;
 }
 
-#incidenciaMenu{
+#menuD{
   display: flex;
   align-items: center;
   position: fixed;
@@ -23,6 +23,9 @@
   padding: 15px;
   border: 2px solid #004d40;
 }
+
+
+
 
 /* Estilos para el contenedor */
 .incidencia-content {
@@ -40,7 +43,7 @@
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  color: #333; 
+  color: #333;
 }
 
 /* Título "Incidencias" */

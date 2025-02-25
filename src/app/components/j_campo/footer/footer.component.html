@@ -1,13 +1,24 @@
 <div class="fixed-footer">
 
   <!-- Incidencias Menu -->
-  <div id="incidenciaMenu" [hidden]="!isIncidenciaMenuVisible">
+  <div id="menuD" [hidden]="!isIncidenciaMenuVisible">
     <div>
       <button class="close-btn" (click)="closeIncidenciaMenu()">X</button>
       <h1 >Incidencias</h1>
       <h3 routerLink="/incidencias/tipo-personal" style="cursor: pointer;">Personal</h3>
       <h3 routerLink="/incidencias/tipo-maquina"style="cursor: pointer;">Máquina</h3>
       <h3 routerLink="/incidencias/tipo-stock"style="cursor: pointer;">Stock</h3>
+    </div>
+  </div>
+
+
+  <div id="menuD" [hidden]="!isOrdenMenuVisible">
+    <div>
+      <button class="close-btn" (click)="closeOrdenMenu()">X</button>
+      <h1>Ordenes</h1>
+      <h3 routerLink="/ordenes/en-curso" style="cursor: pointer;">En curso</h3>
+      <h3 routerLink="/ordenes/pendientes" style="cursor: pointer;">Pendientes</h3>
+      <h3 routerLink="/ordenes/pausadas" style="cursor: pointer;">Pausadas</h3>
     </div>
   </div>
 
@@ -33,14 +44,13 @@
       <div type="button" class="btn" (click)="IncidenciaMenu()">
         <img src="Incidencia.svg" alt="incidencia" />
       </div>
-      <app-modal-incidencia #modalVerIncidencia></app-modal-incidencia>
     </div>
 
     <!-- Botón Orden -->
     <div class="orden">
-      <a routerLink="/orden">
-        <img src="tareas.svg" alt="orden" />
-      </a>
+      <div type="button" class="btn" (click)="OrdenMenu()">
+        <img src="tareas.svg" alt="ordenes" />
+      </div>
     </div>
 
     <!-- Botón Menú -->
