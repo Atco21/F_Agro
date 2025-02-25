@@ -12,9 +12,6 @@ export class TratamientoService {
   }
 
 
-  login($User : user) Obser{
-    return this.http.post('http://localhost:80/api/login',$User)
-  }
 
 
   // private tratamientos = [
