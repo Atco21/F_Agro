@@ -12,6 +12,11 @@ export class TratamientoService {
   }
 
 
+  login($User : user) Obser{
+    return this.http.post('http://localhost:80/api/login',$User)
+  }
+
+
   // private tratamientos = [
   //   { id: 1, nombre: 'Mosca Blanca' },
   //   { id: 2, nombre: 'Mosca del Mediterraneo' },
