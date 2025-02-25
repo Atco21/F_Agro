@@ -2,40 +2,24 @@
     <div class="row">
       <div class="col-12 mb-3">
         <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
-          <div class="card-body">
+          <div class="card-body parcelas">
             <h3 class="card-title">
               <i class="bi bi-geo-alt"></i>
               <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-              Parcela
+              <p>Parcela: {{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</p>
             </h3>
-
-            <div class="ps-5">
-              <div *ngIf="parcelaSeleccionada > 0">
-              <p *ngFor="let parcela of parcelaSeleccionada">
-                Parcela:{{parcela.nombre}}
-              </p>
-              </div>
-              <p *ngIf="aplicadoresSeleccionados == null">No seleccionado</p>
-
-            </div>
-
             <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
-
           </div>
-
         </div>
       </div>
       <div class="col-12 mb-3">
         <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
-          <div class="card-body">
+          <div class="card-body tareas">
             <h3 class="card-title">
               <i class="bi bi-geo-alt"></i>
               <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
-              Tarea
+              <p>Tarea: {{ tareaSeleccionada || 'No seleccionada' }}</p>
             </h3>
-              <div class="ps-5">
-                <p>Tarea: {{ tareaSeleccionada || '' }}</p>
-              </div>
           <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
           </div>
         </div>
@@ -118,7 +102,7 @@
       <button class="btn btn-primary mt-3">Guardar Cambios</button>
     </div>
   </div>
-  </div>
+
 
 
 

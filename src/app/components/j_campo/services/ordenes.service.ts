@@ -11,10 +11,16 @@ export class OrdenesService {
   constructor(private http: HttpClient) {}
 
   enviarOrden(datosOrden: any): Observable<any> {
-    console.log('alfred');
+    console.log('alvaro');
+
     console.log(datosOrden);
+
+
     return this.http.post(this.apiUrl, datosOrden);
 
   }
 }
+
+
+
 
