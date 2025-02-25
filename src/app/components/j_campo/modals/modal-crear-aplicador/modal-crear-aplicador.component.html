@@ -8,13 +8,12 @@
         <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
       <div class="modal-body">
-        <select [(ngModel)]="aplicadoresSeleccionados" multiple>
-          <option *ngFor="let aplicador of aplicadores" [ngValue]="aplicador">
-            {{ aplicador.nombre }}
+         <select [(ngModel)]="aplicadoresSeleccionados">  <!-- ngModel es una directiva de angular cuando el usuario elige la opcion se guarda en tratamiento selecionado-->
+          <option *ngFor="let aplicador of aplicadores" [ngValue]="aplicadores"><!--ngfor repiete un item para cada item de la lista ngValue asigna un objeto completo-->
+            {{aplicador.nombre}}<!--Lo muestra-->
           </option>
         </select>
-
-        <p>{{ aplicadoresSeleccionados?.nombre_completo || 'No seleccionado' }}</p><!--Asegura que se muestr algo siempre en pantalla ? se llama operacion de navegacion segura-->
+        <p>{{ aplicadoresSeleccionados[0]?.nombre || 'No seleccionado' }}</p><!--Asegura que se muestr algo siempre en pantalla ? se llama operacion de navegacion segura-->
         <!-- Botón para guardar y emitir el valor al componente padre -->
         <button type="button" class="btn" (click)="guardarCambios()">Guardar Cambios</button>
 

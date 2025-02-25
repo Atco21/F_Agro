@@ -136,13 +136,13 @@ guardarDatosTarea(){
 }
 
 datosOrden(){
- const orden={
-  parcela:this.parcelaSeleccionada || "",
+ let orden={
+  parcela_id:this.parcelaSeleccionada.id || "",
   tarea:this.tareaSeleccionada ||"",
-  aplicadores:this.aplicadoresSeleccionados[0].id || "",
+  aplicador_id:this.aplicadoresSeleccionados[0].id || "",
+  estado:'pendiente',
   // maquina: || "",
-  tratamiento:this.tratamientoSeleccionado.id || "",
-  fecha:this.fechaSeleccionada || "",
+  //id_tratamiento:this.tratamientoSeleccionado.id || "",
  }
  this.ordenesService.enviarOrden(orden).subscribe({
   next: (response) => {
