@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IncidenciasComponent } from './components/movil/incidencias/incidencias.component';
 import { OrdenComponent } from './components/movil/orden/orden.component';
@@ -11,7 +11,10 @@ import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/
 import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
 import { PedidoComponent } from './components/movil/pedido/pedido.component';
 import LoginComponent from './login/login.component';
-
+import { AuthGuard } from './guards/auth.guard';
+import { JefeGuard } from './guards/guard-jefe.guards';
+import { AplicadorGuard } from './guards/guard-aplicador.guards';
+import { ErrorHandlerComponent } from './components/error-handler/error-handler.component'; // Componente para manejar errores
 
 export const routes: Routes = [
   {
@@ -21,69 +24,80 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
-  
   {
     path: 'movil',
+    canActivate: [AuthGuard], // Asegura que el usuario esté autenticado
     children: [
       {
-        path: 'incidencias',
-        component: IncidenciasComponent,
-        children: [
-          {
-            path: 'crear-incidencia',
-            component: CrearIncidenciaComponent,
-          },
-          //   {
-          //     path: 'incidencia-finalizada',
-          //     component: IncidenciaFinalizadaComponent,
-          //   }
-        ]
-      },
-      {
-        path: 'orden',
-        component: OrdenComponent,
-        children: [
-          {
-            path: 'orden-no-finalizada',
-            component: OrdenNoFinalizadaComponent,
-          },
-          {
-            path: 'orden-finalizada',
-            component: OrdenFinalizadaComponent,
-          }
-        ]
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'calendario',
-        component: CalendarioComponent,
-      },
-      {
-        path: 'crear-incidencia',
-        component: CrearIncidenciaComponent,
-        children: [
-          {
-            path: 'crear-incidencia-maquina',
-            component: CrearIncidenciaMaquinaComponent,
-          }
-        ]
-      },
-      {
         path: 'quimicos',
+        canActivate: [JefeGuard], // Solo accesible por Jefes de Campo
         component: QuimicosComponent,
       },
       {
         path: 'crear-pedido',
+        canActivate: [JefeGuard], // Solo accesible por Jefes de Campo
         component: PedidoComponent,
-        }
+      },
+      {
+        path: '',
+        canActivate: [AplicadorGuard], // Aplicador puede acceder a todas las demás rutas
+        children: [
+          {
+            path: 'incidencias',
+            component: IncidenciasComponent,
+            children: [
+              {
+                path: 'crear-incidencia',
+                component: CrearIncidenciaComponent,
+              },
+            ]
+          },
+          {
+            path: 'orden',
+            component: OrdenComponent,
+            children: [
+              {
+                path: 'orden-no-finalizada',
+                component: OrdenNoFinalizadaComponent,
+              },
+              {
+                path: 'orden-finalizada',
+                component: OrdenFinalizadaComponent,
+              }
+            ]
+          },
+          {
+            path: 'dashboard',
+            component: DashboardComponent,
+          },
+          {
+            path: 'calendario',
+            component: CalendarioComponent,
+          },
+          {
+            path: 'crear-incidencia',
+            component: CrearIncidenciaComponent,
+            children: [
+              {
+                path: 'crear-incidencia-maquina',
+                component: CrearIncidenciaMaquinaComponent,
+              }
+            ]
+          }
+        ]
+      }
     ]
-
   },
-  
-
+  {
+    path: '**',
+    component: ErrorHandlerComponent, // Muestra error en lugar de redirigir al login
+  }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule { }
