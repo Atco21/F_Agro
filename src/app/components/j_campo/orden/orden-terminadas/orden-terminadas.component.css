@@ -1,0 +1,35 @@
+.container {
+  display: flex;                /* Usar flexbox para centrar */
+  justify-content: center;      /* Centrar horizontalmente */
+  align-items: center;          /* Centrar verticalmente (si es necesario) */
+  flex-direction: column;       /* Asegurar que los hijos se alineen en columna */
+  margin-top: 150px;            /* Espacio arriba, ajusta según necesites */
+}
+
+.table {
+  width: 100%;                  /* Hacer que la tabla use todo el ancho del contenedor */
+  max-width: 800px;            /* Limitar el ancho máximo de la tabla */
+  margin: 0 auto;              /* Centrar la tabla horizontalmente */
+}
+h1{
+    color: #532301;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom:50px;
+    padding: 0;
+    text-align: center;
+}
+th{
+    color: #01533E;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+tr{
+  color: #01533E;
+  font-size: 1.2em;
+
+
+  text-align: center;
+}

@@ -11,13 +11,21 @@ export class OrdenesService {
   constructor(private http: HttpClient) {}
 
   enviarOrden(datosOrden: any): Observable<any> {
-    console.log('alvaro');
-
-    console.log(datosOrden);
-
 
     return this.http.post(this.apiUrl, datosOrden);
 
+  }
+
+  getOrdenesPendientes() {
+    return this.http.get('http://localhost:80/api/ordenesPendientes');
+  }
+
+  getOrdenesCurso() {
+    return this.http.get('http://localhost:80/api/ordenesCurso');
+  }
+
+  getOrdenesPausa() {
+    return this.http.get('http://localhost:80/api/ordenesPausadas');
   }
 }
 

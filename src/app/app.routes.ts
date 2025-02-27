@@ -12,6 +12,9 @@ import { CrearOrdenComponent} from './components/j_campo/modals/crear orden/crea
 import { TipoPersonalComponent } from './components/j_campo/incidencias/tipos/tipo-personal/tipo-personal.component';
 import { TipoMaquinaComponent } from './components/j_campo/incidencias/tipos/tipo-maquina/tipo-maquina.component';
 import { TipoStockComponent } from './components/j_campo/incidencias/tipos/tipo-stock/tipo-stock.component';
+import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/orden-en-curso.component';
+import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
+import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -27,12 +30,14 @@ export const routes: Routes = [
   {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
   {path:"incidencias/tipo-personal", component:TipoPersonalComponent},//tabla incidencias tipo personal
   {path:"incidencias/tipo-maquina", component:TipoMaquinaComponent},//incedncias tipo maquina
-  {path:"incidencias/tipo-stock",component:TipoStockComponent} //incidencias tipo stock
+  {path:"incidencias/tipo-stock",component:TipoStockComponent}, //incidencias tipo stock
+  {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
+  {path:"orden/orden-pausadas",component:OrdenPausadasComponent},
+  {path:"orden/orden-pendientes",component:OrdenPendientesComponent},
+  {path:"orden/orden-terminadas",component:OrdenPausadasComponent},
+
 
 ];
 
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
+
 export class AppRoutingModule {}

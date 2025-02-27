@@ -14,14 +14,25 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
+  isOrdenMenuVisible: boolean = false;
 
-  // Función para alternar la visibilidad
-  IncidenciaMenu() {
+   // Función para alternar la visibilidad
+   IncidenciaMenu() {
+    this.isOrdenMenuVisible = false;
     this.isIncidenciaMenuVisible = !this.isIncidenciaMenuVisible;
   }
 
   closeIncidenciaMenu() {
     this.isIncidenciaMenuVisible = false;
+  }
+
+  OrdenMenu(){
+    this.isIncidenciaMenuVisible = false;
+
+    this.isOrdenMenuVisible = !this.isIncidenciaMenuVisible;
+  }
+  closeOrdenMenu(){
+    this.isOrdenMenuVisible = false;
   }
 
 

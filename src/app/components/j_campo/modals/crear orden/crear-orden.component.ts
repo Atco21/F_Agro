@@ -142,7 +142,7 @@ datosOrden(){
   aplicador_id:this.aplicadoresSeleccionados[0].id || "",
   estado:'pendiente',
   // maquina: || "",
-  //id_tratamiento:this.tratamientoSeleccionado.id || "",
+  id_tratamiento:this.tratamientoSeleccionado.id || "",
  }
  this.ordenesService.enviarOrden(orden).subscribe({
   next: (response) => {
