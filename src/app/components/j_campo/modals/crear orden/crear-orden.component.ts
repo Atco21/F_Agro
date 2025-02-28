@@ -8,6 +8,8 @@ import { Parcelas } from '../../../../models/parcelas';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
 import { Aplicador } from '../../../../models/aplicador';
 import { OrdenesService } from '../../services/ordenes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-crear-orden',
@@ -40,7 +42,7 @@ export class CrearOrdenComponent{
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
-  constructor(private ordenesService: OrdenesService) {
+  constructor(private ordenesService: OrdenesService, private router: Router) {
     console.log("CrearOrdenComponent inicializado");
   }
 
@@ -127,8 +129,9 @@ abrirModalFecha(){
 
 
 guardarDatos(){
-
+  this.router.navigate(['/dashboard']);
 this.datosOrden();
+
 }
 
 guardarDatosTarea(){

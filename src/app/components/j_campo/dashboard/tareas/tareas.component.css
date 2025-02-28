@@ -1,6 +1,65 @@
-.parcela-icon {
-    width: 40px; /* Tamaño fijo para el ícono */
-    height: 40px;
-    color:#004d40;
+/* Contenedor general del card */
+.container{
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
 
-  }
+.card {
+  display: flex; /* Alinear imagen y contenido */
+  align-items: center; /* Centrado vertical */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #2f4f4f; /* Verde oscuro */
+  width: 90%; /* Tamaño compacto */
+  max-width: 280px; /* Límite de ancho */
+  margin: 10px auto; /* Centrado */
+  padding: 10px; /* Espaciado */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  gap: 12px; /* Espaciado entre imagen y texto */
+}
+
+/* Imagen más grande y alineada con el título */
+.card-img-top {
+  width: 40px; /* Más grande */
+  height: 40px;
+  object-fit: contain; /* Evita distorsión */
+  flex-shrink: 0; /* No se reduce más */
+}
+
+/* Cuerpo del card con el texto */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+/* Estilo del título con imagen al lado */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Párrafos con información */
+.card-text {
+  font-size: 0.85rem;
+  margin-top: 5px;
+  color: #2f4f4f; /* Verde oscuro */
+}
+
+/* Texto importante en negrita */
+.card-text strong {
+  font-weight: bold;
+  color: #2f4f4f;
+}
+h1{
+  text-align: center;
+  padding: 20px;
+}
+
+
