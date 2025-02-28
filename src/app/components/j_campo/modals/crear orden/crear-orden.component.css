@@ -51,3 +51,16 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
+
+.alert-success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 80%;
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
