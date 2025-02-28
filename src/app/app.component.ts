@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 import { FooterComponent } from './components/movil/footer/footer.component';
 import { HeaderComponent } from './components/movil/header/header.component';
-import { QuimicosService } from './servicios/quimicos.service';
+import { QuimicosService } from './_services/quimicos.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import LoginComponent from "./login/login.component";

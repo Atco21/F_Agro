@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuimicosService } from '../../../servicios/quimicos.service';
+import { QuimicosService } from '../../../_services/quimicos.service';
 
 @Component({
   selector: 'app-pedido',
