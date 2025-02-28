@@ -15,7 +15,7 @@ import { TipoStockComponent } from './components/j_campo/incidencias/tipos/tipo-
 import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/orden-en-curso.component';
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
-
+import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'incidencias', component: IncidenciasComponent },
@@ -34,7 +34,7 @@ export const routes: Routes = [
   {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
   {path:"orden/orden-pausadas",component:OrdenPausadasComponent},
   {path:"orden/orden-pendientes",component:OrdenPendientesComponent},
-  {path:"orden/orden-terminadas",component:OrdenPausadasComponent},
+  {path:"orden/orden-terminadas",component:OrdenTerminadasComponent},
 
 
 ];

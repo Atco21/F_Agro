@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import{ OrdenesService } from '../../services/ordenes.service';
 
 @Component({
   selector: 'app-orden-terminadas',
@@ -8,5 +9,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './orden-terminadas.component.css'
 })
 export class OrdenTerminadasComponent {
+  ordenesTerminadas: any;
 
+  parcela:any;
+  tarea:any;
+  fecha_inicio:any;
+
+  constructor(private ordenesService: OrdenesService) {
+      this.ordenesService.getOrdenesTerminadas()
+        .subscribe(result => this.ordenesTerminadas = result)
+  }
 }

@@ -27,6 +27,10 @@ export class OrdenesService {
   getOrdenesPausa() {
     return this.http.get('http://localhost:80/api/ordenesPausadas');
   }
+
+  getOrdenesTerminadas() {
+    return this.http.get('http://localhost:80/api/ordenesTerminadas');
+  }
 }
 
 
