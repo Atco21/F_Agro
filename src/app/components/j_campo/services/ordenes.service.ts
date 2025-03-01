@@ -13,11 +13,24 @@ export class OrdenesService {
   enviarOrden(datosOrden: any): Observable<any> {
 
 
-    console.log(datosOrden);
-
-
     return this.http.post(this.apiUrl, datosOrden);
 
+  }
+
+  getOrdenesPendientes() {
+    return this.http.get('http://localhost:80/api/ordenesPendientes');
+  }
+
+  getOrdenesCurso() {
+    return this.http.get('http://localhost:80/api/ordenesCurso');
+  }
+
+  getOrdenesPausa() {
+    return this.http.get('http://localhost:80/api/ordenesPausadas');
+  }
+
+  getOrdenesTerminadas() {
+    return this.http.get('http://localhost:80/api/ordenesTerminadas');
   }
 }
 

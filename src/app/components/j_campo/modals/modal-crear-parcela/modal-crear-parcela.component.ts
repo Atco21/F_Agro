@@ -24,6 +24,7 @@ export class ModalCrearParcelaComponent {
   constructor(private rendered: Renderer2 ,private parcelaService: ParcelaService) {
     this.parcelaService.getParcelasAll()
       .subscribe(result => this.parcelas = result)
+
   }
 
 

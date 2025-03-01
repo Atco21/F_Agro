@@ -2,7 +2,7 @@ import { Component,ViewChild,ElementRef, Renderer2} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
   isOrdenMenuVisible: boolean = false;
+
 
   // Función para alternar la visibilidad
   IncidenciaMenu() {
@@ -34,6 +35,23 @@ export class FooterComponent {
   closeOrdenMenu(){
     this.isOrdenMenuVisible = false;
   }
+
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {// Cuando le hagamos click a routerLink , cerramos los menús automáticamente
+    this.router.events.subscribe(() => {
+      this.cerraModalMenus();
+    });
+  }
+
+
+  // Cierra ambos menús
+  cerraModalMenus() {
+    this.isIncidenciaMenuVisible = false;
+    this.isOrdenMenuVisible = false;
+  }
+
 
 
 }

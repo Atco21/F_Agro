@@ -8,6 +8,8 @@ import { Parcelas } from '../../../../models/parcelas';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
 import { Aplicador } from '../../../../models/aplicador';
 import { OrdenesService } from '../../services/ordenes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-crear-orden',
@@ -21,12 +23,10 @@ export class CrearOrdenComponent{
   parcelaSeleccionada: any = null;
   tareaSeleccionada: any = null;
   aplicadoresSeleccionados: any[] = [];
-
   tratamientoSeleccionado: any = null;
-
   fechaSeleccionada:string="";
   horaSeleccionada:string="";
-
+  ventanaVisible = false; // Estado inicial oculto de la ventana de Orden creada
 
 //Se usa ViewChild para referenciar el componente hijo y manipularlo desde el padre
 //@ViewChild() es un decorador de Angular que permite al componente padre obtener una referencia a un elemento hijo dentro de su plantilla (.html). Puede ser usado para acceder a:
@@ -34,13 +34,12 @@ export class CrearOrdenComponent{
   // @ViewChild(ModalCrearTratamientoComponent) modalVerTarea!: ModalCrearTratamientoComponent;//  esto ! Angular se encargará de inicializar la variable más tarde, es decir, sabemos que la referencia existirá en tiempo de ejecución
   @ViewChild('modalVerParcelas') modalVerParcelas!: ModalCrearParcelaComponent;
   @ViewChild('modalVerAplicador') modalVerAplicador!: ModalCrearAplicadorComponent;
-
   @ViewChild('modalVerTratamiento') modalVerTratamiento!: ModalCrearTratamientoComponent;
   //                Id                  Variabel    N undefined            componente
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
-  constructor(private ordenesService: OrdenesService) {
+  constructor(private ordenesService: OrdenesService, private router: Router) {
     console.log("CrearOrdenComponent inicializado");
   }
 
@@ -125,23 +124,31 @@ abrirModalFecha(){
   }
 }
 
-
 guardarDatos(){
+  console.log('guardar datos');
+  this.datosOrden();
+  this.ventanaTareaCreada();
 
-this.datosOrden();
 }
 
-guardarDatosTarea(){
-  console.log(this.tratamientoSeleccionado);
+
+ventanaTareaCreada(){
+  this.ventanaVisible = true; // Muestra la ventana
+  setTimeout(() => {
+    this.ventanaVisible = false; // La oculta después de 15 segundos
+    this.router.navigate(['/dashboard']);
+  }, 1000);
 }
+
 
 datosOrden(){
  let orden={
   parcela_id:this.parcelaSeleccionada.id || "",
   tarea:this.tareaSeleccionada ||"",
   aplicador_id:this.aplicadoresSeleccionados[0].id || "",
-  // maquina: || "",
-  estado: 'pendiente'
+  estado:'pendiente',
+  id_tratamiento:this.tratamientoSeleccionado.id || "",
+
  }
  console.log('Parcela id: ' + orden.parcela_id)
  console.log('Tarea asunto: ' + orden.tarea)
