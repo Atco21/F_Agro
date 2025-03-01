@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuimicosService } from '../../../_services/quimicos.service';
+import { QuimicosService } from '../../../services/quimico.service';
 
 @Component({
   selector: 'app-pedido',
@@ -36,15 +36,15 @@ export class PedidoComponent {
         id: +id,
         cantidad: this.cantidades[+id]
       }));
-  
+
     if (pedido.length === 0) {
       alert("Debes seleccionar al menos un producto.");
       return;
     }
-  
+
     // Guardar el pedido en localStorage antes de enviarlo
     localStorage.setItem('pedido', JSON.stringify(pedido));
-  
+
     // Enviar el pedido al servidor
     this.quimicosService.hacerPedido(pedido).subscribe({
       next: response => {
@@ -61,6 +61,6 @@ export class PedidoComponent {
       }
     });
   }
-  
+
 
 }

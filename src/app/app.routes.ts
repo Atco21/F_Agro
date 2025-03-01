@@ -22,13 +22,13 @@ import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-i
 import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
 import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
 import { PedidoComponent } from './components/movil/pedido/pedido.component';
-import LoginComponent  from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { JefeGuard } from './guards/guard-jefe.guards';
 import { AplicadorGuard } from './guards/guard-aplicador.guards';
+import  LoginComponent  from './components/login/login.component'
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: LoginComponent },
   { path: 'incidencias', component: IncidenciasComponent },
   { path: 'notificaciones', component: NotificacionesComponent },
   { path: 'calendario', component: CalendarioComponent },

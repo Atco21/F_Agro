@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ParcelaService } from '../../services/parcela.service';
+import { ParcelaService } from '../../../../services/parcela.service';
 import { Parcelas } from '../../../../models/parcelas';
 
 @Component({

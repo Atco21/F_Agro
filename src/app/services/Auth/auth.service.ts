@@ -8,16 +8,18 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private LoginUrl = 'http://127.0.0.1:8000/api/loginAngular';
+  private LoginUrl = 'http://0.0.0.0/api/loginAngular';
   public tokenKey = 'authToken';
   public rolKey= 'rol';
-  
+
   constructor(private httpClient: HttpClient, private router: Router) { }
 
-  login(usuario:string, password: string): Observable<any>{
-    return this.httpClient.post(this.LoginUrl, {usuario, password});
+  login(usuario: string, password: string): Observable<any> {
+    console.log('Enviando credenciales:', { usuario, password });  // Verifica los datos enviados
+    return this.httpClient.post(this.LoginUrl, { usuario, password });
   }
-  
+
+
 
   private setToken(token: string): void{
     localStorage.setItem(this.tokenKey, token);

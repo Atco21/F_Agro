@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import{ OrdenesService } from '../../services/ordenes.service';
+import{ OrdenesService } from '../../../../services/ordenes.service';
 @Component({
   selector: 'app-tareas',
   imports: [CommonModule],

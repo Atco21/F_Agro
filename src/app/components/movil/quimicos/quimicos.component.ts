@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuimicosService } from '../../../services/';
+import { QuimicosService } from '../../../services/quimico.service';
 import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-quimicos',
   templateUrl: './quimicos.component.html',
   styleUrls: ['./quimicos.component.css'],
-  imports: [RouterLink, RouterOutlet]
+  imports: [RouterLink]
 })
 export class QuimicosComponent {
   quimicos: any;  // Lista de químicos

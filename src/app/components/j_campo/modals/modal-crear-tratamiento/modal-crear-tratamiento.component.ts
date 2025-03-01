@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TratamientoService } from '../../services/tratamiento.service';
+import { TratamientoService } from '../../../../services/tratamiento.service';
 
 @Component({
   selector: 'app-modal-crear-tratamiento',

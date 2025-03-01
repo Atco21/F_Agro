@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'; // Necesario para los formularios reactivos
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   imports: [CommonModule, ReactiveFormsModule]
@@ -18,7 +19,7 @@ export default class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
 
-  @Output() loginSuccess = new EventEmitter<void>(); // Evento para notificar al componente padre
+  @Output() loginSuccess = new EventEmitter<void>();
 
   constructor(
     private router: Router,
@@ -32,31 +33,31 @@ export default class LoginComponent {
     });
   }
 
-  // Función para manejar el submit del formulario
   onSubmit(): void {
     if (this.loginForm.invalid) {
-      return; // Si el formulario es inválido, no se envía
+      return;
     }
 
     const { usuario, password } = this.loginForm.value;
 
-    // Llamada al servicio para hacer login
     this.authService.login(usuario, password).subscribe({
       next: (result) => {
-        // Guardar token y rol en localStorage
-        localStorage.setItem('token', result.token);
-        localStorage.setItem('role', result.role);
-        
+        console.log(result)
+        localStorage.setItem('token', result.success.token);
+        localStorage.setItem('rol', result.success.rol);
+
+        console.log(result.success.rol);
+
         // Redirigir según el rol del usuario
-        if (result.role === 'jefe') {
-          this.router.navigate(['/movil/quimicos']); // Redirigir a la página de Jefe
-        } else if (result.role === 'aplicador') {
-          this.router.navigate(['/movil/dashboard']); // Redirigir a la página del Aplicador
+        if (result.success.rol === 'jefe de campo') {
+          this.router.navigate(['/quimicos']);
+        } else if (result.success.rol === 'aplicador') {
+          this.router.navigate(['/dashboard']);
         }
       },
       error: (err) => {
         this.errorMessage = 'Credenciales incorrectas';
-        alert('Credenciales incorrectas');
+        console.log(err)
       }
     });
   }

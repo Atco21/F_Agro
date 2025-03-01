@@ -1,8 +1,7 @@
 import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TrabajadoresService } from '../../services/trabajadores.service';
-import { Aplicador } from '../../../../models/aplicador';
+import { TrabajadoresService } from '../../../../services/trabajadores.service';
 
 @Component({
   selector: 'app-modal-crear-aplicador',
@@ -14,7 +13,7 @@ import { Aplicador } from '../../../../models/aplicador';
 export class ModalCrearAplicadorComponent {
 
   isVisible = false;
-  aplicadores: any = [];  // Asegurar que es un array
+  aplicadores: any = [];
   aplicadoresSeleccionados: any = [];
 
   @ViewChild('modalElement') modalElement!: ElementRef;
@@ -27,7 +26,14 @@ export class ModalCrearAplicadorComponent {
     console.log(this.aplicadores);
   }
 
-
+  revisarAplicadores(aplicador: any) {
+    const index = this.aplicadoresSeleccionados.indexOf(aplicador);
+    if (index === -1) {
+      this.aplicadoresSeleccionados.push(aplicador); // Lo agrega si no está
+    } else {
+      this.aplicadoresSeleccionados.splice(index, 1); // Lo quita si ya está
+    }
+  }
 
 
   abrirModal() {
