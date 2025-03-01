@@ -12,6 +12,8 @@ export class TratamientoService {
   }
 
 
+
+
   // private tratamientos = [
   //   { id: 1, nombre: 'Mosca Blanca' },
   //   { id: 2, nombre: 'Mosca del Mediterraneo' },

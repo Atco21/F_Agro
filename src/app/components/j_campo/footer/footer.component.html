@@ -11,7 +11,7 @@
     </div>
   </div>
 
- <!-- Orden Menu -->
+
   <div id="menuD" [hidden]="!isOrdenMenuVisible">
     <div>
       <button class="close-btn" (click)="closeOrdenMenu()">X</button>
@@ -23,6 +23,11 @@
     </div>
   </div>
 
+  <h3 routerLink="/ordenes/en-curso" style="cursor: pointer;">En curso</h3>
+      <h3 routerLink="/ordenes/pendientes" style="cursor: pointer;">Pendientes</h3>
+      <h3 routerLink="/ordenes/pausadas" style="cursor: pointer;">Pausadas</h3>
+    </div>
+  </div>
 
   <!-- Footer Fijo -->
   <div id="fixed-footer">
@@ -46,16 +51,13 @@
       <div type="button" class="btn" (click)="IncidenciaMenu()">
         <img src="Incidencia.svg" alt="incidencia" />
       </div>
-      <app-modal-incidencia></app-modal-incidencia>
     </div>
 
     <!-- Botón Orden -->
     <div class="orden">
-      <div type="buton" class="btn" (click)="OrdenMenu()">
-      <!-- <a routerLink="/orden"> -->
-        <img src="tareas.svg" alt="orden" />
+      <div type="button" class="btn" (click)="OrdenMenu()">
+        <img src="tareas.svg" alt="ordenes" />
       </div>
-      <app-modal-incidencia></app-modal-incidencia>
     </div>
 
     <!-- Botón Menú -->

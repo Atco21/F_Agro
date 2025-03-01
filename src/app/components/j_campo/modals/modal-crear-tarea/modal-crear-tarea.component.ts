@@ -18,7 +18,6 @@ export class ModalCrearTareaComponent {
 
 
 
-
   constructor(private rendered: Renderer2) {
 
   }
@@ -51,6 +50,8 @@ export class ModalCrearTareaComponent {
   }
 
   
+
+
 
 
 
