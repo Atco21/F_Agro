@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuimicosService } from '../../../_services/quimicos.service';
+import { QuimicosService } from '../../../services/';
 import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 
