@@ -12,9 +12,6 @@ export class DashboardComponent {
 
  @ViewChild('incidenciaModal') incidenciaModal: ElementRef | undefined;
 
-  ngAfterViewInit(): void {
-    // Aquí se asegura de que el modal esté completamente disponible después de la inicialización
-  }
 
   abrirModalIncidencia(): void {
     if (this.incidenciaModal) {

@@ -43,8 +43,6 @@ export class ModalCrearFechaComponent {
   //Guardar cambios y emitir el tratamiento seleccionado
   guardarCambiosFecha() {
     if (this.fechaSeleccionada && this.horaSeleccionada) {
-      console.log('Fecha seleccionada:', this.fechaSeleccionada);
-      console.log('Hora seleccionada:', this.horaSeleccionada);
       this.fechaGuardada.emit({
         fecha: this.fechaSeleccionada,
         hora: this.horaSeleccionada

@@ -2,11 +2,11 @@
 
 export interface Aplicador  {
 
-  dni: string;
+  id: number;
   nombre: string;
   email: string;
   telefono: number;
-  nivelAcceso: number;
+
 
 }
 

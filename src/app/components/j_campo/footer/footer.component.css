@@ -23,6 +23,17 @@
   padding: 15px;
   border: 2px solid #004d40;
 }
+#menuD{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  border: 2px solid #004d40;
+}
 
 /* Estilos para el contenedor */
 .incidencia-content {
@@ -40,7 +51,7 @@
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  color: #333; 
+  color: #333;
 }
 
 /* Título "Incidencias" */

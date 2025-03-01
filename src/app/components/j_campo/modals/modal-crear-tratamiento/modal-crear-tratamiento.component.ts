@@ -48,5 +48,7 @@ export class ModalCrearTratamientoComponent {
     this.tratamientoGuardado.emit(this.tratamientoSeleccionado);
     this.cerrarModal();
   }
+
+
   }
 

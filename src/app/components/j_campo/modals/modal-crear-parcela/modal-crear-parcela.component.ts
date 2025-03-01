@@ -24,6 +24,7 @@ export class ModalCrearParcelaComponent {
   constructor(private rendered: Renderer2 ,private parcelaService: ParcelaService) {
     this.parcelaService.getParcelasAll()
       .subscribe(result => this.parcelas = result)
+
   }
 
 
@@ -47,7 +48,6 @@ export class ModalCrearParcelaComponent {
   guardarCambios() {
     console.log('Emitiendo:', this.parcelaSeleecionada);  // Verifica el objeto completo
     this.parcelaGuardada.emit(this.parcelaSeleecionada);
-
     this.cerrarModal();
   }
   }

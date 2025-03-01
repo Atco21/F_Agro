@@ -46,7 +46,11 @@ export class ModalCrearTareaComponent {
     this.tareaGuardada.emit(this.tareaSeleccionada);
     this.cerrarModal();
   }
+
+
   }
+
+  
 
 
 
