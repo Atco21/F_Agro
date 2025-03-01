@@ -1,0 +1,38 @@
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #01533E;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.text-brown {
+  color: #6D3B14; /* Color marrón similar al de la captura */
+}
+
+.btn-brown {
+  background-color: #6D3B14;
+  color: white;
+}
+
+.btn-brown:hover {
+  background-color: #5A2F10;
+}
+
+
+span {
+  font-size: 20px;
+  min-width: 40px;
+  text-align: center;
+}

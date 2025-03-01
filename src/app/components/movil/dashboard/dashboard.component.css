@@ -1,0 +1,45 @@
+* {
+  text-align: center;
+
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: absolute;
+}
+
+.div1 {
+  margin: 10px;
+}
+
+.central {
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+td {
+  padding: 2px;
+}
+
+table {
+  width: 100%;
+}
+
+.div2 {
+  border: 1px solid rgb(207, 207, 207);
+  box-sizing: border-box;
+  position: absolute;
+  width: 95%;
+  height: 83%;
+}
+
+.solucionado {
+  background-color: rgb(207, 207, 207);
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: rgb(207, 207, 207);
+}
