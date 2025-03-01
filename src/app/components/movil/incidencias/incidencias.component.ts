@@ -3,7 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-incidencias',
-  imports: [RouterLink, RouterOutlet ],
+  imports: [],
   templateUrl: './incidencias.component.html',
   styleUrl: './incidencias.component.css'
 })

@@ -10,9 +10,7 @@ export class JefeGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(): boolean {
     const rol = this.authService.getRol();
     if (rol === 'jefe') {
       return true; // El usuario tiene el rol de jefe, puede acceder

@@ -11,12 +11,10 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean {
     const role = localStorage.getItem('role');
 
-    if (role === 'jefe de campo') {
-      this.router.navigate(['/movil/dashboard-jefe']);
-      return false; // Evita que acceda a rutas que no le corresponden
-    } else if (role === 'aplicador') {
-      this.router.navigate(['/movil/dashboard-aplicador']);
-      return false; 
+    if (role == 'jefe de campo') {
+      return true; // Evita que acceda a rutas que no le corresponden
+    } else if (role == 'aplicador') {
+      return true; 
     } else {
       this.router.navigate(['/login']);
       return false;

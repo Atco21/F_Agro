@@ -10,9 +10,7 @@ export class AplicadorGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(): boolean {
     const rol = this.authService.getRol();
     if (rol === 'aplicador') {
       return true; // El usuario tiene el rol de aplicador, puede acceder
