@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { IncidenciasService } from '../../../services/incidencias.service';
+import { IncidenciasService } from '../../../../../services/incidencias.service';
 
 @Component({
   selector: 'app-tipo-personal',

@@ -50,9 +50,9 @@ export default class LoginComponent {
 
         // Redirigir según el rol del usuario
         if (result.success.rol === 'jefe de campo') {
-          this.router.navigate(['/quimicos']);
-        } else if (result.success.rol === 'aplicador') {
           this.router.navigate(['/dashboard']);
+        } else if (result.success.rol === 'aplicador') {
+          this.router.navigate(['/tareas']);
         }
       },
       error: (err) => {
