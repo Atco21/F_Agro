@@ -1,7 +1,8 @@
-import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TrabajadoresService } from '../../../../services/trabajadores.service';
+import { MaquinaService } from '../../../../services/maquina.service';
+import { Maquina } from '../../../../models/Maquina';
 
 @Component({
   selector: 'app-modal-crear-aplicador',
@@ -10,21 +11,25 @@ import { TrabajadoresService } from '../../../../services/trabajadores.service';
   templateUrl: './modal-crear-maquina.component.html',
   styleUrl: './modal-crear-maquina.component.css'
 })
-export class ModalCrearAplicadorComponent {
+export class ModalCrearAplicadorComponent implements OnInit {
 
   isVisible = false;
-  aplicadores: any = [];
+  maquinas: Maquina[] = [];
   aplicadoresSeleccionados: any = [];
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() aplicadoresGuardados = new EventEmitter<any>();
+  @Output() aplicadoresGuardados = new EventEmitter<Maquina>();
 
-  constructor(private rendered: Renderer2, private trabajadoresService: TrabajadoresService) {
-  this.trabajadoresService.obtenerAplicadores()
-      .subscribe(result => this.aplicadores = result);
+  constructor(private rendered: Renderer2, private maquinaService: MaquinaService){}
 
-    console.log(this.aplicadores);
+
+  ngOnInit(): void {
+    this.maquinaService.getMaquinas().subscribe{
+      
+    }
   }
+
+
 
   revisarAplicadores(aplicador: any) {
     const index = this.aplicadoresSeleccionados.indexOf(aplicador);

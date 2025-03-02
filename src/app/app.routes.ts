@@ -1,6 +1,4 @@
-import { NgModule } from '@angular/core';//Ng sirve paraque funcionen las importaciones de padre a hijo y viceversa
-import { Routes, RouterModule } from '@angular/router';
-
+import { Routes } from '@angular/router';
 import { DashboardComponent } from './components/j_campo/dashboard/dashboard.component';
 import { NotificacionesComponent } from './components/j_campo/notificaciones/notificaciones.component';
 import { CalendarioComponent } from './components/j_campo/calendario/calendario.component';
@@ -27,13 +25,12 @@ import { JefeGuard } from './guards/guard-jefe.guards';
 import { AplicadorGuard } from './guards/guard-aplicador.guards';
 import  LoginComponent  from './components/login/login.component'
 
+
+
 export const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'incidencias', component: IncidenciasComponent },
 
-
-export const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path:'dashboard' , component: DashboardComponent },
 
   {
     path: "incidencias",

@@ -4,9 +4,9 @@ import { ModalCrearTareaComponent } from '../modal-crear-tarea/modal-crear-tarea
 import { ModalCrearFechaComponent } from '../modal-crear-fecha/modal-crear-fecha.component';
 import { CommonModule } from '@angular/common';
 import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
-import { Parcelas } from '../../../../models/Parcela';
+import { Parcela } from '../../../../models/Parcela';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
-import { Aplicador } from '../../../../models/aplicador';
+import { User } from '../../../../models/User';
 import { OrdenesService } from '../../../../services/ordenes.service';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 })
 export class CrearOrdenComponent{
 
-  parcelaSeleccionada: any = null;
+  parcelaSeleccionada: Parcela | any = null;
   tareaSeleccionada: any = null;
   aplicadoresSeleccionados: any[] = [];
   tratamientoSeleccionado: any = null;
@@ -35,7 +35,6 @@ export class CrearOrdenComponent{
   @ViewChild('modalVerParcelas') modalVerParcelas!: ModalCrearParcelaComponent;
   @ViewChild('modalVerAplicador') modalVerAplicador!: ModalCrearAplicadorComponent;
   @ViewChild('modalVerTratamiento') modalVerTratamiento!: ModalCrearTratamientoComponent;
-  //                Id                  Variabel    N undefined            componente
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
 
@@ -46,7 +45,7 @@ export class CrearOrdenComponent{
 
 
 
-recibirParcela(parcela: Parcelas) {
+recibirParcela(parcela: Parcela) {
   console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
   this.parcelaSeleccionada = parcela;
 
@@ -54,7 +53,7 @@ recibirParcela(parcela: Parcelas) {
 }
 
 
-recibirAplicador(aplicador: Aplicador | Aplicador[]) {
+recibirAplicador(aplicador: User | User[]) {
 
   console.log('Recibido en el padre:', aplicador);  // Verifica el objeto recibido
   this.aplicadoresSeleccionados = Array.isArray(aplicador) ? aplicador : [aplicador];

@@ -1,8 +1,8 @@
-import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ParcelaService } from '../../../../services/parcela.service';
-import { Parcelas } from '../../../../models/Parcela';
+import { Parcela } from '../../../../models/Parcela';
 
 @Component({
   selector: 'app-modal-crear-parcela',
@@ -11,20 +11,26 @@ import { Parcelas } from '../../../../models/Parcela';
   templateUrl: './modal-crear-parcela.component.html',
   styleUrls: ['./modal-crear-parcela.component.css']
 })
-export class ModalCrearParcelaComponent {
+export class ModalCrearParcelaComponent implements OnInit {
   isVisible = false; // Controla la visibilidad del modal
-  parcelas: any;
+  parcelas: Parcela[] = [];
   parcelaSeleecionada: any = null;  // Inicializado a null o un objeto vacío
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() parcelaGuardada = new EventEmitter<Parcelas>();  // Emite el tratamiento seleccionado al padre
-
-
+  @Output() parcelaGuardada = new EventEmitter<Parcela>();  // Emite el tratamiento seleccionado al padre
 
   constructor(private rendered: Renderer2 ,private parcelaService: ParcelaService) {
-    this.parcelaService.getParcelasAll()
-      .subscribe(result => this.parcelas = result)
+  }
 
+  ngOnInit(): void {
+    this.parcelaService.getParcelasAll().subscribe(
+      (data) => {
+        this.parcelas = data;
+      },
+      (error) => {
+        console.error('Error al obtener usuarios', error);
+      }
+    );
   }
 
 

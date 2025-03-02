@@ -1,7 +1,9 @@
-import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TrabajadoresService } from '../../../../services/trabajadores.service';
+import { User } from '../../../../models/User';
+
 
 @Component({
   selector: 'app-modal-crear-aplicador',
@@ -10,21 +12,29 @@ import { TrabajadoresService } from '../../../../services/trabajadores.service';
   templateUrl: './modal-crear-aplicador.component.html',
   styleUrl: './modal-crear-aplicador.component.css'
 })
-export class ModalCrearAplicadorComponent {
+export class ModalCrearAplicadorComponent implements OnInit{
 
   isVisible = false;
-  aplicadores: any = [];
+  users: User[] = [];
   aplicadoresSeleccionados: any = [];
 
   @ViewChild('modalElement') modalElement!: ElementRef;
   @Output() aplicadoresGuardados = new EventEmitter<any>();
 
-  constructor(private rendered: Renderer2, private trabajadoresService: TrabajadoresService) {
-  this.trabajadoresService.obtenerAplicadores()
-      .subscribe(result => this.aplicadores = result);
+  constructor(private rendered: Renderer2, private usersService: TrabajadoresService) {}
 
-    console.log(this.aplicadores);
+
+  ngOnInit() {
+    this.usersService.obtenerAplicadores().subscribe(
+      (data) => {
+        this.users = data;
+      },
+      (error) => {
+        console.error('Error al obtener usuarios', error);
+      }
+    );
   }
+
 
   revisarAplicadores(aplicador: any) {
     const index = this.aplicadoresSeleccionados.indexOf(aplicador);
