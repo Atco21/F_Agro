@@ -1,4 +1,25 @@
-<br><br><br><br><br><br>
+<!-- src/app/components/incidencias/incidencias.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Incidencias de Personal</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Orden ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let incidencia of incidenciasPersonal">
+            <td>{{ incidencia.fecha }}</td>
+            <td>{{ incidencia.estado }}</td>
+            <td>{{ incidencia.orden_id }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-
-<p>tipo-personal works!</p>
