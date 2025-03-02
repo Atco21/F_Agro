@@ -147,13 +147,9 @@ datosOrden(){
   tarea:this.tareaSeleccionada ||"",
   aplicador_id:this.aplicadoresSeleccionados[0].id || "",
   estado:'pendiente',
+  // maquina: || "",
   id_tratamiento:this.tratamientoSeleccionado.id || "",
-
  }
- console.log('Parcela id: ' + orden.parcela_id)
- console.log('Tarea asunto: ' + orden.tarea)
- console.log(orden.aplicador_id);
-
  this.ordenesService.enviarOrden(orden).subscribe({
   next: (response) => {
     console.log('Orden enviada correctamente:', response);
