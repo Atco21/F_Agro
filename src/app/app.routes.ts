@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';//Ng sirve paraque funcionen las importaciones de padre a hijo y viceversa
-import { Routes,RouterModule } from '@angular/router';
+import { Routes} from '@angular/router';
 import { DashboardComponent } from './components/j_campo/dashboard/dashboard.component';
 import { NotificacionesComponent } from './components/j_campo/notificaciones/notificaciones.component';
 import { CalendarioComponent } from './components/j_campo/calendario/calendario.component';
@@ -7,7 +6,7 @@ import { IncidenciasComponent } from './components/j_campo/incidencias/incidenci
 import { MenuComponent } from './components/j_campo/menu/menu.component';
 import { ModalCrearParcelaComponent } from './components/j_campo/modals/modal-crear-parcela/modal-crear-parcela.component';
 import { ModalCrearTratamientoComponent } from './components/j_campo/modals/modal-crear-tratamiento/modal-crear-tratamiento.component';
-import {ModalCrearTareaComponent} from './components/j_campo/modals/modal-crear-tarea/modal-crear-tarea.component';
+import { ModalCrearTareaComponent} from './components/j_campo/modals/modal-crear-tarea/modal-crear-tarea.component';
 import { CrearOrdenComponent} from './components/j_campo/modals/crear orden/crear-orden.component';
 import { TipoPersonalComponent } from './components/j_campo/incidencias/tipos/tipo-personal/tipo-personal.component';
 import { TipoMaquinaComponent } from './components/j_campo/incidencias/tipos/tipo-maquina/tipo-maquina.component';
@@ -16,6 +15,8 @@ import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/or
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
 import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
+
+
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'incidencias', component: IncidenciasComponent },
