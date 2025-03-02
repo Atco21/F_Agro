@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef, Renderer2, EventEmitter, Output } fro
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ParcelaService } from '../../../../services/parcela.service';
-import { Parcelas } from '../../../../models/parcelas';
+import { Parcelas } from '../../../../models/Parcela';
 
 @Component({
   selector: 'app-modal-crear-parcela',

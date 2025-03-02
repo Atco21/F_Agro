@@ -4,11 +4,10 @@
       <div class="col-12 mb-3">
         <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
           <div class="card-body parcelas">
-            <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
+            <div class="card-title d-flex">
               <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-              <p>Parcela: {{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</p>
-            </h3>
+              <h3>Parcela: {{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</h3>
+            </div>
             <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
           </div>
         </div>
@@ -16,12 +15,12 @@
       <div class="col-12 mb-3">
         <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;"> <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
           <div class="card-body tareas">
-            <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
+            <div class="card-title d-flex">
               <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
-              <p>Tarea: {{ tareaSeleccionada || 'No seleccionada' }}</p>
-            </h3>
-          <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
+              <h3>Tarea: {{ tareaSeleccionada || 'No seleccionada' }}</h3>
+
+            </div>
+            <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
           </div>
         </div>
       </div>
@@ -29,7 +28,6 @@
         <div class="card shadow" (click)="abrirModalAplicador()" style="cursor: pointer;">
           <div class="card-body aplicadores">
             <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
               <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
               Aplicador
             </h3>
@@ -48,23 +46,20 @@
       <div class="col-12 mb-3">
         <div class="card shadow" routerLink="/modal-crear-maquina" style="cursor: pointer;">
           <div class="card-body">
-            <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
+            <div class="card-title d-flex">
               <img src="/Maquina-Icon.svg" alt="Maquina Icon" class="img-fluid me-2" />
-              Máquina
-            </h3>
-            <!-- <p>{{ maquinaNombre }}</p> -->
+              <h3>Máquina: {{ tareaSeleccionada || 'No seleccionada' }}</h3>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-12 mb-3">
           <div class="card shadow" (click)="abrirModalTratamiento()"  style="cursor: pointer;">   <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
-          <div class="card-body">
-            <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
+          <div class="card-body ">
+            <div class="card-title d-flex">
               <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
-              <p>Tratamiento: {{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</p>
-            </h3>
+              <h3>Tratamiento: {{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</h3>
+            </div>
               <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
                   Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
                   Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
@@ -74,9 +69,8 @@
       </div>
       <div class="col-12 mb-3">
         <div class="card shadow" (click)="abrirModalFecha() " style="cursor: pointer;">
-          <div class="card-body">
+          <div class="card-body fecha">
             <h3 class="card-title">
-              <i class="bi bi-geo-alt"></i>
               <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
               Fecha
             </h3>

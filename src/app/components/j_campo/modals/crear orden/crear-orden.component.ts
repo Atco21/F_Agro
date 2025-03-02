@@ -4,7 +4,7 @@ import { ModalCrearTareaComponent } from '../modal-crear-tarea/modal-crear-tarea
 import { ModalCrearFechaComponent } from '../modal-crear-fecha/modal-crear-fecha.component';
 import { CommonModule } from '@angular/common';
 import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
-import { Parcelas } from '../../../../models/parcelas';
+import { Parcelas } from '../../../../models/Parcela';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
 import { Aplicador } from '../../../../models/aplicador';
 import { OrdenesService } from '../../../../services/ordenes.service';

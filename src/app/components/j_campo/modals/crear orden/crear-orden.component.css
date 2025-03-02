@@ -41,8 +41,12 @@ body {
 }
 .card-body{
 
-  max-height: 110px;
+  max-height: 80px;
 
+}
+
+.fecha{
+  max-height: 120px !important;
 }
 
 .aplicadores{

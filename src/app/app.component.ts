@@ -13,8 +13,6 @@ import { FormsModule } from '@angular/forms';
     RouterOutlet,
     HeaderComponent,
     FormsModule,
-
-
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
