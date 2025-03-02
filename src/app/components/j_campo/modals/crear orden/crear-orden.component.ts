@@ -7,7 +7,7 @@ import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-p
 import { Parcelas } from '../../../../models/parcelas';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
 import { Aplicador } from '../../../../models/aplicador';
-import { OrdenesService } from '../../services/ordenes.service';
+import { OrdenesService } from '../../../../services/ordenes.service';
 import { Router } from '@angular/router';
 
 

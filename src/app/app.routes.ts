@@ -1,4 +1,6 @@
-import { Routes} from '@angular/router';
+import { NgModule } from '@angular/core';//Ng sirve paraque funcionen las importaciones de padre a hijo y viceversa
+import { Routes, RouterModule } from '@angular/router';
+
 import { DashboardComponent } from './components/j_campo/dashboard/dashboard.component';
 import { NotificacionesComponent } from './components/j_campo/notificaciones/notificaciones.component';
 import { CalendarioComponent } from './components/j_campo/calendario/calendario.component';
@@ -14,6 +16,20 @@ import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/or
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
 import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
+import { OrdenNoFinalizadaComponent } from './components/movil/orden/orden-no-finalizada/orden-no-finalizada.component';
+import { OrdenFinalizadaComponent } from './components/movil/orden/orden-finalizada/orden-finalizada.component';
+import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
+import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
+import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
+import { PedidoComponent } from './components/movil/pedido/pedido.component';
+import { AuthGuard } from './guards/auth.guard';
+import { JefeGuard } from './guards/guard-jefe.guards';
+import { AplicadorGuard } from './guards/guard-aplicador.guards';
+import  LoginComponent  from './components/login/login.component'
+
+export const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'incidencias', component: IncidenciasComponent },
 
 
 export const routes: Routes = [

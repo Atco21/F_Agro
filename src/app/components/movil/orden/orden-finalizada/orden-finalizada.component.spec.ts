@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PcComponent } from './pc.component';
+import { OrdenFinalizadaComponent } from './orden-finalizada.component';
 
-describe('PcComponent', () => {
-  let component: PcComponent;
-  let fixture: ComponentFixture<PcComponent>;
+describe('OrdenFinalizadaComponent', () => {
+  let component: OrdenFinalizadaComponent;
+  let fixture: ComponentFixture<OrdenFinalizadaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PcComponent]
+      imports: [OrdenFinalizadaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PcComponent);
+    fixture = TestBed.createComponent(OrdenFinalizadaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
