@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
   isOrdenMenuVisible: boolean = false;
+  isCuentaMenuVisible: boolean = false;
 
 
 
@@ -35,6 +36,15 @@ export class FooterComponent {
   closeOrdenMenu(){
     this.isOrdenMenuVisible = false;
   }
+
+  Menu(){
+    this.isCuentaMenuVisible  = false;
+    this.isCuentaMenuVisible = !this.isCuentaMenuVisible;
+  }
+  closeCuentaMenu() {
+    this.isCuentaMenuVisible = false;
+  }
+
 
 
   constructor(private router: Router) {}

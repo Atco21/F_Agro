@@ -2,7 +2,6 @@ import { Routes} from '@angular/router';
 import { DashboardComponent } from './components/j_campo/dashboard/dashboard.component';
 import { NotificacionesComponent } from './components/j_campo/notificaciones/notificaciones.component';
 import { CalendarioComponent } from './components/j_campo/calendario/calendario.component';
-import { IncidenciasComponent } from './components/j_campo/incidencias/incidencias.component';
 import { MenuComponent } from './components/j_campo/menu/menu.component';
 import { ModalCrearParcelaComponent } from './components/j_campo/modals/modal-crear-parcela/modal-crear-parcela.component';
 import { ModalCrearTratamientoComponent } from './components/j_campo/modals/modal-crear-tratamiento/modal-crear-tratamiento.component';
@@ -14,7 +13,6 @@ import { TipoStockComponent } from './components/j_campo/incidencias/tipos/tipo-
 import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/orden-en-curso.component';
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
-import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
 
 
 export const routes: Routes = [
@@ -36,7 +34,7 @@ export const routes: Routes = [
       {path: "orden-pendientes", component: OrdenPendientesComponent}
     ]
   },
-  
+
   { path: 'notificaciones', component: NotificacionesComponent },
   { path: 'calendario', component: CalendarioComponent },
   { path: 'menu', component: MenuComponent },

@@ -1,4 +1,23 @@
-<br><br><br><br><br><br>
-
-
-<p>tipo-personal works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Incidencias Personal</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Aplicador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let incidencia of incidenciasPersonal">
+            <td>{{ incidencia.fecha }}</td>
+            <td>{{ incidencia.estado }}</td>
+            <td>{{ incidencia.user_id }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

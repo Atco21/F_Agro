@@ -20,8 +20,8 @@ export class IncidenciasService {
     return this.http.get('http://localhost:80/api/incidenciasMaquina');
   }
   // Método para obtener incidencias de tipo tratamiento
-  getIncidenciasTratamiento() {
-    return this.http.get('http://localhost:80/api/ordenesStrock');
+  getIncidenciasStock() {
+    return this.http.get('http://localhost:80/api/incidenciasStock');
   }
 
 
