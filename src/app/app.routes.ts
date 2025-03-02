@@ -26,14 +26,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { JefeGuard } from './guards/guard-jefe.guards';
 import { AplicadorGuard } from './guards/guard-aplicador.guards';
 import  LoginComponent  from './components/login/login.component'
+import { IncidenciasComponent } from './components/j_campo/incidencias/incidencias.component';
+
+
 
 export const routes: Routes = [
+
   { path: '', component: LoginComponent },
   { path: 'incidencias', component: IncidenciasComponent },
-
-
-export const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
   {
     path: "incidencias",
@@ -52,14 +53,20 @@ export const routes: Routes = [
       {path: "orden-terminadas", component: OrdenTerminadasComponent}
     ]
   },
+  {
+    path: "modal-crear",
+    children: [
+    {path:'modal-crear-parcela', component: ModalCrearParcelaComponent},
+    {path:'modal-crear-tratamiento', component: ModalCrearTratamientoComponent},
+    {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
+    ]
+  },
 
   { path: 'notificaciones', component: NotificacionesComponent },
   { path: 'calendario', component: CalendarioComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'crear orden', component: CrearOrdenComponent }, // routa de home crear tarea
-  {path:'modal-crear-parcela', component: ModalCrearParcelaComponent},
-  {path:'modal-crear-tratamiento', component: ModalCrearTratamientoComponent},
-  {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
+
   {path:'dashboard', component: DashboardComponent},
   {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
   {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
