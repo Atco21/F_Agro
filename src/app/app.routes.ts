@@ -19,7 +19,24 @@ import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-termi
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'incidencias', component: IncidenciasComponent },
+
+  {
+    path: "incidencias",
+    children: [
+      { path: "tipo-personal", component: TipoPersonalComponent }, // Tabla incidencias tipo personal
+      { path: "tipo-maquina", component: TipoMaquinaComponent },   // Incidencias tipo máquina
+      { path: "tipo-stock", component: TipoStockComponent }        // Incidencias tipo stock
+    ]
+  },
+  {
+    path: "orden",
+    children: [
+      {path: "orden-curso", component: OrdenEnCursoComponent},
+      {path: "orden-pausadas", component: OrdenPausadasComponent},
+      {path: "orden-pendientes", component: OrdenPendientesComponent}
+    ]
+  },
+  
   { path: 'notificaciones', component: NotificacionesComponent },
   { path: 'calendario', component: CalendarioComponent },
   { path: 'menu', component: MenuComponent },
@@ -29,13 +46,8 @@ export const routes: Routes = [
   {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
-  {path:"incidencias/tipo-personal", component:TipoPersonalComponent},//tabla incidencias tipo personal
-  {path:"incidencias/tipo-maquina", component:TipoMaquinaComponent},//incedncias tipo maquina
-  {path:"incidencias/tipo-stock",component:TipoStockComponent}, //incidencias tipo stock
   {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
-  {path:"orden/orden-pausadas",component:OrdenPausadasComponent},
-  {path:"orden/orden-pendientes",component:OrdenPendientesComponent},
-  {path:"orden/orden-terminadas",component:OrdenTerminadasComponent},
+
 
 
 ];
