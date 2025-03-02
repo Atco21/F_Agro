@@ -32,7 +32,8 @@ export const routes: Routes = [
     children: [
       {path: "orden-curso", component: OrdenEnCursoComponent},
       {path: "orden-pausadas", component: OrdenPausadasComponent},
-      {path: "orden-pendientes", component: OrdenPendientesComponent}
+      {path: "orden-pendientes", component: OrdenPendientesComponent},
+      {path: "orden-terminadas", component: OrdenTerminadasComponent}
     ]
   },
 
