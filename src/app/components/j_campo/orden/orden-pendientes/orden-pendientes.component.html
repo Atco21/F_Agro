@@ -11,12 +11,22 @@
           </tr>
         </thead>
         <tbody >
-          <tr *ngFor="let ordenCurso of ordenesPendientes">
+          @for(ordenCurso of ordenesPendientes; track ordenCurso.id){
+          <tr>
             <td>{{ ordenCurso.parcela.nombre }}</td>
             <td>{{ ordenCurso.tarea }}
             <td>{{ ordenCurso.fecha_inicio }}</td>
           </tr>
+        }
         </tbody>
       </table>
     </div>
   </div>
+
+
+  <div class="modal fade">
+
+
+
+  </div>
+
