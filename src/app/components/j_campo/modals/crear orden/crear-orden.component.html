@@ -33,12 +33,16 @@
             </h3>
             <app-modal-crear-aplicador #modalVerAplicador (aplicadoresGuardados)="recibirAplicador($event)"></app-modal-crear-aplicador>
             <div class="ps-5">
-              <div *ngIf="aplicadoresSeleccionados.length > 0">
-                <p *ngFor="let aplicador of aplicadoresSeleccionados">
-                  {{ aplicador.nombre}}
-                </p>
+              @if(aplicadoresSeleccionados.length > 0){
+                @for (aplicador of aplicadoresSeleccionados; track aplicador.id){
+
+                  {{ aplicador.nombre }}
+                }
+              } @else{
+                <p>No seleccionado</p>
+              }
               </div>
-              <p *ngIf="aplicadoresSeleccionados.length === 0">No seleccionado</p>
+
             </div>
           </div>
         </div>
