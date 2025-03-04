@@ -29,8 +29,11 @@ import  LoginComponent  from './components/login/login.component'
 
 export const routes: Routes = [
 
-  { path: '', component: LoginComponent },
+
+
+  { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+
   {
     path: "incidencias",
     children: [
@@ -63,7 +66,7 @@ export const routes: Routes = [
   {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
 
 
-
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 

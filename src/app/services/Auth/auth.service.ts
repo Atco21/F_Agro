@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private LoginUrl = 'http://0.0.0.0/api/loginAngular';
+  private LoginUrl = 'http://127.0.0.1:8000/api/loginAngular';
   public tokenKey = 'authToken';
   public rolKey= 'rol';
 

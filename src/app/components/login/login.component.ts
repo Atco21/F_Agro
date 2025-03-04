@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -33,9 +32,12 @@ export default class LoginComponent {
     });
   }
 
+  // Verificar si el campo está invalidado
+  get f() { return this.loginForm.controls; }
+
   onSubmit(): void {
     if (this.loginForm.invalid) {
-      return;
+      return; // Si el formulario es inválido, no continúa
     }
 
     const { usuario, password } = this.loginForm.value;
@@ -46,13 +48,12 @@ export default class LoginComponent {
         localStorage.setItem('token', result.success.token);
         localStorage.setItem('rol', result.success.rol);
 
-        console.log(result.success.rol);
 
         // Redirigir según el rol del usuario
         if (result.success.rol === 'jefe de campo') {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['dashboard']);
         } else if (result.success.rol === 'aplicador') {
-          this.router.navigate(['/tareas']);
+          this.router.navigate(['tareas']);
         }
       },
       error: (err) => {
@@ -60,5 +61,7 @@ export default class LoginComponent {
         console.log(err)
       }
     });
+    this.loginSuccess.emit();
+
   }
 }
