@@ -30,7 +30,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = event.url === '/' || event.url === '/'; // Verifica la URL
+        this.isLoginPage = event.url === '/login'; // Verifica la URL
       }
     });
   }
