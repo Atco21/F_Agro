@@ -29,7 +29,7 @@ import  LoginComponent  from './components/login/login.component'
 
 export const routes: Routes = [
 
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   {
     path: "incidencias",
@@ -39,6 +39,8 @@ export const routes: Routes = [
       { path: "tipo-stock", component: TipoStockComponent }        // Incidencias tipo stock
     ]
   },
+
+
   {
     path: "orden",
     children: [
