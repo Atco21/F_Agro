@@ -1,20 +1,25 @@
-import { Component, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import { ModalCrearTratamientoComponent } from '../modal-crear-tratamiento/modal-crear-tratamiento.component';
 import { ModalCrearTareaComponent } from '../modal-crear-tarea/modal-crear-tarea.component';
 import { ModalCrearFechaComponent } from '../modal-crear-fecha/modal-crear-fecha.component';
-import { CommonModule } from '@angular/common';
-import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
-import { Parcelas } from '../../../../models/parcelas';
 import { ModalCrearAplicadorComponent } from "../modal-crear-aplicador/modal-crear-aplicador.component";
-import { Aplicador } from '../../../../models/aplicador';
+import { ModalCrearParcelaComponent } from "../modal-crear-parcela/modal-crear-parcela.component";
+import { ModalCrearMaquinaComponent } from "../modal-crear-maquina/modal-crear-maquina.component";
+
+import { Parcela } from '../../../../models/Parcela';
+import { User } from '../../../../models/User';
+import { Maquina } from '../../../../models/Maquina';
+
 import { OrdenesService } from '../../../../services/ordenes.service';
-import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-crear-orden',
   standalone: true,
-  imports: [CommonModule, ModalCrearTratamientoComponent, ModalCrearTareaComponent, ModalCrearFechaComponent, ModalCrearParcelaComponent, ModalCrearAplicadorComponent], //Importamos el modal
+  imports: [CommonModule, ModalCrearTratamientoComponent, ModalCrearTareaComponent, ModalCrearFechaComponent, ModalCrearParcelaComponent, ModalCrearAplicadorComponent, ModalCrearMaquinaComponent], //Importamos el modal
   templateUrl: './crear-orden.component.html',
   styleUrls: ['./crear-orden.component.css']
 })
@@ -23,6 +28,7 @@ export class CrearOrdenComponent{
   parcelaSeleccionada: any = null;
   tareaSeleccionada: any = null;
   aplicadoresSeleccionados: any[] = [];
+  maquinaSeleccionada: any = null;
   tratamientoSeleccionado: any = null;
   fechaSeleccionada:string="";
   horaSeleccionada:string="";
@@ -34,10 +40,11 @@ export class CrearOrdenComponent{
   // @ViewChild(ModalCrearTratamientoComponent) modalVerTarea!: ModalCrearTratamientoComponent;//  esto ! Angular se encargará de inicializar la variable más tarde, es decir, sabemos que la referencia existirá en tiempo de ejecución
   @ViewChild('modalVerParcelas') modalVerParcelas!: ModalCrearParcelaComponent;
   @ViewChild('modalVerAplicador') modalVerAplicador!: ModalCrearAplicadorComponent;
+  @ViewChild('modalVerMaquina') modalVerMaquina!: ModalCrearMaquinaComponent;
   @ViewChild('modalVerTratamiento') modalVerTratamiento!: ModalCrearTratamientoComponent;
-  //                Id                  Variabel    N undefined            componente
   @ViewChild('modalVerTarea') modalVerTarea!: ModalCrearTareaComponent;
   @ViewChild('modalVerFecha') modalVerFecha!: ModalCrearFechaComponent;
+
 
   constructor(private ordenesService: OrdenesService, private router: Router) {
     console.log("CrearOrdenComponent inicializado");
@@ -46,7 +53,7 @@ export class CrearOrdenComponent{
 
 
 
-recibirParcela(parcela: Parcelas) {
+recibirParcela(parcela: Parcela) {
   console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
   this.parcelaSeleccionada = parcela;
 
@@ -54,7 +61,7 @@ recibirParcela(parcela: Parcelas) {
 }
 
 
-recibirAplicador(aplicador: Aplicador | Aplicador[]) {
+recibirAplicador(aplicador: User | User[]) {
 
   console.log('Recibido en el padre:', aplicador);  // Verifica el objeto recibido
   this.aplicadoresSeleccionados = Array.isArray(aplicador) ? aplicador : [aplicador];
@@ -63,14 +70,19 @@ recibirAplicador(aplicador: Aplicador | Aplicador[]) {
   console.log(this.aplicadoresSeleccionados)
 }
 
+recibirMaquina(maquina: any){
+  console.log('Recibido en el padre:', maquina);
+  this.maquinaSeleccionada = maquina;
+}
+
 
 //recibe el tratamiento del hijo y lo almacena
 recibirTratamiento(tratamiento: any) {
-  console.log('Recibido en el padre:', tratamiento);  // Verifica el objeto recibido
+  console.log('Recibido en el padre:', tratamiento);
   this.tratamientoSeleccionado = tratamiento;
 }
 recibirTarea(tarea: any) {
-  console.log('Recibido en el padre:', tarea);  // Verifica el objeto recibido
+  console.log('Recibido en el padre:', tarea);
   this.tareaSeleccionada = tarea;
 }
 
@@ -95,6 +107,16 @@ abrirModalAplicador() {
 abrirModalParcela() {
   if (this.modalVerParcelas) {
     this.modalVerParcelas.abrirModal();
+  } else {
+    console.error('modalVerParcelas no está inicializado aún');
+  }
+}
+
+
+
+abrirModalMaquina() {
+  if (this.modalVerMaquina) {
+    this.modalVerMaquina.abrirModal();
   } else {
     console.error('modalVerParcelas no está inicializado aún');
   }
