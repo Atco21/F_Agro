@@ -5,38 +5,44 @@ import { MaquinaService } from '../../../../services/maquina.service';
 import { Maquina } from '../../../../models/Maquina';
 
 @Component({
-  selector: 'app-modal-crear-aplicador',
+  selector: 'app-modal-crear-maquina',
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './modal-crear-maquina.component.html',
   styleUrl: './modal-crear-maquina.component.css'
 })
-export class ModalCrearAplicadorComponent implements OnInit {
+export class ModalCrearMaquinaComponent implements OnInit {
 
   isVisible = false;
   maquinas: Maquina[] = [];
-  aplicadoresSeleccionados: any = [];
+  maquinaSeleccionada: any = null;
 
   @ViewChild('modalElement') modalElement!: ElementRef;
-  @Output() aplicadoresGuardados = new EventEmitter<Maquina>();
+  @Output() maquinaGuardada = new EventEmitter<Maquina>();
 
   constructor(private rendered: Renderer2, private maquinaService: MaquinaService){}
 
 
   ngOnInit(): void {
-    this.maquinaService.getMaquinas().subscribe{
-      
-    }
+    this.maquinaService.getMaquinas().subscribe(
+      (data) => {
+        this.maquinas = data;
+      },
+      (error) => {
+        console.error('Error al obtener maquinas', error);
+      }
+    );
   }
 
 
 
-  revisarAplicadores(aplicador: any) {
-    const index = this.aplicadoresSeleccionados.indexOf(aplicador);
-    if (index === -1) {
-      this.aplicadoresSeleccionados.push(aplicador); // Lo agrega si no está
+  seleccionarMaquina(maquina: any) {
+    // Si la máquina ya está seleccionada, la deseleccionamos
+    if (this.maquinaSeleccionada === maquina) {
+      this.maquinaSeleccionada = null;
     } else {
-      this.aplicadoresSeleccionados.splice(index, 1); // Lo quita si ya está
+      // Si no, seleccionamos la nueva y desmarcamos la anterior
+      this.maquinaSeleccionada = maquina;
     }
   }
 
@@ -56,8 +62,8 @@ export class ModalCrearAplicadorComponent implements OnInit {
   }
 
   guardarCambios() {
-    console.log('Emitiendo:', this.aplicadoresSeleccionados);
-    this.aplicadoresGuardados.emit(this.aplicadoresSeleccionados);
+    console.log('Emitiendo:', this.maquinaSeleccionada);
+    this.maquinaGuardada.emit(this.maquinaSeleccionada);
     this.cerrarModal();
   }
 }

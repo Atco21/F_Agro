@@ -1,0 +1,67 @@
+.btn {
+  background-color: #532301;
+  text-align: center;
+  color: white;
+}
+
+label{
+  font-size: 18px;
+  padding-left: 2em;
+  color: #01533E;
+
+}
+
+
+h1{
+
+color: #01533E;
+
+
+}
+
+input[type="checkbox"] {
+  appearance: none !important;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+  margin: 1.13em;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  font-weight: 700;
+  width: 21px;
+  height: 16px;
+  background-color: #01533E;
+  -webkit-mask-image: url('data:image/svg+xml,<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.00044 11.9825L18.1162 0.865764L18.1162 0.865751C18.3507 0.63125 18.6688 0.499512 19.0004 0.499512C19.332 0.499512 19.6501 0.63125 19.8846 0.865751C20.1191 1.10025 20.2508 1.4183 20.2508 1.74993C20.2508 2.08156 20.1191 2.39961 19.8846 2.63411L7.88479 14.6339L7.8846 14.6341L7.00044 11.9825ZM7.00044 11.9825L2.63463 7.61578L2.6346 7.61575C2.4001 7.38125 2.08205 7.24951 1.75042 7.24951C1.41879 7.24951 1.10074 7.38125 0.866239 7.61575C0.63174 7.85025 0.5 8.1683 0.5 8.49993C0.5 8.83156 0.63174 9.14961 0.866239 9.38411L6.11604 14.6339L6.11624 14.6341L6.46979 14.2806L7.00044 11.9825Z" fill="%2301533E" stroke="%2301533E"/></svg>');
+  mask-image: url('data:image/svg+xml,<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.00044 11.9825L18.1162 0.865764L18.1162 0.865751C18.3507 0.63125 18.6688 0.499512 19.0004 0.499512C19.332 0.499512 19.6501 0.63125 19.8846 0.865751C20.1191 1.10025 20.2508 1.4183 20.2508 1.74993C20.2508 2.08156 20.1191 2.39961 19.8846 2.63411L7.88479 14.6339L7.8846 14.6341L7.00044 11.9825ZM7.00044 11.9825L2.63463 7.61578L2.6346 7.61575C2.4001 7.38125 2.08205 7.24951 1.75042 7.24951C1.41879 7.24951 1.10074 7.38125 0.866239 7.61575C0.63174 7.85025 0.5 8.1683 0.5 8.49993C0.5 8.83156 0.63174 9.14961 0.866239 9.38411L6.11604 14.6339L6.11624 14.6341L6.46979 14.2806L7.00044 11.9825Z" fill="%2301533E" stroke="%2301533E"/></svg>');
+}
+
+label:has(input[type="checkbox"]:checked) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#textoBusqueda{
+
+  height: 50px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+#cuadro{
+
+  height: 50vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+.imagen-circular {
+  width: 60px !important;
+  height: 60px !important;   /* Tamaño de la imagen */
+  object-fit: cover !important;  /* Asegura que la imagen cubra todo el espacio sin deformarse */
+  border-radius: 50% !important;  /* Hace que la imagen sea circular */
+  background-color: aqua;
+}

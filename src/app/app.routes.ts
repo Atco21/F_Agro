@@ -31,7 +31,6 @@ export const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: "incidencias",
     children: [

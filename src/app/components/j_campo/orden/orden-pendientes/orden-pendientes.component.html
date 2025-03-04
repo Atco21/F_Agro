@@ -24,7 +24,7 @@
   </div>
 
 
-  <div class="modal fade">
+  <div #modalElement class="modal fade" [class.show]="isVisible" [attr.aria-hidden]="!isVisible">
 
 
 

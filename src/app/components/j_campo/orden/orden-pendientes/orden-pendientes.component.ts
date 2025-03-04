@@ -12,7 +12,7 @@ import{ OrdenesService } from '../../../../services/ordenes.service';
 })
 export class OrdenPendientesComponent {
   ordenesPendientes: any;
-
+  isVisible: any = false;;
   parcela:any;
   tarea:any;
   fecha_inicio:any;
