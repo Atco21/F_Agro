@@ -1,13 +1,12 @@
 
 
-export interface Administrador  {
+export interface User  {
 
-  dni: string;
+  id:number;
   nombre: string;
   email: string;
-  edad: number;
   telefono: number;
-  direccion: string;
-  nivelAcceso: number;
+  direccion: string; 
+  rol: string;
 
 }
