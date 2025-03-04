@@ -17,6 +17,8 @@ export class ModalCrearAplicadorComponent {
   aplicadores: any = [];  // Asegurar que es un array
   aplicadoresSeleccionados: any = [];
 
+  
+
   @ViewChild('modalElement') modalElement!: ElementRef;
   @Output() aplicadoresGuardados = new EventEmitter<any>();
 
@@ -49,4 +51,6 @@ export class ModalCrearAplicadorComponent {
     this.aplicadoresGuardados.emit(this.aplicadoresSeleccionados);
     this.cerrarModal();
   }
+
+
 }
