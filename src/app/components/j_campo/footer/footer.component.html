@@ -23,6 +23,21 @@
     </div>
   </div>
 
+
+   <!--  Menu -->
+    <div id="menuD" [hidden]="!isCuentaMenuVisible">
+      <div>
+        <button class="close-btn" (click)="closeCuentaMenu()">X</button>
+        <h1>Menú</h1>
+        <h3 class="desMenu1" routerLink="/cuenta" style="cursor: pointer;">Cuenta</h3>
+        <h3 class="desMenu1" routerLink="/mensajes" style="cursor: pointer;">Mensajes</h3>
+        <h3 class="desMenu1" routerLink="/tratamientos" style="cursor: pointer;">Tratamientos</h3>
+        <h3 class="desMenu1" routerLink="/almacen" style="cursor: pointer;">Almacén</h3>
+        <h3 class="desMenu1" routerLink="/salir" style="cursor: pointer;">Salir</h3>
+      </div>
+    </div>
+
+
   <!-- Footer Fijo -->
   <div id="fixed-footer">
 
@@ -56,9 +71,9 @@
 
     <!-- Botón Menú -->
     <div class="menu">
-      <a routerLink="/menu">
+      <div type="button" class="btn" (click)="Menu()">
         <img src="menu.svg" alt="menu" />
-      </a>
+      </div>
     </div>
 
   </div>

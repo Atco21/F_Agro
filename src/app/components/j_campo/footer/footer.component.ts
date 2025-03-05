@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
   isOrdenMenuVisible: boolean = false;
+  isCuentaMenuVisible: boolean = false;
 
 
   // Función para alternar la visibilidad
@@ -36,6 +37,13 @@ export class FooterComponent {
     this.isOrdenMenuVisible = false;
   }
 
+  Menu() {
+    this.isCuentaMenuVisible = !this.isCuentaMenuVisible;
+  }
+  closeCuentaMenu() {
+    this.isCuentaMenuVisible = false;
+  }
+
 
   constructor(private router: Router) {}
 
@@ -50,6 +58,7 @@ export class FooterComponent {
   cerraModalMenus() {
     this.isIncidenciaMenuVisible = false;
     this.isOrdenMenuVisible = false;
+    this.isCuentaMenuVisible = false;
   }
 
 
