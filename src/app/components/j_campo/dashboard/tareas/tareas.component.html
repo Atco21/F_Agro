@@ -1,16 +1,15 @@
-<div class="container">
+<div class="container  ms-4">
   <div class="row">
     <div class="col-md-12">
       <h1>Órdenes en curso</h1>
       <div class="row">
         <div class="col-md-4" *ngFor="let ordenCurso of ordenesCurso">
           <div class="card" style="width: 18rem;">
-
             <div class="card-body">
               <div class="container">
                 <img src="Parcela-Icon.svg" class="card-img-top" alt="Imagen de la parcela">
-                 <h5 class="card-title">{{ ordenCurso.parcela.nombre }}</h5>
-             </div>
+                <h5 class="card-title">{{ ordenCurso.parcela.nombre }}</h5>
+              </div>
               <p class="card-text">Tarea: {{ ordenCurso.tarea }}</p>
               <p class="card-text">Fecha de inicio: {{ ordenCurso.fecha_inicio }}</p>
               <p class="">Aplicador:{{ ordenesCurso.aplicador_id }}</p>
@@ -21,6 +20,3 @@
     </div>
   </div>
 </div>
-
-
-

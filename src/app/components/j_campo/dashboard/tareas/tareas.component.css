@@ -1,11 +1,14 @@
 /* Contenedor general del card */
-.container{
+container {
   display: flex;
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  align-items: center; /* Alineación vertical */
+  gap: 10px; /* Controla el espacio entre los elementos */
+
 }
+
 
 .card {
   display: flex; /* Alinear imagen y contenido */

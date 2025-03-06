@@ -14,6 +14,8 @@ import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/or
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
 import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
+import{FooterComponent} from './components/j_campo/footer/footer.component';
+import{HeaderComponent} from './components/j_campo/header/header.component';
 import { OrdenNoFinalizadaComponent } from './components/aplicador/orden/orden-no-finalizada/orden-no-finalizada.component';
 import { OrdenFinalizadaComponent } from './components/aplicador/orden/orden-finalizada/orden-finalizada.component';
 import { CrearIncidenciaComponent } from './components/aplicador/incidencias/crear-incidencia/crear-incidencia.component';
@@ -28,45 +30,44 @@ import  LoginComponent  from './components/login/login.component'
 
 
 export const routes: Routes = [
-
-
-
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
 
   {
-    path: "incidencias",
+    path: 'j_campo',
     children: [
-      { path: "tipo-personal", component: TipoPersonalComponent }, // Tabla incidencias tipo personal
-      { path: "tipo-maquina", component: TipoMaquinaComponent },   // Incidencias tipo máquina
-      { path: "tipo-stock", component: TipoStockComponent }        // Incidencias tipo stock
+      { path: 'dashboard', component: DashboardComponent },
+      { path:'footer',component:FooterComponent},
+      { path:'header',component:HeaderComponent},
+      { path: 'notificaciones', component: NotificacionesComponent },
+      { path: 'calendario', component: CalendarioComponent },
+      { path: 'menu', component: MenuComponent },
+      { path: 'crear-orden', component: CrearOrdenComponent },
+      { path: 'modal-crear-parcela', component: ModalCrearParcelaComponent },
+      { path: 'modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
+      { path: 'modal-crear-tarea', component: ModalCrearTareaComponent },
+
+      {
+        path: 'incidencias',
+        children: [
+          { path: 'tipo-personal', component: TipoPersonalComponent },
+          { path: 'tipo-maquina', component: TipoMaquinaComponent },
+          { path: 'tipo-stock', component: TipoStockComponent }
+        ]
+      },
+
+      {
+        path: 'orden',
+        children: [
+          { path: 'orden-curso', component: OrdenEnCursoComponent },
+          { path: 'orden-pausadas', component: OrdenPausadasComponent },
+          { path: 'orden-pendientes', component: OrdenPendientesComponent },
+          { path: 'orden-terminadas', component: OrdenTerminadasComponent }
+        ]
+      }
     ]
   },
 
-
-  {
-    path: "orden",
-    children: [
-      {path: "orden-curso", component: OrdenEnCursoComponent},
-      {path: "orden-pausadas", component: OrdenPausadasComponent},
-      {path: "orden-pendientes", component: OrdenPendientesComponent},
-      {path: "orden-terminadas", component: OrdenTerminadasComponent}
-    ]
-  },
-
-  { path: 'notificaciones', component: NotificacionesComponent },
-  { path: 'calendario', component: CalendarioComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'crear orden', component: CrearOrdenComponent }, // routa de home crear tarea
-  {path:'modal-crear-parcela', component: ModalCrearParcelaComponent},
-  {path:'modal-crear-tratamiento', component: ModalCrearTratamientoComponent},
-  {path:'modal-crear-tarea', component: ModalCrearTareaComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'modal-crear-tratamiento', component:CrearOrdenComponent},
-  {path:"orden/orden-curso", component:OrdenEnCursoComponent},  //ruta de orden
-
-
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 

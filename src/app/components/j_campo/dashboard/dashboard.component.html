@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
 <body class="bg-light">
+
+  <app-header></app-header>
 
   <!-- Contenedor Principal -->
   <div class="container py-3">
@@ -38,11 +47,11 @@
         </div>
       </div>
     </div>
+
     <app-tareas></app-tareas>
-    <ng-content></ng-content><!-- se inyecta <app-tareas> -->
-  </div>
+    <app-footer></app-footer>
 
+  </div> <!-- Cierre del contenedor -->
 
-
-
-
+</body>
+</html>

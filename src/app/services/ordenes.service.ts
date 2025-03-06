@@ -18,11 +18,11 @@ export class OrdenesService {
   }
 
   getOrdenesPendientes() {
-    return this.http.get('http://127.0.0.1:8000/api/ordenesPendientes');
+    return this.http.get('http://localhost/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
-    return this.http.get('http://127.0.0.1:8000/api/ordenesCurso');
+    return this.http.get('http://localhost/api/ordenesCurso');
   }
 
   getOrdenesPausa() {

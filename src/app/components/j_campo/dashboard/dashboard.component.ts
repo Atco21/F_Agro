@@ -3,12 +3,17 @@ import { TareasComponent } from "./tareas/tareas.component";
 import { Modal } from 'bootstrap';
 import { DatePipe } from '@angular/common';
 
+
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  imports: [TareasComponent],
+  imports: [TareasComponent,HeaderComponent,FooterComponent],
   providers:[DatePipe]
 })
 
