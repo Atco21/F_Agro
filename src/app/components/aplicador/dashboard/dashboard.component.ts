@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ModalVerTareaComponent } from '../../modals/modal-ver-tarea/modal-ver-tarea.component';
+import { OrdenesService } from '../../../_services/ordenes.service';
 
 
 
@@ -12,6 +13,16 @@ import { ModalVerTareaComponent } from '../../modals/modal-ver-tarea/modal-ver-t
 })
 export class DashboardComponent {
   @ViewChild(ModalVerTareaComponent) verTarea!: ModalVerTareaComponent; // Accedemos al modal
+
+ordenesPentientes: any;
+  constructor(private ordenesService: OrdenesService) {
+    this.ordenesService.getOrdenesPendientes()
+    .subscribe(result => this.ordenesPentientes = result);
+  }
+
+
+
+
   crearIncidencia(): void {
 
     // var idTarea = document.getElementById("modalVerTarea");
@@ -31,5 +42,7 @@ export class DashboardComponent {
     //       verTarea.classList.add("show"); // Agrega la clase para que se muestre
     //   }
     // }
+
+    
   }
 }

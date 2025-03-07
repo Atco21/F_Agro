@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/movil/header/header.component';
 import { QuimicosService } from './_services/quimicos.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import LoginComponent from "./login/login.component";
+import LoginComponent from "./components/login/login.component";
 
 
 
@@ -20,20 +20,20 @@ import LoginComponent from "./login/login.component";
 export class AppComponent {
   title = 'F_Agro';
 
-  isLoggedIn: boolean = false;
+  isLoginPage: boolean = false;
 
   ngOnInit() {
-    this.isLoggedIn = !!localStorage.getItem('token');
+    this.isLoginPage = !!localStorage.getItem('token');
   }
 
   // Maneja el evento de éxito de login
   onLoginSuccess() {
-    this.isLoggedIn = true;
+    this.isLoginPage = true;
   }
 
   logout(){
     localStorage.removeItem('token');
-    this.isLoggedIn = false;
+    this.isLoginPage = false;
   }
 
   quimicos:any;

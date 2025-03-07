@@ -1,90 +1,40 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { IncidenciasComponent } from './components/movil/incidencias/incidencias.component';
-import { OrdenComponent } from './components/movil/orden/orden.component';
-import { DashboardComponent } from './components/movil/dashboard/dashboard.component';
-import { OrdenNoFinalizadaComponent } from './components/movil/orden/orden-no-finalizada/orden-no-finalizada.component';
-import { OrdenFinalizadaComponent } from './components/movil/orden/orden-finalizada/orden-finalizada.component';
-import { CalendarioComponent } from './components/movil/calendario/calendario.component';
-import { CrearIncidenciaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia.component';
-import { CrearIncidenciaMaquinaComponent } from './components/movil/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
-import { QuimicosComponent } from './components/movil/quimicos/quimicos.component';
-import { PedidoComponent } from './components/movil/pedido/pedido.component';
-import LoginComponent from './login/login.component';
-
-
+import { Routes, provideRouter } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { IncidenciasComponent } from './components/aplicador/incidencias/incidencias.component';
+import { OrdenComponent } from './components/aplicador/orden/orden.component';
+import { DashboardComponent } from './components/aplicador/dashboard/dashboard.component';
+import { OrdenPendientesComponent } from './components/aplicador/orden/orden-pendientes/orden-pendientes.component';
+import { OrdenFinalizadaComponent } from './components/aplicador/orden/orden-finalizada/orden-finalizada.component';
+import { CalendarioComponent } from './components/aplicador/calendario/calendario.component';
+import { CrearIncidenciaComponent } from './components/aplicador/incidencias/crear-incidencia/crear-incidencia.component';
+import { CrearIncidenciaMaquinaComponent } from './components/aplicador/incidencias/crear-incidencia/crear-incidencia-maquina/crear-incidencia-maquina.component';
+import { QuimicosComponent } from './components/j_campo/quimicos/quimicos.component';
+import { PedidoComponent } from './components/j_campo/pedido/pedido.component';
+import LoginComponent from './components/login/login.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  
-  {
-    path: 'movil',
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { 
+    path: 'incidencias', component: IncidenciasComponent,
     children: [
-      {
-        path: 'incidencias',
-        component: IncidenciasComponent,
-        children: [
-          {
-            path: 'crear-incidencia',
-            component: CrearIncidenciaComponent,
-          },
-          //   {
-          //     path: 'incidencia-finalizada',
-          //     component: IncidenciaFinalizadaComponent,
-          //   }
-        ]
-      },
-      {
-        path: 'orden',
-        component: OrdenComponent,
-        children: [
-          {
-            path: 'orden-no-finalizada',
-            component: OrdenNoFinalizadaComponent,
-          },
-          {
-            path: 'orden-finalizada',
-            component: OrdenFinalizadaComponent,
-          }
-        ]
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'calendario',
-        component: CalendarioComponent,
-      },
-      {
-        path: 'crear-incidencia',
-        component: CrearIncidenciaComponent,
-        children: [
-          {
-            path: 'crear-incidencia-maquina',
-            component: CrearIncidenciaMaquinaComponent,
-          }
-        ]
-      },
-      {
-        path: 'quimicos',
-        component: QuimicosComponent,
-      },
-      {
-        path: 'crear-pedido',
-        component: PedidoComponent,
-        }
+      { path: 'crear-incidencia', component: CrearIncidenciaComponent }
     ]
-
   },
-  
-
+  { 
+    path: 'orden', component: OrdenComponent,
+    children: [
+      { path: 'orden-pendientes', component: OrdenPendientesComponent },
+      { path: 'orden-finalizada', component: OrdenFinalizadaComponent }
+    ]
+  },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'calendario', component: CalendarioComponent },
+  { path: 'quimicos', component: QuimicosComponent },
+  { path: 'crear-pedido', component: PedidoComponent }
 ];
+
+bootstrapApplication(AppComponent, {
+  providers: [provideRouter(routes)]
+});
