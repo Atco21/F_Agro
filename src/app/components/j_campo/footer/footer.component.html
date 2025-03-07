@@ -10,7 +10,18 @@
       <h3 routerLink="/incidencias/tipo-stock"style="cursor: pointer;">Stock</h3>
     </div>
   </div>
-
+   <!--  Menu -->
+   <div id="menuD" [hidden]="!isMenuVisible">
+    <div>
+      <button class="close-btn" (click)="closeMenu()">X</button>
+      <h1>Menú</h1>
+      <h3 class="desMenu1" routerLink="j_campo/cuenta" style="cursor: pointer;">Cuenta</h3>
+      <h3 class="desMenu1" routerLink="j_campo/mensajes" style="cursor: pointer;">Mensajes</h3>
+      <h3 class="desMenu1" routerLink="j_campo/tratamientos" style="cursor: pointer;">Tratamientos</h3>
+      <h3 class="desMenu1" routerLink="j_campo/almacen" style="cursor: pointer;">Almacén</h3>
+      <h3 class="desMenu1" routerLink="j_campo/salir" style="cursor: pointer;">Salir</h3>
+    </div>
+  </div>
 
   <div id="menuD" [hidden]="!isOrdenMenuVisible">
     <div>
@@ -56,9 +67,9 @@
 
     <!-- Botón Menú -->
     <div class="menu">
-      <a routerLink="/menu">
+      <div type="button" class="btn" (click)="Menu()">
         <img src="menu.svg" alt="menu" />
-      </a>
+      </div>
     </div>
 
   </div>
