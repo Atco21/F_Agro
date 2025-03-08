@@ -76,7 +76,6 @@ export const routes: Routes = [
       },
     ]
   },
-  { path: '**', redirectTo: '/login' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ]
 
