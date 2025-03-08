@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { ModalVerTareaComponent } from '../../modals/modal-ver-tarea/modal-ver-tarea.component';
+import { ModalVerTareaComponent } from '../modals/modal-ver-tarea/modal-ver-tarea.component';
 import { OrdenesService } from '../../../_services/ordenes.service';
+//import { ModalVerTareaComponent_1 as ModalVerTareaComponent } from "../modals/modal-ver-tarea/modal-ver-tarea.component";
 
 
 
@@ -9,7 +10,7 @@ import { OrdenesService } from '../../../_services/ordenes.service';
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  imports: [ModalVerTareaComponent]
+  imports: [ModalVerTareaComponent, ],
 })
 export class DashboardComponent {
   @ViewChild(ModalVerTareaComponent) verTarea!: ModalVerTareaComponent; // Accedemos al modal
@@ -45,4 +46,6 @@ ordenesPentientes: any;
 
     
   }
+
+  
 }

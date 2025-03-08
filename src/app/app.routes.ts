@@ -16,23 +16,42 @@ import { AppComponent } from './app.component';
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { 
-    path: 'incidencias', component: IncidenciasComponent,
+  {
+    path: 'apliciador',
     children: [
-      { path: 'crear-incidencia', component: CrearIncidenciaComponent }
+      {
+        path: 'dashboardApli',
+        component: DashboardComponent
+      },
+      {
+        path: 'calendario',
+        component: CalendarioComponent
+      },
+      {
+        path: 'incidencias',
+        component: IncidenciasComponent,
+        children: [
+          { path: 'crear-incidencia', component: CrearIncidenciaComponent }
+        ]
+      },
+      {
+        path: 'orden',
+        component: OrdenComponent,
+        children: [
+          { path: 'orden-pendientes', component: OrdenPendientesComponent },
+          { path: 'orden-finalizada', component: OrdenFinalizadaComponent }
+        ]
+      }
     ]
   },
-  { 
-    path: 'orden', component: OrdenComponent,
+  {
+    path: 'j_campo',
     children: [
-      { path: 'orden-pendientes', component: OrdenPendientesComponent },
-      { path: 'orden-finalizada', component: OrdenFinalizadaComponent }
+      { path: 'quimicos', component: QuimicosComponent },
+      { path: 'crear-pedido', component: PedidoComponent }
     ]
-  },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'calendario', component: CalendarioComponent },
-  { path: 'quimicos', component: QuimicosComponent },
-  { path: 'crear-pedido', component: PedidoComponent }
+  }
+
 ];
 
 bootstrapApplication(AppComponent, {
