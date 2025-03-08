@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-.modal-title {
+.modal-title, .title {
   color: #532301;
   font-weight: bold;
 }
@@ -35,28 +35,20 @@ body {
 .modal-footer {
   background-color: #ffffff;
 }
-.title{
-  color: #532301;
-  font-weight: bold;
-}
-.card-body{
 
+.card-body {
   max-height: 80px;
-
 }
 
-.fecha{
+.fecha {
   max-height: 120px !important;
 }
 
-.parcelas, .tareas, .aplicadores .maquinas {
+.parcelas, .tareas, .aplicadores, .maquinas {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
-
-
-
 
 .alert-success {
   position: fixed;
