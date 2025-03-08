@@ -145,26 +145,13 @@ export class ModalCrearParcelaComponent implements OnInit {
 
 
   seleccionarParcela(parcela: any) {
-
-
     // Si la máquina ya está seleccionada, la deseleccionamos
-
-
     if (this.parcelaSeleecionada === parcela) {
-
-
       this.parcelaSeleecionada = null;
-
     } else {
-
-
       // Si no, seleccionamos la nueva y desmarcamos la anterior
-
-
       this.parcelaSeleecionada = parcela;
-
     }
-
   }
 
   }

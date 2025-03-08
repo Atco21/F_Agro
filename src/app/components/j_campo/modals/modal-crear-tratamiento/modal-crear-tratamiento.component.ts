@@ -21,9 +21,21 @@ export class ModalCrearTratamientoComponent {
 
 
   constructor(private rendered: Renderer2 ,private tratamientoService: TratamientoService) {
-    this.tratamientoService.obtenerDatosApi()
-      .subscribe(result => this.tratamientos = result)
+
   }
+
+
+  ngOnInit(): void {
+    this.tratamientoService.getTratamientoAll().subscribe(
+      (data) => {
+        this.tratamientos = data;
+      },
+      (error) => {
+        console.error('Error al obtener usuarios', error);
+      }
+    );
+  }
+
 
 
   // Mostrar modal usando clases de Bootstrap
@@ -48,7 +60,16 @@ export class ModalCrearTratamientoComponent {
     this.tratamientoGuardado.emit(this.tratamientoSeleccionado);
     this.cerrarModal();
   }
-
-
+  seleccionarTratamiento(tratamiento: any){
+      // Si el tratamiento ya está seleccionada, la deseleccionamos
+      if (this.tratamientoSeleccionado === tratamiento) {
+        this.tratamientoSeleccionado = null;
+      } else {
+        // Si no, seleccionamos el nuevo y desmarcamos la anterior
+        this.tratamientoSeleccionado = tratamiento;
+      }
+    }
   }
+
+
 
