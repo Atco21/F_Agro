@@ -8,16 +8,32 @@
             <th>Parcela</th>
             <th>Tarea</th>
             <th>Fecha Inicio</th>
+            <th></th>
           </tr>
         </thead>
         <tbody >
-          <tr *ngFor="let ordenCurso of ordenesCurso">
-            <td>{{ ordenCurso.parcela.nombre }}</td>
-            <td>{{ ordenCurso.tarea }}
-            <td>{{ ordenCurso.fecha_inicio }}</td>
-          </tr>
+           @for(ordenCurso of ordenesCurso; track ordenCurso.id){
+            <tr data-bs-toggle="modal" data-bs-target="#ordenCursoShow">
+              <td>{{ ordenCurso.parcela.nombre }}</td>
+              <td>{{ ordenCurso.tarea }}
+              <td>{{ ordenCurso.fecha_inicio }}</td>
+            </tr>
+           }
+
+
         </tbody>
       </table>
+
     </div>
   </div>
+
 </div>
+
+
+
+
+
+
+
+
+

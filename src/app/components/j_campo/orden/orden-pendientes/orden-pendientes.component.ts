@@ -16,11 +16,17 @@ export class OrdenPendientesComponent {
   parcela:any;
   tarea:any;
   fecha_inicio:any;
+  ordenSeleccionada: any = null;
+
 
   constructor(private ordenesService: OrdenesService) {
       this.ordenesService.getOrdenesPendientes()
         .subscribe(result => this.ordenesPendientes = result)
   }
 
+  seleccionarOrden(orden: any) {
+    console.log(orden);
+    this.ordenSeleccionada = orden;
+  }
 }
 
