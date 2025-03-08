@@ -74,15 +74,6 @@ export const routes: Routes = [
         ],
 
       },
-      {
-        path: 'aplicador',
-        children: [
-          
-
-
-        ]
-
-      }
     ]
   },
   { path: '**', redirectTo: '/login' },

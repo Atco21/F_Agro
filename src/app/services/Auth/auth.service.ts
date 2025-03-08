@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private LoginUrl = 'https://xz9bwhqq7a.laravel-sail.site/api/loginAngular';
+  private LoginUrl = 'http://localhost/api/loginAngular';
   public tokenKey = 'authToken';
   public rolKey= 'rol';
 
