@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./login.component.css'],
   imports: [CommonModule, ReactiveFormsModule]
 })
-export default class LoginComponent {
+export class LoginComponent {
 
   loginForm: FormGroup;
   errorMessage: string = '';
@@ -51,7 +51,7 @@ export default class LoginComponent {
 
         // Redirigir según el rol del usuario
         if (result.success.rol === 'jefe de campo') {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['j_campo/dashboard']);
         } else if (result.success.rol === 'aplicador') {
           this.router.navigate(['tareas']);
         }

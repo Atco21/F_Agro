@@ -25,50 +25,62 @@ import { PedidoComponent } from './components/aplicador/pedido/pedido.component'
 import { AuthGuard } from './guards/auth.guard';
 import { JefeGuard } from './guards/guard-jefe.guards';
 import { AplicadorGuard } from './guards/guard-aplicador.guards';
-import  LoginComponent  from './components/login/login.component'
-
+import { LoginComponent } from './components/login/login.component'
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-
   {
-    path: 'j_campo',
+    path: 'login',
+    component: AuthLayoutComponent,
+    children: [{ path: '', component: LoginComponent }]
+  },
+  {
+    path: '',
+    component: MainLayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path:'footer',component:FooterComponent},
-      { path:'header',component:HeaderComponent},
-      { path: 'notificaciones', component: NotificacionesComponent },
-      { path: 'calendario', component: CalendarioComponent },
-      { path: 'menu', component: MenuComponent },
-      { path: 'crear-orden', component: CrearOrdenComponent },
-      { path: 'modal-crear-parcela', component: ModalCrearParcelaComponent },
-      { path: 'modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
-      { path: 'modal-crear-tarea', component: ModalCrearTareaComponent },
-
       {
-        path: 'incidencias',
+        path: 'j_campo',
         children: [
-          { path: 'tipo-personal', component: TipoPersonalComponent },
-          { path: 'tipo-maquina', component: TipoMaquinaComponent },
-          { path: 'tipo-stock', component: TipoStockComponent }
-        ]
+          { path: 'dashboard', component: DashboardComponent },
+          { path:'footer',component:FooterComponent},
+          { path:'header',component:HeaderComponent},
+          { path: 'notificaciones', component: NotificacionesComponent },
+          { path: 'calendario', component: CalendarioComponent },
+          { path: 'menu', component: MenuComponent },
+          { path: 'crear-orden', component: CrearOrdenComponent },
+          { path: 'modal-crear-parcela', component: ModalCrearParcelaComponent },
+          { path: 'modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
+          { path: 'modal-crear-tarea', component: ModalCrearTareaComponent },
+          {
+            path: 'incidencias',
+            children: [
+              { path: 'tipo-personal', component: TipoPersonalComponent },
+              { path: 'tipo-maquina', component: TipoMaquinaComponent },
+              { path: 'tipo-stock', component: TipoStockComponent }
+            ]
+          },
+
+          {
+            path: 'orden',
+            children: [
+              { path: 'orden-curso', component: OrdenEnCursoComponent },
+              { path: 'orden-pausadas', component: OrdenPausadasComponent },
+              { path: 'orden-pendientes', component: OrdenPendientesComponent },
+              { path: 'orden-terminadas', component: OrdenTerminadasComponent }
+            ]
+          }
+        ],
+
       },
-
-      {
-        path: 'orden',
-        children: [
-          { path: 'orden-curso', component: OrdenEnCursoComponent },
-          { path: 'orden-pausadas', component: OrdenPausadasComponent },
-          { path: 'orden-pendientes', component: OrdenPendientesComponent },
-          { path: 'orden-terminadas', component: OrdenTerminadasComponent }
-        ]
-      }
     ]
   },
+  { path: '**', redirectTo: '/login' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+]
 
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
-];
+
 
 
 export class AppRoutingModule {}
