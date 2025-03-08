@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/j_campo/header/header.component';
-import { FooterComponent } from './components/j_campo/footer/footer.component';
+
 import { FormsModule } from '@angular/forms';
-import { Router, NavigationEnd } from '@angular/router';
+
 import { CommonModule } from '@angular/common';
 
 
@@ -11,9 +10,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [
-    FooterComponent,
+
     RouterOutlet,
-    HeaderComponent,
+
     FormsModule,
     CommonModule
   ],

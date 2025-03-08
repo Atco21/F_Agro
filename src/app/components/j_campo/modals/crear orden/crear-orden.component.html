@@ -4,29 +4,33 @@
     <div class="col-12 mb-3">
       <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
         <div class="card-body parcelas">
-          <div class="card-title d-flex">
-            <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-           <h2 class="fw-semibold"> Parcela</h2>
-              {{ parcelaSeleccionada.parcela.nombre }}
+          <div class="card-title d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+              <h2 class="fw-semibold ms-3 mt-2">Parcela</h2>
+            </div>
+            <h3 class="mb-0">{{ parcelaSeleccionada || 'No seleccionada' }}</h3>
           </div>
-          <app-modal-crear-parcela #modalVerParcelas
-            (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
+          <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
         </div>
       </div>
     </div>
-    <div class="col-12 mb-3">
-      <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;">
-        <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal()-->
-        <div class="card-body tareas">
-          <div class="card-title d-flex">
-            <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
-            <h3>Tarea: {{ tareaSeleccionada || 'No seleccionada' }}</h3>
 
+    <div class="col-12 ">
+      <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;">
+        <div class="card-body tareas">
+          <div class="card-title d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
+              <h2 class="fw-semibold ms-3 mt-2">Tarea</h2>
+            </div>
+            <h3 class="mb-0">{{ tareaSeleccionada || 'No seleccionada' }}</h3>
           </div>
           <app-modal-crear-tarea #modalVerTarea (tareaGuardada)="recibirTarea($event)"></app-modal-crear-tarea>
         </div>
       </div>
     </div>
+
     <div class="col-12 mb-3">
       <div class="card shadow" (click)="abrirModalAplicador()" style="cursor: pointer;">
         <div class="card-body aplicadores">
@@ -53,7 +57,7 @@
   </div>
   <div class="col-12 mb-3">
     <div class="card shadow" (click)="abrirModalMaquina()" style="cursor: pointer;">
-      <div class="card-body">
+      <div class="card-body maquinas">
         <div class="card-title d-flex">
           <img src="/Maquina-Icon.svg" alt="Maquina Icon" class="img-fluid me-2" />
           <h3>Máquina: {{ maquinaSeleccionada?.nombre || 'No seleccionada' }}</h3>

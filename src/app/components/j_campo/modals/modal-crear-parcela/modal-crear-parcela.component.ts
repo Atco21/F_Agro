@@ -57,12 +57,22 @@ export class ModalCrearParcelaComponent implements OnInit {
     this.cerrarModal();
   }
 
-  revisarParcela(parcela:any){
-    const index = this.parcelaSeleecionada.indexOf(parcela);
-    if (index === -1) {
-      this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
+  // revisarParcela(parcela:any){
+  //   const index = this.parcelaSeleecionada.indexOf(parcela);
+  //   if (index === -1) {
+  //     this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
+  //   } else {
+  //     this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
+  //   }
+  // }
+
+  seleccionarParcela(parcela: any) {
+    // Si la máquina ya está seleccionada, la deseleccionamos
+    if (this.parcelaSeleecionada === parcela) {
+      this.parcelaSeleecionada = null;
     } else {
-      this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
+      // Si no, seleccionamos la nueva y desmarcamos la anterior
+      this.parcelaSeleecionada = parcela;
     }
   }
   }

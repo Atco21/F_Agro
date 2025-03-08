@@ -11,20 +11,4 @@ export class TratamientoService {
     return this.http.get('http://localhost:80/api/tratamiento');
   }
 
-
-
-
-  // private tratamientos = [
-  //   { id: 1, nombre: 'Mosca Blanca' },
-  //   { id: 2, nombre: 'Mosca del Mediterraneo' },
-  //   { id: 3, nombre: 'Cotonet' },
-  //   { id: 4, nombre: 'Trip' },
-  //   { id: 5, nombre: 'Cochinilla' }
-  // ];
-
-  // constructor() { }
-
-  // obtenerTratamientos() {
-  //   return this.tratamientos;  // Debería devolver el array de tratamientos
-  // }
 }

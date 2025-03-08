@@ -49,12 +49,14 @@ body {
   max-height: 120px !important;
 }
 
-.aplicadores{
-  display: flex;
+.parcelas, .tareas, .aplicadores .maquinas {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
+
+
+
 
 .alert-success {
   position: fixed;
