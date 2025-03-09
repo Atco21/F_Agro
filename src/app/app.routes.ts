@@ -32,16 +32,16 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 export const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: AuthLayoutComponent,
-    children: [{ path: '', component: LoginComponent }]
+    children: [{ path: 'login', component: LoginComponent }]
   },
   {
-    path: '',
+    path: 'j_campo',
     component: MainLayoutComponent,
     children: [
       {
-        path: 'j_campo',
+        path: '',
         children: [
           { path: 'dashboard', component: DashboardComponent },
           { path:'footer',component:FooterComponent},
