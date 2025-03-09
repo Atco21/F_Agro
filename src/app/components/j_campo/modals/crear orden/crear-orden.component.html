@@ -4,17 +4,19 @@
     <div class="col-12 mb-3">
       <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
         <div class="card-body parcelas">
-          <div class="card-title d-flex">
-            <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-           <h2 class="fw-semibold"> Parcela</h2>
-              {{ parcelaSeleccionada.parcela.nombre }}
+          <div class="card-title d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+              <h2 class="fw-semibold ms-3 mt-2">Parcela</h2>
+            </div>
+            <h3 class="mb-0">{{ parcelaSeleccionada || 'No seleccionada' }}</h3>
           </div>
           <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
         </div>
       </div>
     </div>
 
-    <div class="col-12 ">
+    <div class="col-12 mb-3 ">
       <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;">
         <div class="card-body tareas">
           <div class="card-title d-flex justify-content-between align-items-center">
@@ -30,29 +32,20 @@
     </div>
 
     <div class="col-12 mb-3">
-      <div class="card shadow" (click)="abrirModalAplicador()" style="cursor: pointer;">
-        <div class="card-body aplicadores">
-          <h3 class="card-title">
-            <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-            Aplicador
-          </h3>
-          <app-modal-crear-aplicador #modalVerAplicador
-            (aplicadoresGuardados)="recibirAplicador($event)"></app-modal-crear-aplicador>
-          <div class="ps-5">
-            @if(aplicadoresSeleccionados.length > 0){
-            @for (aplicador of aplicadoresSeleccionados; track aplicador.id){
-
-            {{ aplicador.nombre }}
-            }
-            } @else{
-            <p>No seleccionado</p>
-            }
-          </div>
-
+  <div class="card shadow" (click)="abrirModalAplicador()" style="cursor: pointer;">
+    <div class="card-body aplicadores">
+      <div class="card-title d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <img src="/-Icon.svg" alt="Aplicador Icon" class="img-fluid me-2" />
+          <h2 class="fw-semibold ms-3 mt-2">Aplicador</h2>
         </div>
+        <h3 class="mb-0">{{ aplicadoresSeleccionados || 'No seleccionado' }}</h3>
       </div>
+      <app-modal-crear-aplicador #modalVerAplicador (aplicadoresGuardados)="recibirAplicador($event)"></app-modal-crear-aplicador>
     </div>
   </div>
+</div>
+
   <div class="col-12 mb-3">
     <div class="card shadow" (click)="abrirModalMaquina()" style="cursor: pointer;">
       <div class="card-body maquinas">
@@ -66,20 +59,19 @@
   </div>
   <div class="col-12 mb-3">
     <div class="card shadow" (click)="abrirModalTratamiento()" style="cursor: pointer;">
-      <!-- Cuando se hace click en la tarjeta, se ejecuta abrirModal() -->
-      <div class="card-body ">
-        <div class="card-title d-flex">
-          <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
-          <h3>Tratamiento: {{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</h3>
+      <div class="card-body tratamientos">
+        <div class="card-title d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
+            <h2 class="fw-semibold ms-3 mt-2">Tratamiento</h2>
+          </div>
+          <h3 class="mb-0">{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</h3>
         </div>
-        <!--Incluye el componente hijo <app-modal-crear-tratamiento> dentro del padre.
-                  Usa #modalVerTarea para referenciar el modal(que tenemos en el otro componente) y poder acceder a él desde el TypeScript(archivo.ts).
-                  Escucha el evento (tratamientoGuardado): Cuando el usuario guarda un tratamiento en el modal, se envía al padre con $event.-->
-        <app-modal-crear-tratamiento #modalVerTratamiento
-          (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
+        <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
       </div>
     </div>
   </div>
+
   <div class="col-12 mb-3">
     <div class="card shadow" (click)="abrirModalFecha() " style="cursor: pointer;">
       <div class="card-body fecha">
