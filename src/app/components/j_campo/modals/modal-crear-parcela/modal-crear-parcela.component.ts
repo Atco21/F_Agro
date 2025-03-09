@@ -58,12 +58,7 @@ export class ModalCrearParcelaComponent implements OnInit {
   }
 
   revisarParcela(parcela:any){
-    const index = this.parcelaSeleecionada.indexOf(parcela);
-    if (index === -1) {
-      this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
-    } else {
-      this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
-    }
+    this.parcelaSeleccionada = parcela;
   }
   }
 
