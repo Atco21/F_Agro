@@ -57,7 +57,7 @@ export default class LoginComponent {
         if (result.success.rol === 'jefe de campo') {
           this.router.navigate(['dashboard']);
         } else if (result.success.rol === 'aplicador') {
-          this.router.navigate(['tareas']);
+          this.router.navigate(['/aplicador/tareas']);
         }
       },
       error: (err) => {
