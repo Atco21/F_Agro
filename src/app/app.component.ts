@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 import { FooterComponent } from './components/aplicador/footer/footer.component';
 import { HeaderComponent } from './components/aplicador/header/header.component';
-import { QuimicosService } from './_services/quimicos.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import LoginComponent from "./components/login/login.component";
@@ -34,11 +33,5 @@ export class AppComponent {
   logout(){
     localStorage.removeItem('token');
     this.isLoginPage = false;
-  }
-
-  quimicos:any;
-
-  constructor(private quimicosService: QuimicosService){
-    this.quimicosService.obtenerQuimicos().subscribe(result => this.quimicos = result)
   }
 }

@@ -11,5 +11,15 @@ import { RouterOutlet } from '@angular/router';
 
 })
 export class FooterComponent {
+  isCuentaMenuVisible: boolean = false;
+
+  Menu() {
+    this.isCuentaMenuVisible = !this.isCuentaMenuVisible;
+  }
+
+  closeCuentaMenu() {
+    this.isCuentaMenuVisible = false;
+  }
+  
 
 }

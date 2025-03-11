@@ -15,14 +15,14 @@
         <tr class="solucionado" data-bs-toggle="modal" data-bs-target="#modalVerIncidencia" (click)="seleccionarIncidencia(incidencia)">
             <td class="icono" ><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
             <td class="central" >{{incidencia.descripcion}}<br> Creada el {{incidencia.fecha}}</td>
-            <td class="estado" >Solucionado</td>
+            <td class="estado" >{{incidencia.estado}}</td>
         </tr>
     }@else {
     
         <tr data-bs-toggle="modal" data-bs-target="#modalVerIncidencia" (click)="seleccionarIncidencia(incidencia)">
             <td class="icono" ><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
             <td class="central" >{{incidencia.descripcion}}<br> Creada el {{incidencia.fecha}}</td>
-            <td class="estado" >Pendiente</td>
+            <td class="estado" >{{incidencia.estado}}</td>
         </tr>
     }
 }
@@ -65,6 +65,18 @@
                 </div>
               </div>
             </div>
+
+            <div class="modal-body">
+              <div class="col-12 mb-3">
+                <div class="card shadow" style="cursor: pointer;">
+                  <div class="card-body parcelas">
+                    <div class="card-title d-flex">
+                      <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                     <h2 class="fw-semibold"> Estado: <br> {{incidenciaSeleccionada?.estado}}</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
     </div>
