@@ -43,3 +43,27 @@ tr:hover {
   cursor: pointer;
   background-color: rgb(207, 207, 207);
 }
+
+
+.empezar {
+  background-color: #532301;
+  color: white;
+  border-radius: 5%;
+  padding: 20px;
+  font-size: 24px;
+}
+.terminar {
+  background-color: #532301;
+  color: white;
+  border-radius: 5%;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.reportar {
+  background-color: white;
+  color: #004215;
+  border-radius: 5%;
+  padding: 20px;
+  font-size: 24px;
+}

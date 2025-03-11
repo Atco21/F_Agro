@@ -51,13 +51,11 @@ export default class LoginComponent {
         console.log(result);
         localStorage.setItem('token', result.success.token);
         localStorage.setItem('rol', result.success.rol);
-
+        console.log(result.success.rol);
 
         // Redirigir según el rol del usuario
-        if (result.success.rol === 'jefe de campo') {
-          this.router.navigate(['dashboard']);
-        } else if (result.success.rol === 'aplicador') {
-          this.router.navigate(['/aplicador/tareas']);
+      if (result.success.rol === 'aplicador') {
+          this.router.navigate(['/aplicador/dashboardApli']);
         }
       },
       error: (err) => {

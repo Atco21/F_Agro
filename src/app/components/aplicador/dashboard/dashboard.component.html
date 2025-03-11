@@ -1,25 +1,127 @@
+<div class="div1">
+  <div class="div2">
+    <table>
+      <tbody>
 
+        <!-- <tr id="modalVerTarea" (click)="crearIncidencia()">
+          <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+          <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
+
+        </tr>
+      </tbody> -->
+
+
+        @for (orden of ordenesPentientes; track orden.id) {
+          <tbody>
+            <tr data-bs-toggle="modal" data-bs-target="#modalVerTarea" (click)="seleccionarOrden(orden)">
+              <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+              <td class="central">{{ orden.parcela.nombre }} - {{orden.tarea}} <br> Creada el {{orden.fecha_inicio}} </td>
+            </tr>
+          </tbody>
+        }
+
+
+    </table>
+  </div>
+</div>
 
 <div class="div1">
   <div class="div2">
     <table>
       <tbody>
-        <tr id="modalVerTarea" (click)="crearIncidencia()">
+
+        <!-- <tr id="modalVerTarea" (click)="crearIncidencia()">
           <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
           <td class="central">Parcela 1 - PODA <br> Creada el 20 de diciembre</td>
 
         </tr>
+      </tbody> -->
+
 
         @for (orden of ordenesPentientes; track orden.id) {
           <tbody>
-            <tr>
-              <td>{{ orden.nombre }}</td>
+            <tr data-bs-toggle="modal" data-bs-target="#modalVerTarea" (click)="seleccionarOrden(orden)">
+              <td class="icono"><img src="IconoParcela.svg" alt="parcelaIcono" width="50px" height="50px"></td>
+              <td class="central">{{ orden.parcela.nombre }} - {{orden.tarea}} <br> Creada el {{orden.fecha_inicio}} </td>
             </tr>
           </tbody>
         }
-        <app-modal-ver-tarea #modalVerTarea></app-modal-ver-tarea>
 
-      </tbody>
+
     </table>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="modalVerTarea" tabindex="-1" aria-labelledby="ordenPendienteModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ordenCursoModal">Orden en curso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+      <div class="modal-body">
+        <div class="col-12 mb-3">
+          <div class="card shadow" style="cursor: pointer;">
+            <div class="card-body parcelas">
+              <div class="card-title d-flex">
+                <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+               <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.parcela.nombre}}</h2>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body parcelas">
+                <div class="card-title d-flex">
+                  <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                 <h2 class="fw-semibold"> Tarea:  {{ordenSeleccionada?.tarea}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-12 mb-3">
+          <div class="card shadow" style="cursor: pointer;">
+            <div class="card-body tareas">
+              <div class="card-title d-flex">
+                <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
+                <h3>Aplicador: {{ ordenSeleccionada?.nombre_id}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <div class="card shadow" style="cursor: pointer;">
+            <div class="card-body aplicadores">
+              <div class="card-title d-flex">
+                <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                <h3>Aplicadores</h3>
+                <p>{{ordenSeleccionada?.aplicador_id}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          
+          <button type="button" class="reportar" (click)="reportarIncidencia(ordenSeleccionada)">Reportar</button>
+          @if(ordenSeleccionada?.estado == 'pendiente'){
+            <button type="button" class="empezar" (click)="empezarOrden(ordenSeleccionada)">Empezar Orden</button>
+          }@else if(ordenSeleccionada?.estado == 'empezada'){
+            <button type="button" class="terminar" (click)="terminarOrden(ordenSeleccionada)">Terminar Orden</button>
+          } 
+        </div>
+
+
+      </div>
+    </div>
   </div>
 </div>

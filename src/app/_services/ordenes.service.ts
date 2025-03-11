@@ -6,29 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrdenesService {
-  private apiUrl = 'http://127.0.0.1:8000/api/ordenes';
+
 
   constructor(private http: HttpClient) {}
 
-  enviarOrden(datosOrden: any): Observable<any> {
-
-    return this.http.post(this.apiUrl, datosOrden);
-
-  }
-
   getOrdenesPendientes() {
-    return this.http.get('127.0.0.1/api/ordenesPendientes');
+    return this.http.get('http://127.0.0.1:8000/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
-    return this.http.get('http://localhost:80/api/ordenesCurso');
+    return this.http.get('http://127.0.0.1:8000/api/ordenesCurso');
   }
 
   getOrdenesPausa() {
-    return this.http.get('http://localhost:80/api/ordenesPausadas');
+    return this.http.get('http://127.0.0.1:8000/api/ordenesPausadas');
   }
 
   getOrdenesTerminadas() {
-    return this.http.get('http://localhost:80/api/ordenesTerminadas');
+    return this.http.get('http://127.0.0.1:8000/api/ordenesTerminadas');
   }
 }
